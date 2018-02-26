@@ -1,0 +1,18 @@
+Mediterranean_OM4_05
+1 1 1 0 0 0
+
+"tendency_native",     24, "hours", 1, "days", "time"
+"tendency_z",          24, "hours", 1, "days", "time"
+
+# Tendencies in z space 
+ "ocean_model_z",  "umo",                     "umo",                       "tendency_z",   "all", "mean", "none",2
+ "ocean_model_z",  "vmo",                     "vmo",                       "tendency_z",   "all", "mean", "none",2
+ "ocean_model_z",  "uo",                     "uo",                       "tendency_z",   "all", "mean", "none",2
+ "ocean_model_z",  "vo",                     "vo",                       "tendency_z",   "all", "mean", "none",2
+ 
+# Tendencies in native space
+ "ocean_model",  "umo",                     "umo",                       "tendency_native",   "all", "mean", "none",2
+ "ocean_model",  "vmo",                     "vmo",                       "tendency_native",   "all", "mean", "none",2
+ "ocean_model",  "uo",                     "uo",                       "tendency_native",   "all", "mean", "none",2
+ "ocean_model",  "vo",                     "vo",                       "tendency_native",   "all", "mean", "none",2
+ "ocean_model_z",  "MLD_003",                     "MLD_003",                       "tendency_z",   "all", "mean", "none",2

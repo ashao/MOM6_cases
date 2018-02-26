@@ -1,0 +1,5 @@
+#override TOPO_CONFIG = "file"
+#override RESTORE_SALINITY = False
+#override NK = 20
+#override DT = 3600
+#override DT_THERM = 7200
