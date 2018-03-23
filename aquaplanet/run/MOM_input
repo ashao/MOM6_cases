@@ -91,7 +91,7 @@ GRID_CONFIG = "mosaic"          !
                                 !     mercator - use a Mercator spherical grid.
 GRID_FILE = "ocean_supergrid.nc" !
                                 ! Name of the file from which to read horizontal grid data.
-TOPO_CONFIG = "flat"         !
+TOPO_CONFIG = "file"         !
                                 ! This specifies how bathymetry is specified:
                                 !     file - read bathymetric information from the file
                                 !       specified by (TOPO_FILE).

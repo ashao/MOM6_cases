@@ -3,10 +3,12 @@
 import midas
 import netCDF4 as nc
 import numpy as np
+import set_fv_geom
 
 ## Ocean Grid
 # Define the parameters of a cartesian grid
-refine = 1
+xrefine = 1
+yrefine = 1
 lat0 = -90 # Start at the south pole
 lon0 = 0   # Start the grid at the prime meridian
 lenlat = 180 #total latitude range (-90 to 90)
@@ -18,8 +20,8 @@ cap_extent = 80 # How far equatorward the land at poles extends
 
 # Number of points in the super grid (twice as much as actual model grid)
 # 'round' used here in case of roundoff error
-nx_super = round(360*refine) # Nominally 2-degree zonal resolution
-ny_super = round(180*refine) # Nominally 2-degree meridional resolution
+nx_super = round(360*xrefine) # Nominally 2-degree zonal resolution
+ny_super = round(180*yrefine) # Nominally 2-degree meridional resolution
 
 # Make a equally spaced lat-lon grid
 ocean_grid = midas.rectgrid.supergrid(nx_super,ny_super,'spherical','degrees',lat0,lenlat,lon0,lenlon,cyclic_x=True)
@@ -63,22 +65,32 @@ fout.sync()
 fout.close()
 
 ## Atmospheric Grid
-# Define the parameters of a cartesian grid
-refine = 0.5 # Four-degree resolution
+# Define the parameters.
+xrefine = 0.8 # 2.5-degree resolution
+yrefine = 1.0 # 2-degree resolution
 lat0 = -90 # Start at the south pole
 lon0 = 0   # Start the grid at the prime meridian
+lenlat = 180 #total latitude range (-90 to 90)
+lenlon = 360 #total longitude range (0 to 360)
 lenlat = 180 #total latitude range (-90 to 90)
 lenlon = 360 #total longitude range (0 to 360)
 # Define parameters related to topography
 
 # Number of points in the super grid (twice as much as actual model grid)
 # 'round' used here in case of roundoff error
-nx_super = round(360*refine)
-ny_super = round(180*refine)
+nx_super = round(360*xrefine)
+ny_super = round(180*yrefine)
 
 # Make a equally spaced lat-lon grid
 atmos_grid = midas.rectgrid.supergrid(nx_super,ny_super,'spherical','degrees',lat0,lenlat,lon0,lenlon,cyclic_x=True)
 atmos_grid.grid_metrics()
+# Overwrite the metrics with those from set_fv_geoms
+print(atmos_grid.area.shape)
+y, x = set_fv_geom.set_fv_geom(int(ny_super), int(nx_super))
+print( x.shape, y.shape)
+atmos_grid.x[:,:] = x
+atmos_grid.y[:,:] = y
+atmos_grid.angle_dx[:,:] = 0.
 atmos_grid.write_nc('atmos_supergrid.nc')
 
 # Make a tile variable and a string dimension...needed to generate exchange grids
