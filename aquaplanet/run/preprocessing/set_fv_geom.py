@@ -20,7 +20,7 @@ def set_fv_geom(mlat,nlon):
 # To be consistent with the coupler and the atmospheric grid, we must first convert the lat/lon to radians
 # and then back to degrees using very slightly different conversion factors
    latb = latb*(np.pi/180.)
-   latb = latb*(np.arctan(1.)/45.)
+   latb = latb/(np.arctan(1.)/45.)
 
    longrid, latgrid = np.meshgrid(lonb, latb)
 #   convert = np.arctan(1.)/45.

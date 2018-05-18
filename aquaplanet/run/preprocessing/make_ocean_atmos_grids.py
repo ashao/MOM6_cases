@@ -66,8 +66,8 @@ fout.close()
 
 ## Atmospheric Grid
 # Define the parameters.
-xrefine = 0.8 # 2.5-degree resolution
-yrefine = 1.0 # 2-degree resolution
+xrefine = 0.4 # 2.5-degree resolution
+yrefine = 0.5 # 2-degree resolution
 lat0 = -90 # Start at the south pole
 lon0 = 0   # Start the grid at the prime meridian
 lenlat = 180 #total latitude range (-90 to 90)
