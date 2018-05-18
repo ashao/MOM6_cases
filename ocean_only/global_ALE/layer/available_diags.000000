@@ -91,6 +91,12 @@
 "ocean_model", "dyCv"  [Unused]
     ! long_name: Delta(y) at v points (meter)
     ! units: m
+"ocean_model", "dyCuo"  [Unused]
+    ! long_name: Open meridional grid spacing at u points (meter)
+    ! units: m
+"ocean_model", "dxCvo"  [Unused]
+    ! long_name: Open zonal grid spacing at v points (meter)
+    ! units: m
 "ocean_model", "area_t_percent"  [Unused]
     ! long_name: Percentage of cell area covered by ocean
     ! units: %
@@ -98,6 +104,20 @@
     ! long_name: Sea Area Fraction
     ! units: %
     ! standard_name: SeaAreaFraction
+"ocean_model", "Rho_0"  [Unused]
+    ! long_name: mean ocean density used with the Boussinesq approximation
+    ! units: kg m-3
+"ocean_model", "rhozero"  [Unused]
+    ! long_name: reference sea water density for boussinesq approximation
+    ! units: kg m-3
+    ! standard_name: reference_sea_water_density_for_boussinesq_approximation
+"ocean_model", "C_p"  [Unused]
+    ! long_name: heat capacity of sea water
+    ! units: J kg-1 K-1
+"ocean_model", "cpocean"  [Unused]
+    ! long_name: specific_heat_capacity_of_sea_water
+    ! units: J kg-1 K-1
+    ! standard_name: specific_heat_capacity_of_sea_water
 "ocean_model", "volcello"  [Unused]
     ! long_name: Ocean grid-cell volume
     ! units: m3
@@ -1046,43 +1066,43 @@
     ! cell_methods: xh:mean yh:mean area:mean
 "ocean_model", "KHTH_u"  [Used]
     ! long_name: Parameterized mesoscale eddy advection diffusivity at U-point
-    ! units: m s-2
+    ! units: m2 s-1
     ! cell_methods: xq:point yh:mean zi:point
 "ocean_model", "KHTH_u_xyave"  [Unused]
     ! long_name: Parameterized mesoscale eddy advection diffusivity at U-point
-    ! units: m s-2
+    ! units: m2 s-1
     ! cell_methods: zi:point
 "ocean_model_z", "KHTH_u"  [Unused]
     ! long_name: Parameterized mesoscale eddy advection diffusivity at U-point
-    ! units: m s-2
+    ! units: m2 s-1
     ! cell_methods: xq:point yh:mean z_i:point
 "ocean_model_z", "KHTH_u_xyave"  [Unused]
     ! long_name: Parameterized mesoscale eddy advection diffusivity at U-point
-    ! units: m s-2
+    ! units: m2 s-1
     ! cell_methods: z_i:point
 "ocean_model", "KHTH_v"  [Used]
     ! long_name: Parameterized mesoscale eddy advection diffusivity at V-point
-    ! units: m s-2
+    ! units: m2 s-1
     ! cell_methods: xh:mean yq:point zi:point
 "ocean_model", "KHTH_v_xyave"  [Unused]
     ! long_name: Parameterized mesoscale eddy advection diffusivity at V-point
-    ! units: m s-2
+    ! units: m2 s-1
     ! cell_methods: zi:point
 "ocean_model_z", "KHTH_v"  [Unused]
     ! long_name: Parameterized mesoscale eddy advection diffusivity at V-point
-    ! units: m s-2
+    ! units: m2 s-1
     ! cell_methods: xh:mean yq:point z_i:point
 "ocean_model_z", "KHTH_v_xyave"  [Unused]
     ! long_name: Parameterized mesoscale eddy advection diffusivity at V-point
-    ! units: m s-2
+    ! units: m2 s-1
     ! cell_methods: z_i:point
 "ocean_model", "KHTH_t"  [Unused] (CMOR equivalent is "diftrblo")
     ! long_name: Ocean Tracer Diffusivity due to Parameterized Mesoscale Advection
-    ! units: m s-2
+    ! units: m2 s-1
     ! cell_methods: xh:mean yh:mean zl:mean area:mean
 "ocean_model", "KHTH_t_xyave"  [Unused] (CMOR equivalent is "diftrblo_xyave")
     ! long_name: Ocean Tracer Diffusivity due to Parameterized Mesoscale Advection
-    ! units: m s-2
+    ! units: m2 s-1
     ! cell_methods: zl:mean
 "ocean_model", "diftrblo"  [Used] (native name is "KHTH_t")
     ! long_name: Ocean Tracer Diffusivity due to Parameterized Mesoscale Advection
@@ -1096,11 +1116,11 @@
     ! cell_methods: zl:mean
 "ocean_model_z", "KHTH_t"  [Unused] (CMOR equivalent is "diftrblo")
     ! long_name: Ocean Tracer Diffusivity due to Parameterized Mesoscale Advection
-    ! units: m s-2
+    ! units: m2 s-1
     ! cell_methods: xh:mean yh:mean z_l:mean area:mean
 "ocean_model_z", "KHTH_t_xyave"  [Unused] (CMOR equivalent is "diftrblo_xyave")
     ! long_name: Ocean Tracer Diffusivity due to Parameterized Mesoscale Advection
-    ! units: m s-2
+    ! units: m2 s-1
     ! cell_methods: z_l:mean
 "ocean_model_z", "diftrblo"  [Unused] (native name is "KHTH_t")
     ! long_name: Ocean Tracer Diffusivity due to Parameterized Mesoscale Advection
@@ -1114,15 +1134,15 @@
     ! cell_methods: z_l:mean
 "ocean_model", "KHTH_u1"  [Unused]
     ! long_name: Parameterized mesoscale eddy advection diffusivity at U-points (2-D)
-    ! units: m s-2
+    ! units: m2 s-1
     ! cell_methods: xq:point yh:mean
 "ocean_model", "KHTH_v1"  [Unused]
     ! long_name: Parameterized mesoscale eddy advection diffusivity at V-points (2-D)
-    ! units: m s-2
+    ! units: m2 s-1
     ! cell_methods: xh:mean yq:point
 "ocean_model", "KHTH_t1"  [Unused]
     ! long_name: Parameterized mesoscale eddy advection diffusivity at T-points (2-D)
-    ! units: m s-2
+    ! units: m2 s-1
     ! cell_methods: xh:mean yh:mean area:mean
 "ocean_model", "neutral_slope_x"  [Unused]
     ! long_name: Zonal slope of neutral surface
@@ -1284,14 +1304,6 @@
     ! long_name: Surface meridional velocity component of mixed layer restratification
     ! units: m s-1
     ! cell_methods: xh:mean yq:point
-"ocean_model", "temp_layer_ave"  [Used]
-    ! long_name: Layer Average Ocean Temperature
-    ! units: degC
-    ! cell_methods: zl:mean
-"ocean_model", "salt_layer_ave"  [Used]
-    ! long_name: Layer Average Ocean Salinity
-    ! units: psu
-    ! cell_methods: zl:mean
 "ocean_model", "masscello"  [Used]
     ! long_name: Mass per unit area of liquid ocean grid cell
     ! units: kg m-2
@@ -1336,6 +1348,40 @@
     ! units: m
     ! standard_name: cell_thickness
     ! cell_methods: z_l:sum
+"ocean_model", "h_pre_sync"  [Unused]
+    ! long_name: Cell thickness from the previous timestep
+    ! units: m
+    ! cell_methods: xh:mean yh:mean zl:sum area:mean
+"ocean_model", "h_pre_sync_xyave"  [Unused]
+    ! long_name: Cell thickness from the previous timestep
+    ! units: m
+    ! cell_methods: zl:sum
+"ocean_model_z", "h_pre_sync"  [Unused]
+    ! long_name: Cell thickness from the previous timestep
+    ! units: m
+    ! cell_methods: xh:mean yh:mean z_l:sum area:mean
+"ocean_model_z", "h_pre_sync_xyave"  [Unused]
+    ! long_name: Cell thickness from the previous timestep
+    ! units: m
+    ! cell_methods: z_l:sum
+"ocean_model", "tob"  [Unused]
+    ! long_name: Sea Water Potential Temperature at Sea Floor
+    ! units: degC
+    ! standard_name: sea_water_potential_temperature_at_sea_floor
+    ! cell_methods: xh:mean yh:mean area:mean
+"ocean_model", "sob"  [Unused]
+    ! long_name: Sea Water Salinity at Sea Floor
+    ! units: psu
+    ! standard_name: sea_water_salinity_at_sea_floor
+    ! cell_methods: xh:mean yh:mean area:mean
+"ocean_model", "temp_layer_ave"  [Used]
+    ! long_name: Layer Average Ocean Temperature
+    ! units: degC
+    ! cell_methods: zl:mean
+"ocean_model", "salt_layer_ave"  [Used]
+    ! long_name: Layer Average Ocean Salinity
+    ! units: psu
+    ! cell_methods: zl:mean
 "ocean_model", "thetaoga"  [Used]
     ! long_name: Global Mean Ocean Potential Temperature
     ! units: degC
@@ -1360,6 +1406,94 @@
     ! long_name: Sea Surface Salinity
     ! units: psu
     ! standard_name: sea_surface_salinity
+"ocean_model", "u"  [Used] (CMOR equivalent is "uo")
+    ! long_name: Zonal velocity
+    ! units: m s-1
+    ! cell_methods: xq:point yh:mean zl:mean
+"ocean_model", "u_xyave"  [Unused] (CMOR equivalent is "uo_xyave")
+    ! long_name: Zonal velocity
+    ! units: m s-1
+    ! cell_methods: zl:mean
+"ocean_model", "uo"  [Used] (native name is "u")
+    ! long_name: Sea Water X Velocity
+    ! units: m s-1
+    ! standard_name: sea_water_x_velocity
+    ! cell_methods: xq:point yh:mean zl:mean
+"ocean_model", "uo_xyave"  [Unused] (native name is "u_xyave")
+    ! long_name: Sea Water X Velocity
+    ! units: m s-1
+    ! standard_name: sea_water_x_velocity
+    ! cell_methods: zl:mean
+"ocean_model_z", "u"  [Used] (CMOR equivalent is "uo")
+    ! long_name: Zonal velocity
+    ! units: m s-1
+    ! cell_methods: xq:point yh:mean z_l:mean
+"ocean_model_z", "u_xyave"  [Unused] (CMOR equivalent is "uo_xyave")
+    ! long_name: Zonal velocity
+    ! units: m s-1
+    ! cell_methods: z_l:mean
+"ocean_model_z", "uo"  [Used] (native name is "u")
+    ! long_name: Sea Water X Velocity
+    ! units: m s-1
+    ! standard_name: sea_water_x_velocity
+    ! cell_methods: xq:point yh:mean z_l:mean
+"ocean_model_z", "uo_xyave"  [Unused] (native name is "u_xyave")
+    ! long_name: Sea Water X Velocity
+    ! units: m s-1
+    ! standard_name: sea_water_x_velocity
+    ! cell_methods: z_l:mean
+"ocean_model", "v"  [Used] (CMOR equivalent is "vo")
+    ! long_name: Meridional velocity
+    ! units: m s-1
+    ! cell_methods: xh:mean yq:point zl:mean
+"ocean_model", "v_xyave"  [Unused] (CMOR equivalent is "vo_xyave")
+    ! long_name: Meridional velocity
+    ! units: m s-1
+    ! cell_methods: zl:mean
+"ocean_model", "vo"  [Used] (native name is "v")
+    ! long_name: Sea Water Y Velocity
+    ! units: m s-1
+    ! standard_name: sea_water_y_velocity
+    ! cell_methods: xh:mean yq:point zl:mean
+"ocean_model", "vo_xyave"  [Unused] (native name is "v_xyave")
+    ! long_name: Sea Water Y Velocity
+    ! units: m s-1
+    ! standard_name: sea_water_y_velocity
+    ! cell_methods: zl:mean
+"ocean_model_z", "v"  [Used] (CMOR equivalent is "vo")
+    ! long_name: Meridional velocity
+    ! units: m s-1
+    ! cell_methods: xh:mean yq:point z_l:mean
+"ocean_model_z", "v_xyave"  [Unused] (CMOR equivalent is "vo_xyave")
+    ! long_name: Meridional velocity
+    ! units: m s-1
+    ! cell_methods: z_l:mean
+"ocean_model_z", "vo"  [Used] (native name is "v")
+    ! long_name: Sea Water Y Velocity
+    ! units: m s-1
+    ! standard_name: sea_water_y_velocity
+    ! cell_methods: xh:mean yq:point z_l:mean
+"ocean_model_z", "vo_xyave"  [Unused] (native name is "v_xyave")
+    ! long_name: Sea Water Y Velocity
+    ! units: m s-1
+    ! standard_name: sea_water_y_velocity
+    ! cell_methods: z_l:mean
+"ocean_model", "h"  [Used]
+    ! long_name: Layer Thickness
+    ! units: m
+    ! cell_methods: xh:mean yh:mean zl:sum area:mean
+"ocean_model", "h_xyave"  [Unused]
+    ! long_name: Layer Thickness
+    ! units: m
+    ! cell_methods: zl:sum
+"ocean_model_z", "h"  [Unused]
+    ! long_name: Layer Thickness
+    ! units: m
+    ! cell_methods: xh:mean yh:mean z_l:sum area:mean
+"ocean_model_z", "h_xyave"  [Unused]
+    ! long_name: Layer Thickness
+    ! units: m
+    ! cell_methods: z_l:sum
 "ocean_model", "e"  [Used]
     ! long_name: Interface Height Relative to Mean Sea Level
     ! units: m
@@ -1507,19 +1641,19 @@
 "ocean_model", "dhdt"  [Unused]
     ! long_name: Thickness tendency
     ! units: m s-1
-    ! cell_methods: xh:mean yh:mean zl:mean area:mean
+    ! cell_methods: xh:mean yh:mean zl:sum area:mean
 "ocean_model", "dhdt_xyave"  [Unused]
     ! long_name: Thickness tendency
     ! units: m s-1
-    ! cell_methods: zl:mean
+    ! cell_methods: zl:sum
 "ocean_model_z", "dhdt"  [Unused]
     ! long_name: Thickness tendency
     ! units: m s-1
-    ! cell_methods: xh:mean yh:mean z_l:mean area:mean
+    ! cell_methods: xh:mean yh:mean z_l:sum area:mean
 "ocean_model_z", "dhdt_xyave"  [Unused]
     ! long_name: Thickness tendency
     ! units: m s-1
-    ! cell_methods: z_l:mean
+    ! cell_methods: z_l:sum
 "ocean_model", "h_rho"  [Used]
     ! long_name: Layer thicknesses in pure potential density coordinates
     ! units: m
@@ -2012,6 +2146,102 @@
 "ocean_model_zold", "Sflx_dia_adv"  [Unused]
     ! long_name: Advective diapycnal salinity flux across interfaces, interpolated to z
     ! units: psu m s-1
+"ocean_model", "u_predia"  [Unused]
+    ! long_name: Zonal velocity before diabatic forcing
+    ! units: m s-1
+    ! cell_methods: xq:point yh:mean zl:mean
+"ocean_model", "u_predia_xyave"  [Unused]
+    ! long_name: Zonal velocity before diabatic forcing
+    ! units: m s-1
+    ! cell_methods: zl:mean
+"ocean_model_z", "u_predia"  [Unused]
+    ! long_name: Zonal velocity before diabatic forcing
+    ! units: m s-1
+    ! cell_methods: xq:point yh:mean z_l:mean
+"ocean_model_z", "u_predia_xyave"  [Unused]
+    ! long_name: Zonal velocity before diabatic forcing
+    ! units: m s-1
+    ! cell_methods: z_l:mean
+"ocean_model", "v_predia"  [Unused]
+    ! long_name: Meridional velocity before diabatic forcing
+    ! units: m s-1
+    ! cell_methods: xh:mean yq:point zl:mean
+"ocean_model", "v_predia_xyave"  [Unused]
+    ! long_name: Meridional velocity before diabatic forcing
+    ! units: m s-1
+    ! cell_methods: zl:mean
+"ocean_model_z", "v_predia"  [Unused]
+    ! long_name: Meridional velocity before diabatic forcing
+    ! units: m s-1
+    ! cell_methods: xh:mean yq:point z_l:mean
+"ocean_model_z", "v_predia_xyave"  [Unused]
+    ! long_name: Meridional velocity before diabatic forcing
+    ! units: m s-1
+    ! cell_methods: z_l:mean
+"ocean_model", "h_predia"  [Unused]
+    ! long_name: Layer Thickness before diabatic forcing
+    ! units: m
+    ! cell_methods: xh:mean yh:mean zl:sum area:mean
+"ocean_model", "h_predia_xyave"  [Unused]
+    ! long_name: Layer Thickness before diabatic forcing
+    ! units: m
+    ! cell_methods: zl:sum
+"ocean_model_z", "h_predia"  [Unused]
+    ! long_name: Layer Thickness before diabatic forcing
+    ! units: m
+    ! cell_methods: xh:mean yh:mean z_l:sum area:mean
+"ocean_model_z", "h_predia_xyave"  [Unused]
+    ! long_name: Layer Thickness before diabatic forcing
+    ! units: m
+    ! cell_methods: z_l:sum
+"ocean_model", "e_predia"  [Unused]
+    ! long_name: Interface Heights before diabatic forcing
+    ! units: m
+    ! cell_methods: xh:mean yh:mean zi:point area:mean
+"ocean_model", "e_predia_xyave"  [Unused]
+    ! long_name: Interface Heights before diabatic forcing
+    ! units: m
+    ! cell_methods: zi:point
+"ocean_model_z", "e_predia"  [Unused]
+    ! long_name: Interface Heights before diabatic forcing
+    ! units: m
+    ! cell_methods: xh:mean yh:mean z_i:point area:mean
+"ocean_model_z", "e_predia_xyave"  [Unused]
+    ! long_name: Interface Heights before diabatic forcing
+    ! units: m
+    ! cell_methods: z_i:point
+"ocean_model", "temp_predia"  [Unused]
+    ! long_name: Potential Temperature
+    ! units: degC
+    ! cell_methods: xh:mean yh:mean zl:mean area:mean
+"ocean_model", "temp_predia_xyave"  [Unused]
+    ! long_name: Potential Temperature
+    ! units: degC
+    ! cell_methods: zl:mean
+"ocean_model_z", "temp_predia"  [Unused]
+    ! long_name: Potential Temperature
+    ! units: degC
+    ! cell_methods: xh:mean yh:mean z_l:mean area:mean
+"ocean_model_z", "temp_predia_xyave"  [Unused]
+    ! long_name: Potential Temperature
+    ! units: degC
+    ! cell_methods: z_l:mean
+"ocean_model", "salt_predia"  [Unused]
+    ! long_name: Salinity
+    ! units: PSU
+    ! cell_methods: xh:mean yh:mean zl:mean area:mean
+"ocean_model", "salt_predia_xyave"  [Unused]
+    ! long_name: Salinity
+    ! units: PSU
+    ! cell_methods: zl:mean
+"ocean_model_z", "salt_predia"  [Unused]
+    ! long_name: Salinity
+    ! units: PSU
+    ! cell_methods: xh:mean yh:mean z_l:mean area:mean
+"ocean_model_z", "salt_predia_xyave"  [Unused]
+    ! long_name: Salinity
+    ! units: PSU
+    ! cell_methods: z_l:mean
 "ocean_model", "Kd_interface"  [Used]
     ! long_name: Total diapycnal diffusivity at interfaces
     ! units: m2 s-1
@@ -2100,6 +2330,42 @@
     ! units: m2 s-1
     ! standard_name: ocean_vertical_salt_diffusivity
     ! cell_methods: z_i:point
+"ocean_model", "diabatic_diff_h"  [Unused]
+    ! long_name: Cell thickness used during diabatic diffusion
+    ! units: m
+    ! cell_methods: xh:mean yh:mean zl:sum area:mean
+"ocean_model", "diabatic_diff_h_xyave"  [Unused]
+    ! long_name: Cell thickness used during diabatic diffusion
+    ! units: m
+    ! cell_methods: zl:sum
+"ocean_model_z", "diabatic_diff_h"  [Unused]
+    ! long_name: Cell thickness used during diabatic diffusion
+    ! units: m
+    ! cell_methods: xh:mean yh:mean z_l:sum area:mean
+"ocean_model_z", "diabatic_diff_h_xyave"  [Unused]
+    ! long_name: Cell thickness used during diabatic diffusion
+    ! units: m
+    ! cell_methods: z_l:sum
+"ocean_model", "frazil_h"  [Unused]
+    ! long_name: Cell Thickness
+    ! units: m
+    ! standard_name: cell_thickness
+    ! cell_methods: xh:mean yh:mean zl:sum area:mean
+"ocean_model", "frazil_h_xyave"  [Unused]
+    ! long_name: Cell Thickness
+    ! units: m
+    ! standard_name: cell_thickness
+    ! cell_methods: zl:sum
+"ocean_model_z", "frazil_h"  [Unused]
+    ! long_name: Cell Thickness
+    ! units: m
+    ! standard_name: cell_thickness
+    ! cell_methods: xh:mean yh:mean z_l:sum area:mean
+"ocean_model_z", "frazil_h_xyave"  [Unused]
+    ! long_name: Cell Thickness
+    ! units: m
+    ! standard_name: cell_thickness
+    ! cell_methods: z_l:sum
 "ocean_model", "frazil_temp_tendency"  [Used]
     ! long_name: Temperature tendency due to frazil formation
     ! units: degC s-1
@@ -2119,133 +2385,22 @@
 "ocean_model", "frazil_heat_tendency"  [Used]
     ! long_name: Heat tendency due to frazil formation
     ! units: W m-2
-    ! cell_methods: xh:mean yh:mean zl:mean area:mean
+    ! cell_methods: xh:mean yh:mean zl:sum area:mean
 "ocean_model", "frazil_heat_tendency_xyave"  [Unused]
     ! long_name: Heat tendency due to frazil formation
     ! units: W m-2
-    ! cell_methods: zl:mean
+    ! cell_methods: zl:sum
 "ocean_model_z", "frazil_heat_tendency"  [Unused]
     ! long_name: Heat tendency due to frazil formation
     ! units: W m-2
-    ! cell_methods: xh:mean yh:mean z_l:mean area:mean
+    ! cell_methods: xh:mean yh:mean z_l:sum area:mean
 "ocean_model_z", "frazil_heat_tendency_xyave"  [Unused]
     ! long_name: Heat tendency due to frazil formation
     ! units: W m-2
-    ! cell_methods: z_l:mean
+    ! cell_methods: z_l:sum
 "ocean_model", "frazil_heat_tendency_2d"  [Used]
     ! long_name: Depth integrated heat tendency due to frazil formation
     ! units: W m-2
-    ! cell_methods: xh:mean yh:mean area:mean
-"ocean_model", "Kd_effective"  [Used]
-    ! long_name: Diapycnal diffusivity as applied
-    ! units: m2 s-1
-    ! cell_methods: xh:mean yh:mean zl:mean area:mean
-"ocean_model", "Kd_effective_xyave"  [Unused]
-    ! long_name: Diapycnal diffusivity as applied
-    ! units: m2 s-1
-    ! cell_methods: zl:mean
-"ocean_model_z", "Kd_effective"  [Unused]
-    ! long_name: Diapycnal diffusivity as applied
-    ! units: m2 s-1
-    ! cell_methods: xh:mean yh:mean z_l:mean area:mean
-"ocean_model_z", "Kd_effective_xyave"  [Unused]
-    ! long_name: Diapycnal diffusivity as applied
-    ! units: m2 s-1
-    ! cell_methods: z_l:mean
-"ocean_model", "diff_work"  [Unused]
-    ! long_name: Work actually done by diapycnal diffusion across each interface
-    ! units: W m-2
-    ! cell_methods: xh:mean yh:mean zi:point area:mean
-"ocean_model", "diff_work_xyave"  [Unused]
-    ! long_name: Work actually done by diapycnal diffusion across each interface
-    ! units: W m-2
-    ! cell_methods: zi:point
-"ocean_model_z", "diff_work"  [Unused]
-    ! long_name: Work actually done by diapycnal diffusion across each interface
-    ! units: W m-2
-    ! cell_methods: xh:mean yh:mean z_i:point area:mean
-"ocean_model_z", "diff_work_xyave"  [Unused]
-    ! long_name: Work actually done by diapycnal diffusion across each interface
-    ! units: W m-2
-    ! cell_methods: z_i:point
-"ocean_model", "geo_heat"  [Unused]
-    ! long_name: Geothermal heat flux into ocean
-    ! units: W m-2
-"ocean_model", "hfgeou"  [Used]
-    ! long_name: Upward geothermal heat flux at sea floor
-    ! units: W m-2
-    ! standard_name: upward_geothermal_heat_flux_at_sea_floor
-"ocean_model", "Kd_BBL"  [Used]
-    ! long_name: Bottom Boundary Layer Diffusivity
-    ! units: m2 s-1
-    ! cell_methods: xh:mean yh:mean zi:point area:mean
-"ocean_model", "Kd_BBL_xyave"  [Unused]
-    ! long_name: Bottom Boundary Layer Diffusivity
-    ! units: m2 s-1
-    ! cell_methods: zi:point
-"ocean_model_z", "Kd_BBL"  [Unused]
-    ! long_name: Bottom Boundary Layer Diffusivity
-    ! units: m2 s-1
-    ! cell_methods: xh:mean yh:mean z_i:point area:mean
-"ocean_model_z", "Kd_BBL_xyave"  [Unused]
-    ! long_name: Bottom Boundary Layer Diffusivity
-    ! units: m2 s-1
-    ! cell_methods: z_i:point
-"ocean_model", "Kd_layer"  [Used]
-    ! long_name: Diapycnal diffusivity of layers (as set)
-    ! units: m2 s-1
-    ! cell_methods: xh:mean yh:mean zl:mean area:mean
-"ocean_model", "Kd_layer_xyave"  [Unused]
-    ! long_name: Diapycnal diffusivity of layers (as set)
-    ! units: m2 s-1
-    ! cell_methods: zl:mean
-"ocean_model_z", "Kd_layer"  [Unused]
-    ! long_name: Diapycnal diffusivity of layers (as set)
-    ! units: m2 s-1
-    ! cell_methods: xh:mean yh:mean z_l:mean area:mean
-"ocean_model_z", "Kd_layer_xyave"  [Unused]
-    ! long_name: Diapycnal diffusivity of layers (as set)
-    ! units: m2 s-1
-    ! cell_methods: z_l:mean
-"ocean_model", "TKE_itidal"  [Unused]
-    ! long_name: Internal Tide Driven Turbulent Kinetic Energy
-    ! units: W m-2
-    ! cell_methods: xh:mean yh:mean area:mean
-"ocean_model", "maxTKE"  [Unused]
-    ! long_name: Maximum layer TKE
-    ! units: m3 s-3
-    ! cell_methods: xh:mean yh:mean zl:mean area:mean
-"ocean_model", "maxTKE_xyave"  [Unused]
-    ! long_name: Maximum layer TKE
-    ! units: m3 s-3
-    ! cell_methods: zl:mean
-"ocean_model_z", "maxTKE"  [Unused]
-    ! long_name: Maximum layer TKE
-    ! units: m3 s-3
-    ! cell_methods: xh:mean yh:mean z_l:mean area:mean
-"ocean_model_z", "maxTKE_xyave"  [Unused]
-    ! long_name: Maximum layer TKE
-    ! units: m3 s-3
-    ! cell_methods: z_l:mean
-"ocean_model", "TKE_to_Kd"  [Unused]
-    ! long_name: Convert TKE to Kd
-    ! units: s2 m
-    ! cell_methods: xh:mean yh:mean zl:mean area:mean
-"ocean_model", "TKE_to_Kd_xyave"  [Unused]
-    ! long_name: Convert TKE to Kd
-    ! units: s2 m
-    ! cell_methods: zl:mean
-"ocean_model_z", "TKE_to_Kd"  [Unused]
-    ! long_name: Convert TKE to Kd
-    ! units: s2 m
-    ! cell_methods: xh:mean yh:mean z_l:mean area:mean
-"ocean_model_z", "TKE_to_Kd_xyave"  [Unused]
-    ! long_name: Convert TKE to Kd
-    ! units: s2 m
-    ! cell_methods: z_l:mean
-"ocean_model", "Nb"  [Unused]
-    ! long_name: Bottom Buoyancy Frequency
-    ! units: s-1
     ! cell_methods: xh:mean yh:mean area:mean
 "ocean_model", "Kd_itides"  [Used]
     ! long_name: Internal Tide Driven Diffusivity
@@ -2263,6 +2418,14 @@
     ! long_name: Internal Tide Driven Diffusivity
     ! units: m2 s-1
     ! cell_methods: z_i:point
+"ocean_model", "TKE_itidal"  [Unused]
+    ! long_name: Internal Tide Driven Turbulent Kinetic Energy
+    ! units: W m-2
+    ! cell_methods: xh:mean yh:mean area:mean
+"ocean_model", "Nb"  [Unused]
+    ! long_name: Bottom Buoyancy Frequency
+    ! units: s-1
+    ! cell_methods: xh:mean yh:mean area:mean
 "ocean_model", "Kd_lowmode"  [Unused]
     ! long_name: Internal Tide Driven Diffusivity (from propagating low modes)
     ! units: m2 s-1
@@ -2327,22 +2490,6 @@
     ! long_name: Buoyancy frequency squared averaged over the water column
     ! units: s-2
     ! cell_methods: xh:mean yh:mean area:mean
-"ocean_model", "Kd_Work"  [Unused]
-    ! long_name: Work done by Diapycnal Mixing
-    ! units: W m-2
-    ! cell_methods: xh:mean yh:mean zl:mean area:mean
-"ocean_model", "Kd_Work_xyave"  [Unused]
-    ! long_name: Work done by Diapycnal Mixing
-    ! units: W m-2
-    ! cell_methods: zl:mean
-"ocean_model_z", "Kd_Work"  [Unused]
-    ! long_name: Work done by Diapycnal Mixing
-    ! units: W m-2
-    ! cell_methods: xh:mean yh:mean z_l:mean area:mean
-"ocean_model_z", "Kd_Work_xyave"  [Unused]
-    ! long_name: Work done by Diapycnal Mixing
-    ! units: W m-2
-    ! cell_methods: z_l:mean
 "ocean_model", "Kd_Itidal_Work"  [Unused]
     ! long_name: Work done by Internal Tide Diapycnal Mixing
     ! units: W m-2
@@ -2391,6 +2538,160 @@
     ! long_name: Work done by Internal Tide Diapycnal Mixing (low modes)
     ! units: W m-2
     ! cell_methods: z_l:mean
+"ocean_model_zold", "Kd_itides"  [Unused]
+    ! long_name: Internal Tide Driven Diffusivity, interpolated to z
+    ! units: m2 s-1
+"ocean_model", "Kd_effective"  [Used]
+    ! long_name: Diapycnal diffusivity as applied
+    ! units: m2 s-1
+    ! cell_methods: xh:mean yh:mean zl:mean area:mean
+"ocean_model", "Kd_effective_xyave"  [Unused]
+    ! long_name: Diapycnal diffusivity as applied
+    ! units: m2 s-1
+    ! cell_methods: zl:mean
+"ocean_model_z", "Kd_effective"  [Unused]
+    ! long_name: Diapycnal diffusivity as applied
+    ! units: m2 s-1
+    ! cell_methods: xh:mean yh:mean z_l:mean area:mean
+"ocean_model_z", "Kd_effective_xyave"  [Unused]
+    ! long_name: Diapycnal diffusivity as applied
+    ! units: m2 s-1
+    ! cell_methods: z_l:mean
+"ocean_model", "diff_work"  [Unused]
+    ! long_name: Work actually done by diapycnal diffusion across each interface
+    ! units: W m-2
+    ! cell_methods: xh:mean yh:mean zi:point area:mean
+"ocean_model", "diff_work_xyave"  [Unused]
+    ! long_name: Work actually done by diapycnal diffusion across each interface
+    ! units: W m-2
+    ! cell_methods: zi:point
+"ocean_model_z", "diff_work"  [Unused]
+    ! long_name: Work actually done by diapycnal diffusion across each interface
+    ! units: W m-2
+    ! cell_methods: xh:mean yh:mean z_i:point area:mean
+"ocean_model_z", "diff_work_xyave"  [Unused]
+    ! long_name: Work actually done by diapycnal diffusion across each interface
+    ! units: W m-2
+    ! cell_methods: z_i:point
+"ocean_model", "geo_heat"  [Unused]
+    ! long_name: Geothermal heat flux into ocean
+    ! units: W m-2
+"ocean_model", "hfgeou"  [Used]
+    ! long_name: Upward geothermal heat flux at sea floor
+    ! units: W m-2
+    ! standard_name: upward_geothermal_heat_flux_at_sea_floor
+"ocean_model", "Kd_BBL"  [Used]
+    ! long_name: Bottom Boundary Layer Diffusivity
+    ! units: m2 s-1
+    ! cell_methods: xh:mean yh:mean zi:point area:mean
+"ocean_model", "Kd_BBL_xyave"  [Unused]
+    ! long_name: Bottom Boundary Layer Diffusivity
+    ! units: m2 s-1
+    ! cell_methods: zi:point
+"ocean_model_z", "Kd_BBL"  [Unused]
+    ! long_name: Bottom Boundary Layer Diffusivity
+    ! units: m2 s-1
+    ! cell_methods: xh:mean yh:mean z_i:point area:mean
+"ocean_model_z", "Kd_BBL_xyave"  [Unused]
+    ! long_name: Bottom Boundary Layer Diffusivity
+    ! units: m2 s-1
+    ! cell_methods: z_i:point
+"ocean_model", "Kd_bkgnd"  [Unused]
+    ! long_name: Background diffusivity added by MOM_bkgnd_mixing module
+    ! units: m2/s
+    ! cell_methods: xh:mean yh:mean zi:point area:mean
+"ocean_model", "Kd_bkgnd_xyave"  [Unused]
+    ! long_name: Background diffusivity added by MOM_bkgnd_mixing module
+    ! units: m2/s
+    ! cell_methods: zi:point
+"ocean_model_z", "Kd_bkgnd"  [Unused]
+    ! long_name: Background diffusivity added by MOM_bkgnd_mixing module
+    ! units: m2/s
+    ! cell_methods: xh:mean yh:mean z_i:point area:mean
+"ocean_model_z", "Kd_bkgnd_xyave"  [Unused]
+    ! long_name: Background diffusivity added by MOM_bkgnd_mixing module
+    ! units: m2/s
+    ! cell_methods: z_i:point
+"ocean_model", "Kv_bkgnd"  [Unused]
+    ! long_name: Background viscosity added by MOM_bkgnd_mixing module
+    ! units: m2/s
+    ! cell_methods: xh:mean yh:mean zi:point area:mean
+"ocean_model", "Kv_bkgnd_xyave"  [Unused]
+    ! long_name: Background viscosity added by MOM_bkgnd_mixing module
+    ! units: m2/s
+    ! cell_methods: zi:point
+"ocean_model_z", "Kv_bkgnd"  [Unused]
+    ! long_name: Background viscosity added by MOM_bkgnd_mixing module
+    ! units: m2/s
+    ! cell_methods: xh:mean yh:mean z_i:point area:mean
+"ocean_model_z", "Kv_bkgnd_xyave"  [Unused]
+    ! long_name: Background viscosity added by MOM_bkgnd_mixing module
+    ! units: m2/s
+    ! cell_methods: z_i:point
+"ocean_model", "Kd_layer"  [Used]
+    ! long_name: Diapycnal diffusivity of layers (as set)
+    ! units: m2 s-1
+    ! cell_methods: xh:mean yh:mean zl:mean area:mean
+"ocean_model", "Kd_layer_xyave"  [Unused]
+    ! long_name: Diapycnal diffusivity of layers (as set)
+    ! units: m2 s-1
+    ! cell_methods: zl:mean
+"ocean_model_z", "Kd_layer"  [Unused]
+    ! long_name: Diapycnal diffusivity of layers (as set)
+    ! units: m2 s-1
+    ! cell_methods: xh:mean yh:mean z_l:mean area:mean
+"ocean_model_z", "Kd_layer_xyave"  [Unused]
+    ! long_name: Diapycnal diffusivity of layers (as set)
+    ! units: m2 s-1
+    ! cell_methods: z_l:mean
+"ocean_model", "Kd_Work"  [Unused]
+    ! long_name: Work done by Diapycnal Mixing
+    ! units: W m-2
+    ! cell_methods: xh:mean yh:mean zl:mean area:mean
+"ocean_model", "Kd_Work_xyave"  [Unused]
+    ! long_name: Work done by Diapycnal Mixing
+    ! units: W m-2
+    ! cell_methods: zl:mean
+"ocean_model_z", "Kd_Work"  [Unused]
+    ! long_name: Work done by Diapycnal Mixing
+    ! units: W m-2
+    ! cell_methods: xh:mean yh:mean z_l:mean area:mean
+"ocean_model_z", "Kd_Work_xyave"  [Unused]
+    ! long_name: Work done by Diapycnal Mixing
+    ! units: W m-2
+    ! cell_methods: z_l:mean
+"ocean_model", "maxTKE"  [Unused]
+    ! long_name: Maximum layer TKE
+    ! units: m3 s-3
+    ! cell_methods: xh:mean yh:mean zl:mean area:mean
+"ocean_model", "maxTKE_xyave"  [Unused]
+    ! long_name: Maximum layer TKE
+    ! units: m3 s-3
+    ! cell_methods: zl:mean
+"ocean_model_z", "maxTKE"  [Unused]
+    ! long_name: Maximum layer TKE
+    ! units: m3 s-3
+    ! cell_methods: xh:mean yh:mean z_l:mean area:mean
+"ocean_model_z", "maxTKE_xyave"  [Unused]
+    ! long_name: Maximum layer TKE
+    ! units: m3 s-3
+    ! cell_methods: z_l:mean
+"ocean_model", "TKE_to_Kd"  [Unused]
+    ! long_name: Convert TKE to Kd
+    ! units: s2 m
+    ! cell_methods: xh:mean yh:mean zl:mean area:mean
+"ocean_model", "TKE_to_Kd_xyave"  [Unused]
+    ! long_name: Convert TKE to Kd
+    ! units: s2 m
+    ! cell_methods: zl:mean
+"ocean_model_z", "TKE_to_Kd"  [Unused]
+    ! long_name: Convert TKE to Kd
+    ! units: s2 m
+    ! cell_methods: xh:mean yh:mean z_l:mean area:mean
+"ocean_model_z", "TKE_to_Kd_xyave"  [Unused]
+    ! long_name: Convert TKE to Kd
+    ! units: s2 m
+    ! cell_methods: z_l:mean
 "ocean_model", "N2"  [Unused] (CMOR equivalent is "obvfsq")
     ! long_name: Buoyancy frequency squared
     ! units: s-2
@@ -2430,9 +2731,6 @@
 "ocean_model_zold", "N2"  [Unused]
     ! long_name: Buoyancy frequency, interpolated to z
     ! units: s-2
-"ocean_model_zold", "Kd_itides"  [Unused]
-    ! long_name: Internal Tide Driven Diffusivity, interpolated to z
-    ! units: m2 s-1
 "ocean_model", "Kd_shear"  [Used]
     ! long_name: Shear-driven Diapycnal Diffusivity
     ! units: m2 s-1
@@ -2614,94 +2912,6 @@
     ! long_name: Epipycnal tracer diffusivity operator at meridional faces of tracer cell
     ! units: m2
     ! cell_methods: xh:mean yq:point
-"ocean_model", "u"  [Used] (CMOR equivalent is "uo")
-    ! long_name: Zonal velocity
-    ! units: m s-1
-    ! cell_methods: xq:point yh:mean zl:mean
-"ocean_model", "u_xyave"  [Unused] (CMOR equivalent is "uo_xyave")
-    ! long_name: Zonal velocity
-    ! units: m s-1
-    ! cell_methods: zl:mean
-"ocean_model", "uo"  [Used] (native name is "u")
-    ! long_name: Sea Water X Velocity
-    ! units: m s-1
-    ! standard_name: sea_water_x_velocity
-    ! cell_methods: xq:point yh:mean zl:mean
-"ocean_model", "uo_xyave"  [Unused] (native name is "u_xyave")
-    ! long_name: Sea Water X Velocity
-    ! units: m s-1
-    ! standard_name: sea_water_x_velocity
-    ! cell_methods: zl:mean
-"ocean_model_z", "u"  [Used] (CMOR equivalent is "uo")
-    ! long_name: Zonal velocity
-    ! units: m s-1
-    ! cell_methods: xq:point yh:mean z_l:mean
-"ocean_model_z", "u_xyave"  [Unused] (CMOR equivalent is "uo_xyave")
-    ! long_name: Zonal velocity
-    ! units: m s-1
-    ! cell_methods: z_l:mean
-"ocean_model_z", "uo"  [Used] (native name is "u")
-    ! long_name: Sea Water X Velocity
-    ! units: m s-1
-    ! standard_name: sea_water_x_velocity
-    ! cell_methods: xq:point yh:mean z_l:mean
-"ocean_model_z", "uo_xyave"  [Unused] (native name is "u_xyave")
-    ! long_name: Sea Water X Velocity
-    ! units: m s-1
-    ! standard_name: sea_water_x_velocity
-    ! cell_methods: z_l:mean
-"ocean_model", "v"  [Used] (CMOR equivalent is "vo")
-    ! long_name: Meridional velocity
-    ! units: m s-1
-    ! cell_methods: xh:mean yq:point zl:mean
-"ocean_model", "v_xyave"  [Unused] (CMOR equivalent is "vo_xyave")
-    ! long_name: Meridional velocity
-    ! units: m s-1
-    ! cell_methods: zl:mean
-"ocean_model", "vo"  [Used] (native name is "v")
-    ! long_name: Sea Water Y Velocity
-    ! units: m s-1
-    ! standard_name: sea_water_y_velocity
-    ! cell_methods: xh:mean yq:point zl:mean
-"ocean_model", "vo_xyave"  [Unused] (native name is "v_xyave")
-    ! long_name: Sea Water Y Velocity
-    ! units: m s-1
-    ! standard_name: sea_water_y_velocity
-    ! cell_methods: zl:mean
-"ocean_model_z", "v"  [Used] (CMOR equivalent is "vo")
-    ! long_name: Meridional velocity
-    ! units: m s-1
-    ! cell_methods: xh:mean yq:point z_l:mean
-"ocean_model_z", "v_xyave"  [Unused] (CMOR equivalent is "vo_xyave")
-    ! long_name: Meridional velocity
-    ! units: m s-1
-    ! cell_methods: z_l:mean
-"ocean_model_z", "vo"  [Used] (native name is "v")
-    ! long_name: Sea Water Y Velocity
-    ! units: m s-1
-    ! standard_name: sea_water_y_velocity
-    ! cell_methods: xh:mean yq:point z_l:mean
-"ocean_model_z", "vo_xyave"  [Unused] (native name is "v_xyave")
-    ! long_name: Sea Water Y Velocity
-    ! units: m s-1
-    ! standard_name: sea_water_y_velocity
-    ! cell_methods: z_l:mean
-"ocean_model", "h"  [Used]
-    ! long_name: Layer Thickness
-    ! units: m
-    ! cell_methods: xh:mean yh:mean zl:sum area:mean
-"ocean_model", "h_xyave"  [Unused]
-    ! long_name: Layer Thickness
-    ! units: m
-    ! cell_methods: zl:sum
-"ocean_model_z", "h"  [Unused]
-    ! long_name: Layer Thickness
-    ! units: m
-    ! cell_methods: xh:mean yh:mean z_l:sum area:mean
-"ocean_model_z", "h_xyave"  [Unused]
-    ! long_name: Layer Thickness
-    ! units: m
-    ! cell_methods: z_l:sum
 "ocean_model", "volo"  [Used]
     ! long_name: Total volume of liquid ocean
     ! units: m3
@@ -2724,10 +2934,6 @@
     ! long_name: Area averaged sea surface height
     ! units: m
     ! standard_name: area_averaged_sea_surface_height
-"ocean_model", "SSH_inst"  [Unused]
-    ! long_name: Instantaneous Sea Surface Height
-    ! units: m
-    ! cell_methods: xh:mean yh:mean area:mean
 "ocean_model", "SSU"  [Used]
     ! long_name: Sea Surface Zonal Velocity
     ! units: m s-1
@@ -2739,88 +2945,6 @@
 "ocean_model", "speed"  [Used]
     ! long_name: Sea Surface Speed
     ! units: m s-1
-    ! cell_methods: xh:mean yh:mean area:mean
-"ocean_model", "temp"  [Used] (CMOR equivalent is "thetao")
-    ! long_name: Potential Temperature
-    ! units: degC
-    ! cell_methods: xh:mean yh:mean zl:mean area:mean
-"ocean_model", "temp_xyave"  [Unused] (CMOR equivalent is "thetao_xyave")
-    ! long_name: Potential Temperature
-    ! units: degC
-    ! cell_methods: zl:mean
-"ocean_model", "thetao"  [Unused] (native name is "temp")
-    ! long_name: Sea Water Potential Temperature
-    ! units: degC
-    ! standard_name: sea_water_potential_temperature
-    ! cell_methods: xh:mean yh:mean zl:mean area:mean
-"ocean_model", "thetao_xyave"  [Unused] (native name is "temp_xyave")
-    ! long_name: Sea Water Potential Temperature
-    ! units: degC
-    ! standard_name: sea_water_potential_temperature
-    ! cell_methods: zl:mean
-"ocean_model_z", "temp"  [Used] (CMOR equivalent is "thetao")
-    ! long_name: Potential Temperature
-    ! units: degC
-    ! cell_methods: xh:mean yh:mean z_l:mean area:mean
-"ocean_model_z", "temp_xyave"  [Used] (CMOR equivalent is "thetao_xyave")
-    ! long_name: Potential Temperature
-    ! units: degC
-    ! cell_methods: z_l:mean
-"ocean_model_z", "thetao"  [Used] (native name is "temp")
-    ! long_name: Sea Water Potential Temperature
-    ! units: degC
-    ! standard_name: sea_water_potential_temperature
-    ! cell_methods: xh:mean yh:mean z_l:mean area:mean
-"ocean_model_z", "thetao_xyave"  [Unused] (native name is "temp_xyave")
-    ! long_name: Sea Water Potential Temperature
-    ! units: degC
-    ! standard_name: sea_water_potential_temperature
-    ! cell_methods: z_l:mean
-"ocean_model", "salt"  [Used] (CMOR equivalent is "so")
-    ! long_name: Salinity
-    ! units: psu
-    ! cell_methods: xh:mean yh:mean zl:mean area:mean
-"ocean_model", "salt_xyave"  [Unused] (CMOR equivalent is "so_xyave")
-    ! long_name: Salinity
-    ! units: psu
-    ! cell_methods: zl:mean
-"ocean_model", "so"  [Used] (native name is "salt")
-    ! long_name: Sea Water Salinity
-    ! units: psu
-    ! standard_name: sea_water_salinity
-    ! cell_methods: xh:mean yh:mean zl:mean area:mean
-"ocean_model", "so_xyave"  [Unused] (native name is "salt_xyave")
-    ! long_name: Sea Water Salinity
-    ! units: psu
-    ! standard_name: sea_water_salinity
-    ! cell_methods: zl:mean
-"ocean_model_z", "salt"  [Used] (CMOR equivalent is "so")
-    ! long_name: Salinity
-    ! units: psu
-    ! cell_methods: xh:mean yh:mean z_l:mean area:mean
-"ocean_model_z", "salt_xyave"  [Unused] (CMOR equivalent is "so_xyave")
-    ! long_name: Salinity
-    ! units: psu
-    ! cell_methods: z_l:mean
-"ocean_model_z", "so"  [Used] (native name is "salt")
-    ! long_name: Sea Water Salinity
-    ! units: psu
-    ! standard_name: sea_water_salinity
-    ! cell_methods: xh:mean yh:mean z_l:mean area:mean
-"ocean_model_z", "so_xyave"  [Unused] (native name is "salt_xyave")
-    ! long_name: Sea Water Salinity
-    ! units: psu
-    ! standard_name: sea_water_salinity
-    ! cell_methods: z_l:mean
-"ocean_model", "tob"  [Unused]
-    ! long_name: Sea Water Potential Temperature at Sea Floor
-    ! units: degC
-    ! standard_name: sea_water_potential_temperature_at_sea_floor
-    ! cell_methods: xh:mean yh:mean area:mean
-"ocean_model", "sob"  [Unused]
-    ! long_name: Sea Water Salinity at Sea Floor
-    ! units: psu
-    ! standard_name: sea_water_salinity_at_sea_floor
     ! cell_methods: xh:mean yh:mean area:mean
 "ocean_model", "SST"  [Used] (CMOR equivalent is "tos")
     ! long_name: Sea Surface Temperature
@@ -2879,358 +3003,58 @@
     ! long_name: Heat flux into ocean from geothermal or other internal sources
     ! units: W m-2
     ! cell_methods: xh:mean yh:mean area:mean
-"ocean_model", "T_adx"  [Used]
-    ! long_name: Advective (by residual mean) Zonal Flux of Potential Temperature
-    ! units: W m-2
-    ! cell_methods: xq:point yh:mean zl:sum
-"ocean_model", "T_adx_xyave"  [Unused]
-    ! long_name: Advective (by residual mean) Zonal Flux of Potential Temperature
-    ! units: W m-2
-    ! cell_methods: zl:sum
-"ocean_model_z", "T_adx"  [Unused]
-    ! long_name: Advective (by residual mean) Zonal Flux of Potential Temperature
-    ! units: W m-2
-    ! cell_methods: xq:point yh:mean z_l:sum
-"ocean_model_z", "T_adx_xyave"  [Unused]
-    ! long_name: Advective (by residual mean) Zonal Flux of Potential Temperature
-    ! units: W m-2
-    ! cell_methods: z_l:sum
-"ocean_model", "T_ady"  [Used]
-    ! long_name: Advective (by residual mean) Meridional Flux of Potential Temperature
-    ! units: W m-2
-    ! cell_methods: xh:mean yq:point zl:sum
-"ocean_model", "T_ady_xyave"  [Unused]
-    ! long_name: Advective (by residual mean) Meridional Flux of Potential Temperature
-    ! units: W m-2
-    ! cell_methods: zl:sum
-"ocean_model_z", "T_ady"  [Unused]
-    ! long_name: Advective (by residual mean) Meridional Flux of Potential Temperature
-    ! units: W m-2
-    ! cell_methods: xh:mean yq:point z_l:sum
-"ocean_model_z", "T_ady_xyave"  [Unused]
-    ! long_name: Advective (by residual mean) Meridional Flux of Potential Temperature
-    ! units: W m-2
-    ! cell_methods: z_l:sum
-"ocean_model", "T_diffx"  [Used]
-    ! long_name: Diffusive Zonal Flux of Potential Temperature
-    ! units: W m-2
-    ! cell_methods: xq:point yh:mean zl:sum
-"ocean_model", "T_diffx_xyave"  [Unused]
-    ! long_name: Diffusive Zonal Flux of Potential Temperature
-    ! units: W m-2
-    ! cell_methods: zl:sum
-"ocean_model_z", "T_diffx"  [Unused]
-    ! long_name: Diffusive Zonal Flux of Potential Temperature
-    ! units: W m-2
-    ! cell_methods: xq:point yh:mean z_l:sum
-"ocean_model_z", "T_diffx_xyave"  [Unused]
-    ! long_name: Diffusive Zonal Flux of Potential Temperature
-    ! units: W m-2
-    ! cell_methods: z_l:sum
-"ocean_model", "T_diffy"  [Used]
-    ! long_name: Diffusive Meridional Flux of Potential Temperature
-    ! units: W m-2
-    ! cell_methods: xh:mean yq:point zl:sum
-"ocean_model", "T_diffy_xyave"  [Unused]
-    ! long_name: Diffusive Meridional Flux of Potential Temperature
-    ! units: W m-2
-    ! cell_methods: zl:sum
-"ocean_model_z", "T_diffy"  [Unused]
-    ! long_name: Diffusive Meridional Flux of Potential Temperature
-    ! units: W m-2
-    ! cell_methods: xh:mean yq:point z_l:sum
-"ocean_model_z", "T_diffy_xyave"  [Unused]
-    ! long_name: Diffusive Meridional Flux of Potential Temperature
-    ! units: W m-2
-    ! cell_methods: z_l:sum
-"ocean_model", "S_adx"  [Used]
-    ! long_name: Advective (by residual mean) Zonal Flux of Salinity
-    ! units: psu m3 s-1
-    ! cell_methods: xq:point yh:mean zl:sum
-"ocean_model", "S_adx_xyave"  [Unused]
-    ! long_name: Advective (by residual mean) Zonal Flux of Salinity
-    ! units: psu m3 s-1
-    ! cell_methods: zl:sum
-"ocean_model_z", "S_adx"  [Unused]
-    ! long_name: Advective (by residual mean) Zonal Flux of Salinity
-    ! units: psu m3 s-1
-    ! cell_methods: xq:point yh:mean z_l:sum
-"ocean_model_z", "S_adx_xyave"  [Unused]
-    ! long_name: Advective (by residual mean) Zonal Flux of Salinity
-    ! units: psu m3 s-1
-    ! cell_methods: z_l:sum
-"ocean_model", "S_ady"  [Used]
-    ! long_name: Advective (by residual mean) Meridional Flux of Salinity
-    ! units: psu m3 s-1
-    ! cell_methods: xh:mean yq:point zl:sum
-"ocean_model", "S_ady_xyave"  [Unused]
-    ! long_name: Advective (by residual mean) Meridional Flux of Salinity
-    ! units: psu m3 s-1
-    ! cell_methods: zl:sum
-"ocean_model_z", "S_ady"  [Unused]
-    ! long_name: Advective (by residual mean) Meridional Flux of Salinity
-    ! units: psu m3 s-1
-    ! cell_methods: xh:mean yq:point z_l:sum
-"ocean_model_z", "S_ady_xyave"  [Unused]
-    ! long_name: Advective (by residual mean) Meridional Flux of Salinity
-    ! units: psu m3 s-1
-    ! cell_methods: z_l:sum
-"ocean_model", "S_diffx"  [Used]
-    ! long_name: Diffusive Zonal Flux of Salinity
-    ! units: psu m3 s-1
-    ! cell_methods: xq:point yh:mean zl:sum
-"ocean_model", "S_diffx_xyave"  [Unused]
-    ! long_name: Diffusive Zonal Flux of Salinity
-    ! units: psu m3 s-1
-    ! cell_methods: zl:sum
-"ocean_model_z", "S_diffx"  [Unused]
-    ! long_name: Diffusive Zonal Flux of Salinity
-    ! units: psu m3 s-1
-    ! cell_methods: xq:point yh:mean z_l:sum
-"ocean_model_z", "S_diffx_xyave"  [Unused]
-    ! long_name: Diffusive Zonal Flux of Salinity
-    ! units: psu m3 s-1
-    ! cell_methods: z_l:sum
-"ocean_model", "S_diffy"  [Used]
-    ! long_name: Diffusive Meridional Flux of Salinity
-    ! units: psu m3 s-1
-    ! cell_methods: xh:mean yq:point zl:sum
-"ocean_model", "S_diffy_xyave"  [Unused]
-    ! long_name: Diffusive Meridional Flux of Salinity
-    ! units: psu m3 s-1
-    ! cell_methods: zl:sum
-"ocean_model_z", "S_diffy"  [Unused]
-    ! long_name: Diffusive Meridional Flux of Salinity
-    ! units: psu m3 s-1
-    ! cell_methods: xh:mean yq:point z_l:sum
-"ocean_model_z", "S_diffy_xyave"  [Unused]
-    ! long_name: Diffusive Meridional Flux of Salinity
-    ! units: psu m3 s-1
-    ! cell_methods: z_l:sum
-"ocean_model", "T_adx_2d"  [Unused]
-    ! long_name: Vertically Integrated Advective Zonal Flux of Potential Temperature
-    ! units: W m-2
-    ! cell_methods: xq:point yh:mean
-"ocean_model", "T_ady_2d"  [Unused]
-    ! long_name: Vertically Integrated Advective Meridional Flux of Potential Temperature
-    ! units: W m-2
-    ! cell_methods: xh:mean yq:point
-"ocean_model", "T_diffx_2d"  [Unused]
-    ! long_name: Vertically Integrated Diffusive Zonal Flux of Potential Temperature
-    ! units: W m-2
-    ! cell_methods: xq:point yh:mean
-"ocean_model", "T_diffy_2d"  [Unused]
-    ! long_name: Vertically Integrated Diffusive Meridional Flux of Potential Temperature
-    ! units: W m-2
-    ! cell_methods: xh:mean yq:point
-"ocean_model", "S_adx_2d"  [Unused]
-    ! long_name: Vertically Integrated Advective Zonal Flux of Salinity
-    ! units: psu m3 s-1
-    ! cell_methods: xq:point yh:mean
-"ocean_model", "S_ady_2d"  [Unused]
-    ! long_name: Vertically Integrated Advective Meridional Flux of Salinity
-    ! units: psu m3 s-1
-    ! cell_methods: xh:mean yq:point
-"ocean_model", "S_diffx_2d"  [Unused]
-    ! long_name: Vertically Integrated Diffusive Zonal Flux of Salinity
-    ! units: psu m3 s-1
-    ! cell_methods: xq:point yh:mean
-"ocean_model", "S_diffy_2d"  [Unused]
-    ! long_name: Vertically Integrated Diffusive Meridional Flux of Salinity
-    ! units: psu m3 s-1
-    ! cell_methods: xh:mean yq:point
-"ocean_model", "u_predia"  [Unused]
-    ! long_name: Zonal velocity before diabatic forcing
+"ocean_model", "u_dyn"  [Unused]
+    ! long_name: Zonal velocity after the dynamics update
     ! units: m s-1
     ! cell_methods: xq:point yh:mean zl:mean
-"ocean_model", "u_predia_xyave"  [Unused]
-    ! long_name: Zonal velocity before diabatic forcing
+"ocean_model", "u_dyn_xyave"  [Unused]
+    ! long_name: Zonal velocity after the dynamics update
     ! units: m s-1
     ! cell_methods: zl:mean
-"ocean_model_z", "u_predia"  [Unused]
-    ! long_name: Zonal velocity before diabatic forcing
+"ocean_model_z", "u_dyn"  [Unused]
+    ! long_name: Zonal velocity after the dynamics update
     ! units: m s-1
     ! cell_methods: xq:point yh:mean z_l:mean
-"ocean_model_z", "u_predia_xyave"  [Unused]
-    ! long_name: Zonal velocity before diabatic forcing
+"ocean_model_z", "u_dyn_xyave"  [Unused]
+    ! long_name: Zonal velocity after the dynamics update
     ! units: m s-1
     ! cell_methods: z_l:mean
-"ocean_model", "v_predia"  [Unused]
-    ! long_name: Meridional velocity before diabatic forcing
+"ocean_model", "v_dyn"  [Unused]
+    ! long_name: Meridional velocity after the dynamics update
     ! units: m s-1
     ! cell_methods: xh:mean yq:point zl:mean
-"ocean_model", "v_predia_xyave"  [Unused]
-    ! long_name: Meridional velocity before diabatic forcing
+"ocean_model", "v_dyn_xyave"  [Unused]
+    ! long_name: Meridional velocity after the dynamics update
     ! units: m s-1
     ! cell_methods: zl:mean
-"ocean_model_z", "v_predia"  [Unused]
-    ! long_name: Meridional velocity before diabatic forcing
+"ocean_model_z", "v_dyn"  [Unused]
+    ! long_name: Meridional velocity after the dynamics update
     ! units: m s-1
     ! cell_methods: xh:mean yq:point z_l:mean
-"ocean_model_z", "v_predia_xyave"  [Unused]
-    ! long_name: Meridional velocity before diabatic forcing
+"ocean_model_z", "v_dyn_xyave"  [Unused]
+    ! long_name: Meridional velocity after the dynamics update
     ! units: m s-1
     ! cell_methods: z_l:mean
-"ocean_model", "h_predia"  [Unused]
-    ! long_name: Layer Thickness before diabatic forcing
+"ocean_model", "h_dyn"  [Unused]
+    ! long_name: Layer Thickness after the dynamics update
     ! units: m
     ! cell_methods: xh:mean yh:mean zl:sum area:mean
-"ocean_model", "h_predia_xyave"  [Unused]
-    ! long_name: Layer Thickness before diabatic forcing
+"ocean_model", "h_dyn_xyave"  [Unused]
+    ! long_name: Layer Thickness after the dynamics update
     ! units: m
     ! cell_methods: zl:sum
-"ocean_model_z", "h_predia"  [Unused]
-    ! long_name: Layer Thickness before diabatic forcing
+"ocean_model_z", "h_dyn"  [Unused]
+    ! long_name: Layer Thickness after the dynamics update
     ! units: m
     ! cell_methods: xh:mean yh:mean z_l:sum area:mean
-"ocean_model_z", "h_predia_xyave"  [Unused]
-    ! long_name: Layer Thickness before diabatic forcing
+"ocean_model_z", "h_dyn_xyave"  [Unused]
+    ! long_name: Layer Thickness after the dynamics update
     ! units: m
     ! cell_methods: z_l:sum
-"ocean_model", "e_predia"  [Unused]
-    ! long_name: Interface Heights before diabatic forcing
+"ocean_model", "SSH_inst"  [Unused]
+    ! long_name: Instantaneous Sea Surface Height
     ! units: m
-    ! cell_methods: xh:mean yh:mean zi:point area:mean
-"ocean_model", "e_predia_xyave"  [Unused]
-    ! long_name: Interface Heights before diabatic forcing
-    ! units: m
-    ! cell_methods: zi:point
-"ocean_model_z", "e_predia"  [Unused]
-    ! long_name: Interface Heights before diabatic forcing
-    ! units: m
-    ! cell_methods: xh:mean yh:mean z_i:point area:mean
-"ocean_model_z", "e_predia_xyave"  [Unused]
-    ! long_name: Interface Heights before diabatic forcing
-    ! units: m
-    ! cell_methods: z_i:point
-"ocean_model", "u_preale"  [Unused]
-    ! long_name: Zonal velocity before remapping
-    ! units: m s-1
-    ! cell_methods: xq:point yh:mean zl:mean
-"ocean_model", "u_preale_xyave"  [Unused]
-    ! long_name: Zonal velocity before remapping
-    ! units: m s-1
-    ! cell_methods: zl:mean
-"ocean_model_z", "u_preale"  [Unused]
-    ! long_name: Zonal velocity before remapping
-    ! units: m s-1
-    ! cell_methods: xq:point yh:mean z_l:mean
-"ocean_model_z", "u_preale_xyave"  [Unused]
-    ! long_name: Zonal velocity before remapping
-    ! units: m s-1
-    ! cell_methods: z_l:mean
-"ocean_model", "v_preale"  [Unused]
-    ! long_name: Meridional velocity before remapping
-    ! units: m s-1
-    ! cell_methods: xh:mean yq:point zl:mean
-"ocean_model", "v_preale_xyave"  [Unused]
-    ! long_name: Meridional velocity before remapping
-    ! units: m s-1
-    ! cell_methods: zl:mean
-"ocean_model_z", "v_preale"  [Unused]
-    ! long_name: Meridional velocity before remapping
-    ! units: m s-1
-    ! cell_methods: xh:mean yq:point z_l:mean
-"ocean_model_z", "v_preale_xyave"  [Unused]
-    ! long_name: Meridional velocity before remapping
-    ! units: m s-1
-    ! cell_methods: z_l:mean
-"ocean_model", "h_preale"  [Unused]
-    ! long_name: Layer Thickness before remapping
-    ! units: m
-    ! cell_methods: xh:mean yh:mean zl:sum area:mean
-"ocean_model", "h_preale_xyave"  [Unused]
-    ! long_name: Layer Thickness before remapping
-    ! units: m
-    ! cell_methods: zl:sum
-"ocean_model_z", "h_preale"  [Unused]
-    ! long_name: Layer Thickness before remapping
-    ! units: m
-    ! cell_methods: xh:mean yh:mean z_l:sum area:mean
-"ocean_model_z", "h_preale_xyave"  [Unused]
-    ! long_name: Layer Thickness before remapping
-    ! units: m
-    ! cell_methods: z_l:sum
-"ocean_model", "T_preale"  [Unused]
-    ! long_name: Temperature before remapping
-    ! units: degC
-    ! cell_methods: xh:mean yh:mean zl:mean area:mean
-"ocean_model", "T_preale_xyave"  [Unused]
-    ! long_name: Temperature before remapping
-    ! units: degC
-    ! cell_methods: zl:mean
-"ocean_model_z", "T_preale"  [Unused]
-    ! long_name: Temperature before remapping
-    ! units: degC
-    ! cell_methods: xh:mean yh:mean z_l:mean area:mean
-"ocean_model_z", "T_preale_xyave"  [Unused]
-    ! long_name: Temperature before remapping
-    ! units: degC
-    ! cell_methods: z_l:mean
-"ocean_model", "S_preale"  [Unused]
-    ! long_name: Salinity before remapping
-    ! units: psu
-    ! cell_methods: xh:mean yh:mean zl:mean area:mean
-"ocean_model", "S_preale_xyave"  [Unused]
-    ! long_name: Salinity before remapping
-    ! units: psu
-    ! cell_methods: zl:mean
-"ocean_model_z", "S_preale"  [Unused]
-    ! long_name: Salinity before remapping
-    ! units: psu
-    ! cell_methods: xh:mean yh:mean z_l:mean area:mean
-"ocean_model_z", "S_preale_xyave"  [Unused]
-    ! long_name: Salinity before remapping
-    ! units: psu
-    ! cell_methods: z_l:mean
-"ocean_model", "e_preale"  [Unused]
-    ! long_name: Interface Heights before remapping
-    ! units: m
-    ! cell_methods: xh:mean yh:mean zi:point area:mean
-"ocean_model", "e_preale_xyave"  [Unused]
-    ! long_name: Interface Heights before remapping
-    ! units: m
-    ! cell_methods: zi:point
-"ocean_model_z", "e_preale"  [Unused]
-    ! long_name: Interface Heights before remapping
-    ! units: m
-    ! cell_methods: xh:mean yh:mean z_i:point area:mean
-"ocean_model_z", "e_preale_xyave"  [Unused]
-    ! long_name: Interface Heights before remapping
-    ! units: m
-    ! cell_methods: z_i:point
-"ocean_model", "temp_predia"  [Unused]
-    ! long_name: Potential Temperature
-    ! units: degC
-    ! cell_methods: xh:mean yh:mean zl:mean area:mean
-"ocean_model", "temp_predia_xyave"  [Unused]
-    ! long_name: Potential Temperature
-    ! units: degC
-    ! cell_methods: zl:mean
-"ocean_model_z", "temp_predia"  [Unused]
-    ! long_name: Potential Temperature
-    ! units: degC
-    ! cell_methods: xh:mean yh:mean z_l:mean area:mean
-"ocean_model_z", "temp_predia_xyave"  [Unused]
-    ! long_name: Potential Temperature
-    ! units: degC
-    ! cell_methods: z_l:mean
-"ocean_model", "salt_predia"  [Unused]
-    ! long_name: Salinity
-    ! units: psu
-    ! cell_methods: xh:mean yh:mean zl:mean area:mean
-"ocean_model", "salt_predia_xyave"  [Unused]
-    ! long_name: Salinity
-    ! units: psu
-    ! cell_methods: zl:mean
-"ocean_model_z", "salt_predia"  [Unused]
-    ! long_name: Salinity
-    ! units: psu
-    ! cell_methods: xh:mean yh:mean z_l:mean area:mean
-"ocean_model_z", "salt_predia_xyave"  [Unused]
-    ! long_name: Salinity
-    ! units: psu
-    ! cell_methods: z_l:mean
+    ! cell_methods: xh:mean yh:mean area:mean
 "ocean_model", "uhtr"  [Unused]
     ! long_name: Accumulated zonal thickness fluxes to advect tracers
     ! units: kg
@@ -3313,40 +3137,249 @@
     ! units: kg s-1
     ! standard_name: ocean_mass_y_transport_vertical_sum
     ! cell_methods: xh:sum yq:point
+"ocean_model", "dynamics_h"  [Unused]
+    ! long_name: Change in layer thicknesses due to horizontal dynamics
+    ! units: m s-1
+    ! cell_methods: xh:mean yh:mean zl:sum area:mean
+"ocean_model", "dynamics_h_xyave"  [Unused]
+    ! long_name: Change in layer thicknesses due to horizontal dynamics
+    ! units: m s-1
+    ! cell_methods: zl:sum
+"ocean_model_z", "dynamics_h"  [Unused]
+    ! long_name: Change in layer thicknesses due to horizontal dynamics
+    ! units: m s-1
+    ! cell_methods: xh:mean yh:mean z_l:sum area:mean
+"ocean_model_z", "dynamics_h_xyave"  [Unused]
+    ! long_name: Change in layer thicknesses due to horizontal dynamics
+    ! units: m s-1
+    ! cell_methods: z_l:sum
+"ocean_model", "dynamics_h_tendency"  [Unused]
+    ! long_name: Change in layer thicknesses due to horizontal dynamics
+    ! units: m s-1
+    ! cell_methods: xh:mean yh:mean zl:sum area:mean
+"ocean_model", "dynamics_h_tendency_xyave"  [Unused]
+    ! long_name: Change in layer thicknesses due to horizontal dynamics
+    ! units: m s-1
+    ! cell_methods: zl:sum
+"ocean_model_z", "dynamics_h_tendency"  [Unused]
+    ! long_name: Change in layer thicknesses due to horizontal dynamics
+    ! units: m s-1
+    ! cell_methods: xh:mean yh:mean z_l:sum area:mean
+"ocean_model_z", "dynamics_h_tendency_xyave"  [Unused]
+    ! long_name: Change in layer thicknesses due to horizontal dynamics
+    ! units: m s-1
+    ! cell_methods: z_l:sum
+"ocean_model", "temp"  [Used] (CMOR equivalent is "thetao")
+    ! long_name: Potential Temperature
+    ! units: degC
+    ! cell_methods: xh:mean yh:mean zl:mean area:mean
+"ocean_model", "temp_xyave"  [Unused] (CMOR equivalent is "thetao_xyave")
+    ! long_name: Potential Temperature
+    ! units: degC
+    ! cell_methods: zl:mean
+"ocean_model", "thetao"  [Unused] (native name is "temp")
+    ! long_name: Sea Water Potential Temperature
+    ! units: degC
+    ! standard_name: sea_water_potential_temperature
+    ! cell_methods: xh:mean yh:mean zl:mean area:mean
+"ocean_model", "thetao_xyave"  [Unused] (native name is "temp_xyave")
+    ! long_name: Sea Water Potential Temperature
+    ! units: degC
+    ! standard_name: sea_water_potential_temperature
+    ! cell_methods: zl:mean
+"ocean_model_z", "temp"  [Used] (CMOR equivalent is "thetao")
+    ! long_name: Potential Temperature
+    ! units: degC
+    ! cell_methods: xh:mean yh:mean z_l:mean area:mean
+"ocean_model_z", "temp_xyave"  [Used] (CMOR equivalent is "thetao_xyave")
+    ! long_name: Potential Temperature
+    ! units: degC
+    ! cell_methods: z_l:mean
+"ocean_model_z", "thetao"  [Used] (native name is "temp")
+    ! long_name: Sea Water Potential Temperature
+    ! units: degC
+    ! standard_name: sea_water_potential_temperature
+    ! cell_methods: xh:mean yh:mean z_l:mean area:mean
+"ocean_model_z", "thetao_xyave"  [Unused] (native name is "temp_xyave")
+    ! long_name: Sea Water Potential Temperature
+    ! units: degC
+    ! standard_name: sea_water_potential_temperature
+    ! cell_methods: z_l:mean
+"ocean_model", "T_adx"  [Used]
+    ! long_name: Advective (by residual mean) Zonal Flux of Heat
+    ! units: W m-2
+    ! cell_methods: xq:point yh:sum zl:sum
+"ocean_model", "T_adx_xyave"  [Unused]
+    ! long_name: Advective (by residual mean) Zonal Flux of Heat
+    ! units: W m-2
+    ! cell_methods: zl:sum
+"ocean_model_z", "T_adx"  [Unused]
+    ! long_name: Advective (by residual mean) Zonal Flux of Heat
+    ! units: W m-2
+    ! cell_methods: xq:point yh:sum z_l:sum
+"ocean_model_z", "T_adx_xyave"  [Unused]
+    ! long_name: Advective (by residual mean) Zonal Flux of Heat
+    ! units: W m-2
+    ! cell_methods: z_l:sum
+"ocean_model", "T_ady"  [Used]
+    ! long_name: Advective (by residual mean) Meridional Flux of Heat
+    ! units: W m-2
+    ! cell_methods: xh:sum yq:point zl:sum
+"ocean_model", "T_ady_xyave"  [Unused]
+    ! long_name: Advective (by residual mean) Meridional Flux of Heat
+    ! units: W m-2
+    ! cell_methods: zl:sum
+"ocean_model_z", "T_ady"  [Unused]
+    ! long_name: Advective (by residual mean) Meridional Flux of Heat
+    ! units: W m-2
+    ! cell_methods: xh:sum yq:point z_l:sum
+"ocean_model_z", "T_ady_xyave"  [Unused]
+    ! long_name: Advective (by residual mean) Meridional Flux of Heat
+    ! units: W m-2
+    ! cell_methods: z_l:sum
+"ocean_model", "T_diffx"  [Used]
+    ! long_name: Diffusive Zonal Flux of Heat
+    ! units: W m-2
+    ! cell_methods: xq:point yh:sum zl:sum
+"ocean_model", "T_diffx_xyave"  [Unused]
+    ! long_name: Diffusive Zonal Flux of Heat
+    ! units: W m-2
+    ! cell_methods: zl:sum
+"ocean_model_z", "T_diffx"  [Unused]
+    ! long_name: Diffusive Zonal Flux of Heat
+    ! units: W m-2
+    ! cell_methods: xq:point yh:sum z_l:sum
+"ocean_model_z", "T_diffx_xyave"  [Unused]
+    ! long_name: Diffusive Zonal Flux of Heat
+    ! units: W m-2
+    ! cell_methods: z_l:sum
+"ocean_model", "T_diffy"  [Used]
+    ! long_name: Diffusive Meridional Flux of Heat
+    ! units: W m-2
+    ! cell_methods: xh:sum yq:point zl:sum
+"ocean_model", "T_diffy_xyave"  [Unused]
+    ! long_name: Diffusive Meridional Flux of Heat
+    ! units: W m-2
+    ! cell_methods: zl:sum
+"ocean_model_z", "T_diffy"  [Unused]
+    ! long_name: Diffusive Meridional Flux of Heat
+    ! units: W m-2
+    ! cell_methods: xh:sum yq:point z_l:sum
+"ocean_model_z", "T_diffy_xyave"  [Unused]
+    ! long_name: Diffusive Meridional Flux of Heat
+    ! units: W m-2
+    ! cell_methods: z_l:sum
+"ocean_model", "T_adx_2d"  [Unused]
+    ! long_name: Vertically Integrated Advective Zonal Flux of Heat
+    ! units: W m-2
+    ! cell_methods: xq:point yh:sum
+"ocean_model", "T_ady_2d"  [Unused]
+    ! long_name: Vertically Integrated Advective Meridional Flux of Heat
+    ! units: W m-2
+    ! cell_methods: xh:sum yq:point
+"ocean_model", "T_diffx_2d"  [Unused]
+    ! long_name: Vertically Integrated Diffusive Zonal Flux of Heat
+    ! units: W m-2
+    ! cell_methods: xq:point yh:sum
+"ocean_model", "T_diffy_2d"  [Unused]
+    ! long_name: Vertically Integrated Diffusive Meridional Flux of Heat
+    ! units: W m-2
+    ! cell_methods: xh:sum yq:point
 "ocean_model", "T_advection_xy"  [Used]
-    ! long_name: Horizontal convergence of residual mean heat advective fluxes
+    ! long_name: Horizontal convergence of residual mean advective fluxes of heat
     ! units: W m-2
     ! cell_methods: xh:mean yh:mean zl:sum area:mean
 "ocean_model", "T_advection_xy_xyave"  [Unused]
-    ! long_name: Horizontal convergence of residual mean heat advective fluxes
+    ! long_name: Horizontal convergence of residual mean advective fluxes of heat
     ! units: W m-2
     ! cell_methods: zl:sum
 "ocean_model_z", "T_advection_xy"  [Unused]
-    ! long_name: Horizontal convergence of residual mean heat advective fluxes
+    ! long_name: Horizontal convergence of residual mean advective fluxes of heat
     ! units: W m-2
     ! cell_methods: xh:mean yh:mean z_l:sum area:mean
 "ocean_model_z", "T_advection_xy_xyave"  [Unused]
-    ! long_name: Horizontal convergence of residual mean heat advective fluxes
+    ! long_name: Horizontal convergence of residual mean advective fluxes of heat
     ! units: W m-2
     ! cell_methods: z_l:sum
 "ocean_model", "T_advection_xy_2d"  [Used]
-    ! long_name: Vertical sum of horizontal convergence of residual mean heat advective fluxes
+    ! long_name: Vertical sum of horizontal convergence of residual mean advective fluxes of heat
     ! units: W m-2
     ! cell_methods: xh:mean yh:mean area:mean
 "ocean_model", "T_tendency"  [Used]
-    ! long_name: Net time tendency for temperature
+    ! long_name: Net time tendency for potential temperature
     ! units: degC s-1
     ! cell_methods: xh:mean yh:mean zl:mean area:mean
 "ocean_model", "T_tendency_xyave"  [Unused]
-    ! long_name: Net time tendency for temperature
+    ! long_name: Net time tendency for potential temperature
     ! units: degC s-1
     ! cell_methods: zl:mean
 "ocean_model_z", "T_tendency"  [Unused]
-    ! long_name: Net time tendency for temperature
+    ! long_name: Net time tendency for potential temperature
     ! units: degC s-1
     ! cell_methods: xh:mean yh:mean z_l:mean area:mean
 "ocean_model_z", "T_tendency_xyave"  [Unused]
-    ! long_name: Net time tendency for temperature
+    ! long_name: Net time tendency for potential temperature
+    ! units: degC s-1
+    ! cell_methods: z_l:mean
+"ocean_model", "T_dfxy_cont_tendency"  [Unused] (CMOR equivalent is "opottemppmdiff")
+    ! long_name: Lateral or neutral diffusion tracer concentration tendency for T
+    ! units: W m-2
+    ! cell_methods: xh:sum yh:sum zl:sum area:sum
+"ocean_model", "T_dfxy_cont_tendency_xyave"  [Unused] (CMOR equivalent is "opottemppmdiff_xyave")
+    ! long_name: Lateral or neutral diffusion tracer concentration tendency for T
+    ! units: W m-2
+    ! cell_methods: zl:sum
+"ocean_model", "opottemppmdiff"  [Unused] (native name is "T_dfxy_cont_tendency")
+    ! long_name: Tendency of sea water potential temperature expressed as heat content due to parameterized mesoscale diffusion
+    ! units: W m-2
+    ! standard_name: tendency_of_sea_water_potential_temperature_expressed_as_heat_content_due_to_parameterized_mesoscale_diffusion
+    ! cell_methods: xh:sum yh:sum zl:sum area:sum
+"ocean_model", "opottemppmdiff_xyave"  [Unused] (native name is "T_dfxy_cont_tendency_xyave")
+    ! long_name: Tendency of sea water potential temperature expressed as heat content due to parameterized mesoscale diffusion
+    ! units: W m-2
+    ! standard_name: tendency_of_sea_water_potential_temperature_expressed_as_heat_content_due_to_parameterized_mesoscale_diffusion
+    ! cell_methods: zl:sum
+"ocean_model_z", "T_dfxy_cont_tendency"  [Unused] (CMOR equivalent is "opottemppmdiff")
+    ! long_name: Lateral or neutral diffusion tracer concentration tendency for T
+    ! units: W m-2
+    ! cell_methods: xh:sum yh:sum z_l:sum area:sum
+"ocean_model_z", "T_dfxy_cont_tendency_xyave"  [Unused] (CMOR equivalent is "opottemppmdiff_xyave")
+    ! long_name: Lateral or neutral diffusion tracer concentration tendency for T
+    ! units: W m-2
+    ! cell_methods: z_l:sum
+"ocean_model_z", "opottemppmdiff"  [Unused] (native name is "T_dfxy_cont_tendency")
+    ! long_name: Tendency of sea water potential temperature expressed as heat content due to parameterized mesoscale diffusion
+    ! units: W m-2
+    ! standard_name: tendency_of_sea_water_potential_temperature_expressed_as_heat_content_due_to_parameterized_mesoscale_diffusion
+    ! cell_methods: xh:sum yh:sum z_l:sum area:sum
+"ocean_model_z", "opottemppmdiff_xyave"  [Unused] (native name is "T_dfxy_cont_tendency_xyave")
+    ! long_name: Tendency of sea water potential temperature expressed as heat content due to parameterized mesoscale diffusion
+    ! units: W m-2
+    ! standard_name: tendency_of_sea_water_potential_temperature_expressed_as_heat_content_due_to_parameterized_mesoscale_diffusion
+    ! cell_methods: z_l:sum
+"ocean_model", "T_dfxy_cont_tendency_2d"  [Unused] (CMOR equivalent is "opottemppmdiff_2d")
+    ! long_name: Depth integrated lateral or neutral diffusion tracer concentration tendency for T
+    ! units: W m-2
+    ! cell_methods: xh:sum yh:sum area:sum
+"ocean_model", "opottemppmdiff_2d"  [Unused] (native name is "T_dfxy_cont_tendency_2d")
+    ! long_name: Tendency of sea water potential temperature expressed as heat content due to parameterized mesoscale diffusion
+    ! units: W m-2
+    ! standard_name: tendency_of_sea_water_potential_temperature_expressed_as_heat_content_due_to_parameterized_mesoscale_diffusion
+    ! cell_methods: xh:sum yh:sum area:sum
+"ocean_model", "T_dfxy_conc_tendency"  [Unused]
+    ! long_name: Lateral (neutral) tracer concentration tendency for T
+    ! units: degC s-1
+    ! cell_methods: xh:mean yh:mean zl:mean area:mean
+"ocean_model", "T_dfxy_conc_tendency_xyave"  [Unused]
+    ! long_name: Lateral (neutral) tracer concentration tendency for T
+    ! units: degC s-1
+    ! cell_methods: zl:mean
+"ocean_model_z", "T_dfxy_conc_tendency"  [Unused]
+    ! long_name: Lateral (neutral) tracer concentration tendency for T
+    ! units: degC s-1
+    ! cell_methods: xh:mean yh:mean z_l:mean area:mean
+"ocean_model_z", "T_dfxy_conc_tendency_xyave"  [Unused]
+    ! long_name: Lateral (neutral) tracer concentration tendency for T
     ! units: degC s-1
     ! cell_methods: z_l:mean
 "ocean_model", "Th_tendency"  [Unused] (CMOR equivalent is "opottemptend")
@@ -3394,24 +3427,156 @@
     ! units: W m-2
     ! standard_name: tendency_of_sea_water_potential_temperature_expressed_as_heat_content_vertical_sum
     ! cell_methods: xh:mean yh:mean area:mean
+"ocean_model_zold", "temp"  [Used]
+    ! long_name: Potential Temperature
+    ! units: degC
+    ! standard_name: not provided
+"ocean_model_zold", "temp_xyave"  [Used]
+    ! long_name: Potential Temperature
+    ! units: degC
+    ! standard_name: not provided
+"ocean_model_zold", "thetao"  [Unused]
+    ! long_name: Sea Water Potential Temperature
+    ! units: degC
+    ! standard_name: sea_water_potential_temperature
+"ocean_model_zold", "thetao_xyave"  [Unused]
+    ! long_name: Sea Water Potential Temperature
+    ! units: degC
+    ! standard_name: sea_water_potential_temperature
+"ocean_model", "salt"  [Used] (CMOR equivalent is "so")
+    ! long_name: Salinity
+    ! units: psu
+    ! cell_methods: xh:mean yh:mean zl:mean area:mean
+"ocean_model", "salt_xyave"  [Unused] (CMOR equivalent is "so_xyave")
+    ! long_name: Salinity
+    ! units: psu
+    ! cell_methods: zl:mean
+"ocean_model", "so"  [Used] (native name is "salt")
+    ! long_name: Sea Water Salinity
+    ! units: psu
+    ! standard_name: sea_water_salinity
+    ! cell_methods: xh:mean yh:mean zl:mean area:mean
+"ocean_model", "so_xyave"  [Unused] (native name is "salt_xyave")
+    ! long_name: Sea Water Salinity
+    ! units: psu
+    ! standard_name: sea_water_salinity
+    ! cell_methods: zl:mean
+"ocean_model_z", "salt"  [Used] (CMOR equivalent is "so")
+    ! long_name: Salinity
+    ! units: psu
+    ! cell_methods: xh:mean yh:mean z_l:mean area:mean
+"ocean_model_z", "salt_xyave"  [Unused] (CMOR equivalent is "so_xyave")
+    ! long_name: Salinity
+    ! units: psu
+    ! cell_methods: z_l:mean
+"ocean_model_z", "so"  [Used] (native name is "salt")
+    ! long_name: Sea Water Salinity
+    ! units: psu
+    ! standard_name: sea_water_salinity
+    ! cell_methods: xh:mean yh:mean z_l:mean area:mean
+"ocean_model_z", "so_xyave"  [Unused] (native name is "salt_xyave")
+    ! long_name: Sea Water Salinity
+    ! units: psu
+    ! standard_name: sea_water_salinity
+    ! cell_methods: z_l:mean
+"ocean_model", "S_adx"  [Used]
+    ! long_name: Advective (by residual mean) Zonal Flux of Salt
+    ! units: psu m3 s-1
+    ! cell_methods: xq:point yh:sum zl:sum
+"ocean_model", "S_adx_xyave"  [Unused]
+    ! long_name: Advective (by residual mean) Zonal Flux of Salt
+    ! units: psu m3 s-1
+    ! cell_methods: zl:sum
+"ocean_model_z", "S_adx"  [Unused]
+    ! long_name: Advective (by residual mean) Zonal Flux of Salt
+    ! units: psu m3 s-1
+    ! cell_methods: xq:point yh:sum z_l:sum
+"ocean_model_z", "S_adx_xyave"  [Unused]
+    ! long_name: Advective (by residual mean) Zonal Flux of Salt
+    ! units: psu m3 s-1
+    ! cell_methods: z_l:sum
+"ocean_model", "S_ady"  [Used]
+    ! long_name: Advective (by residual mean) Meridional Flux of Salt
+    ! units: psu m3 s-1
+    ! cell_methods: xh:sum yq:point zl:sum
+"ocean_model", "S_ady_xyave"  [Unused]
+    ! long_name: Advective (by residual mean) Meridional Flux of Salt
+    ! units: psu m3 s-1
+    ! cell_methods: zl:sum
+"ocean_model_z", "S_ady"  [Unused]
+    ! long_name: Advective (by residual mean) Meridional Flux of Salt
+    ! units: psu m3 s-1
+    ! cell_methods: xh:sum yq:point z_l:sum
+"ocean_model_z", "S_ady_xyave"  [Unused]
+    ! long_name: Advective (by residual mean) Meridional Flux of Salt
+    ! units: psu m3 s-1
+    ! cell_methods: z_l:sum
+"ocean_model", "S_diffx"  [Used]
+    ! long_name: Diffusive Zonal Flux of Salt
+    ! units: psu m3 s-1
+    ! cell_methods: xq:point yh:sum zl:sum
+"ocean_model", "S_diffx_xyave"  [Unused]
+    ! long_name: Diffusive Zonal Flux of Salt
+    ! units: psu m3 s-1
+    ! cell_methods: zl:sum
+"ocean_model_z", "S_diffx"  [Unused]
+    ! long_name: Diffusive Zonal Flux of Salt
+    ! units: psu m3 s-1
+    ! cell_methods: xq:point yh:sum z_l:sum
+"ocean_model_z", "S_diffx_xyave"  [Unused]
+    ! long_name: Diffusive Zonal Flux of Salt
+    ! units: psu m3 s-1
+    ! cell_methods: z_l:sum
+"ocean_model", "S_diffy"  [Used]
+    ! long_name: Diffusive Meridional Flux of Salt
+    ! units: psu m3 s-1
+    ! cell_methods: xh:sum yq:point zl:sum
+"ocean_model", "S_diffy_xyave"  [Unused]
+    ! long_name: Diffusive Meridional Flux of Salt
+    ! units: psu m3 s-1
+    ! cell_methods: zl:sum
+"ocean_model_z", "S_diffy"  [Unused]
+    ! long_name: Diffusive Meridional Flux of Salt
+    ! units: psu m3 s-1
+    ! cell_methods: xh:sum yq:point z_l:sum
+"ocean_model_z", "S_diffy_xyave"  [Unused]
+    ! long_name: Diffusive Meridional Flux of Salt
+    ! units: psu m3 s-1
+    ! cell_methods: z_l:sum
+"ocean_model", "S_adx_2d"  [Unused]
+    ! long_name: Vertically Integrated Advective Zonal Flux of Salt
+    ! units: psu m3 s-1
+    ! cell_methods: xq:point yh:sum
+"ocean_model", "S_ady_2d"  [Unused]
+    ! long_name: Vertically Integrated Advective Meridional Flux of Salt
+    ! units: psu m3 s-1
+    ! cell_methods: xh:sum yq:point
+"ocean_model", "S_diffx_2d"  [Unused]
+    ! long_name: Vertically Integrated Diffusive Zonal Flux of Salt
+    ! units: psu m3 s-1
+    ! cell_methods: xq:point yh:sum
+"ocean_model", "S_diffy_2d"  [Unused]
+    ! long_name: Vertically Integrated Diffusive Meridional Flux of Salt
+    ! units: psu m3 s-1
+    ! cell_methods: xh:sum yq:point
 "ocean_model", "S_advection_xy"  [Used]
-    ! long_name: Horizontal convergence of residual mean salt advective fluxes
+    ! long_name: Horizontal convergence of residual mean advective fluxes of salt
     ! units: kg m-2 s-1
     ! cell_methods: xh:mean yh:mean zl:sum area:mean
 "ocean_model", "S_advection_xy_xyave"  [Unused]
-    ! long_name: Horizontal convergence of residual mean salt advective fluxes
+    ! long_name: Horizontal convergence of residual mean advective fluxes of salt
     ! units: kg m-2 s-1
     ! cell_methods: zl:sum
 "ocean_model_z", "S_advection_xy"  [Unused]
-    ! long_name: Horizontal convergence of residual mean salt advective fluxes
+    ! long_name: Horizontal convergence of residual mean advective fluxes of salt
     ! units: kg m-2 s-1
     ! cell_methods: xh:mean yh:mean z_l:sum area:mean
 "ocean_model_z", "S_advection_xy_xyave"  [Unused]
-    ! long_name: Horizontal convergence of residual mean salt advective fluxes
+    ! long_name: Horizontal convergence of residual mean advective fluxes of salt
     ! units: kg m-2 s-1
     ! cell_methods: z_l:sum
 "ocean_model", "S_advection_xy_2d"  [Used]
-    ! long_name: Vertical sum of horizontal convergence of residual mean salt advective fluxes
+    ! long_name: Vertical sum of horizontal convergence of residual mean advective fluxes of salt
     ! units: kg m-2 s-1
     ! cell_methods: xh:mean yh:mean area:mean
 "ocean_model", "S_tendency"  [Used]
@@ -3428,6 +3593,67 @@
     ! cell_methods: xh:mean yh:mean z_l:mean area:mean
 "ocean_model_z", "S_tendency_xyave"  [Unused]
     ! long_name: Net time tendency for salinity
+    ! units: psu s-1
+    ! cell_methods: z_l:mean
+"ocean_model", "S_dfxy_cont_tendency"  [Unused] (CMOR equivalent is "osaltpmdiff")
+    ! long_name: Lateral or neutral diffusion tracer concentration tendency for S
+    ! units: kg m-2 s-1
+    ! cell_methods: xh:sum yh:sum zl:sum area:sum
+"ocean_model", "S_dfxy_cont_tendency_xyave"  [Unused] (CMOR equivalent is "osaltpmdiff_xyave")
+    ! long_name: Lateral or neutral diffusion tracer concentration tendency for S
+    ! units: kg m-2 s-1
+    ! cell_methods: zl:sum
+"ocean_model", "osaltpmdiff"  [Unused] (native name is "S_dfxy_cont_tendency")
+    ! long_name: Tendency of sea water salinity expressed as salt content due to parameterized mesoscale diffusion
+    ! units: kg m-2 s-1
+    ! standard_name: tendency_of_sea_water_salinity_expressed_as_salt_content_due_to_parameterized_mesoscale_diffusion
+    ! cell_methods: xh:sum yh:sum zl:sum area:sum
+"ocean_model", "osaltpmdiff_xyave"  [Unused] (native name is "S_dfxy_cont_tendency_xyave")
+    ! long_name: Tendency of sea water salinity expressed as salt content due to parameterized mesoscale diffusion
+    ! units: kg m-2 s-1
+    ! standard_name: tendency_of_sea_water_salinity_expressed_as_salt_content_due_to_parameterized_mesoscale_diffusion
+    ! cell_methods: zl:sum
+"ocean_model_z", "S_dfxy_cont_tendency"  [Unused] (CMOR equivalent is "osaltpmdiff")
+    ! long_name: Lateral or neutral diffusion tracer concentration tendency for S
+    ! units: kg m-2 s-1
+    ! cell_methods: xh:sum yh:sum z_l:sum area:sum
+"ocean_model_z", "S_dfxy_cont_tendency_xyave"  [Unused] (CMOR equivalent is "osaltpmdiff_xyave")
+    ! long_name: Lateral or neutral diffusion tracer concentration tendency for S
+    ! units: kg m-2 s-1
+    ! cell_methods: z_l:sum
+"ocean_model_z", "osaltpmdiff"  [Unused] (native name is "S_dfxy_cont_tendency")
+    ! long_name: Tendency of sea water salinity expressed as salt content due to parameterized mesoscale diffusion
+    ! units: kg m-2 s-1
+    ! standard_name: tendency_of_sea_water_salinity_expressed_as_salt_content_due_to_parameterized_mesoscale_diffusion
+    ! cell_methods: xh:sum yh:sum z_l:sum area:sum
+"ocean_model_z", "osaltpmdiff_xyave"  [Unused] (native name is "S_dfxy_cont_tendency_xyave")
+    ! long_name: Tendency of sea water salinity expressed as salt content due to parameterized mesoscale diffusion
+    ! units: kg m-2 s-1
+    ! standard_name: tendency_of_sea_water_salinity_expressed_as_salt_content_due_to_parameterized_mesoscale_diffusion
+    ! cell_methods: z_l:sum
+"ocean_model", "S_dfxy_cont_tendency_2d"  [Unused] (CMOR equivalent is "osaltpmdiff_2d")
+    ! long_name: Depth integrated lateral or neutral diffusion tracer concentration tendency for S
+    ! units: kg m-2 s-1
+    ! cell_methods: xh:sum yh:sum area:sum
+"ocean_model", "osaltpmdiff_2d"  [Unused] (native name is "S_dfxy_cont_tendency_2d")
+    ! long_name: Tendency of sea water salinity expressed as salt content due to parameterized mesoscale diffusion
+    ! units: kg m-2 s-1
+    ! standard_name: tendency_of_sea_water_salinity_expressed_as_salt_content_due_to_parameterized_mesoscale_diffusion
+    ! cell_methods: xh:sum yh:sum area:sum
+"ocean_model", "S_dfxy_conc_tendency"  [Unused]
+    ! long_name: Lateral (neutral) tracer concentration tendency for S
+    ! units: psu s-1
+    ! cell_methods: xh:mean yh:mean zl:mean area:mean
+"ocean_model", "S_dfxy_conc_tendency_xyave"  [Unused]
+    ! long_name: Lateral (neutral) tracer concentration tendency for S
+    ! units: psu s-1
+    ! cell_methods: zl:mean
+"ocean_model_z", "S_dfxy_conc_tendency"  [Unused]
+    ! long_name: Lateral (neutral) tracer concentration tendency for S
+    ! units: psu s-1
+    ! cell_methods: xh:mean yh:mean z_l:mean area:mean
+"ocean_model_z", "S_dfxy_conc_tendency_xyave"  [Unused]
+    ! long_name: Lateral (neutral) tracer concentration tendency for S
     ! units: psu s-1
     ! cell_methods: z_l:mean
 "ocean_model", "Sh_tendency"  [Unused] (CMOR equivalent is "osalttend")
@@ -3475,22 +3701,6 @@
     ! units: kg m-2 s-1
     ! standard_name: tendency_of_sea_water_salinity_expressed_as_salt_content_vertical_sum
     ! cell_methods: xh:mean yh:mean area:mean
-"ocean_model_zold", "temp"  [Used]
-    ! long_name: Potential Temperature
-    ! units: degC
-    ! standard_name: not provided
-"ocean_model_zold", "temp_xyave"  [Used]
-    ! long_name: Potential Temperature
-    ! units: degC
-    ! standard_name: not provided
-"ocean_model_zold", "thetao"  [Unused]
-    ! long_name: Sea Water Potential Temperature
-    ! units: degC
-    ! standard_name: sea_water_potential_temperature
-"ocean_model_zold", "thetao_xyave"  [Unused]
-    ! long_name: Sea Water Potential Temperature
-    ! units: degC
-    ! standard_name: sea_water_potential_temperature
 "ocean_model_zold", "salt"  [Used]
     ! long_name: Salinity
     ! units: psu
@@ -3518,12 +3728,12 @@
 "ocean_model", "agessc"  [Unused] (native name is "age")
     ! long_name: Ideal Age Tracer
     ! units: yr
-    ! standard_name: not provided
+    ! standard_name: ideal_age_tracer
     ! cell_methods: xh:mean yh:mean zl:mean area:mean
 "ocean_model", "agessc_xyave"  [Unused] (native name is "age_xyave")
     ! long_name: Ideal Age Tracer
     ! units: yr
-    ! standard_name: not provided
+    ! standard_name: ideal_age_tracer
     ! cell_methods: zl:mean
 "ocean_model_z", "age"  [Unused] (CMOR equivalent is "agessc")
     ! long_name: Ideal Age Tracer
@@ -3536,77 +3746,185 @@
 "ocean_model_z", "agessc"  [Unused] (native name is "age")
     ! long_name: Ideal Age Tracer
     ! units: yr
-    ! standard_name: not provided
+    ! standard_name: ideal_age_tracer
     ! cell_methods: xh:mean yh:mean z_l:mean area:mean
 "ocean_model_z", "agessc_xyave"  [Unused] (native name is "age_xyave")
     ! long_name: Ideal Age Tracer
     ! units: yr
-    ! standard_name: not provided
+    ! standard_name: ideal_age_tracer
     ! cell_methods: z_l:mean
 "ocean_model", "age_adx"  [Unused]
     ! long_name: Ideal Age Tracer advective zonal flux
     ! units: yr m3 s-1
-    ! cell_methods: xq:point yh:mean zl:mean
+    ! cell_methods: xq:point yh:sum zl:sum
 "ocean_model", "age_adx_xyave"  [Unused]
     ! long_name: Ideal Age Tracer advective zonal flux
     ! units: yr m3 s-1
-    ! cell_methods: zl:mean
+    ! cell_methods: zl:sum
 "ocean_model_z", "age_adx"  [Unused]
     ! long_name: Ideal Age Tracer advective zonal flux
     ! units: yr m3 s-1
-    ! cell_methods: xq:point yh:mean z_l:mean
+    ! cell_methods: xq:point yh:sum z_l:sum
 "ocean_model_z", "age_adx_xyave"  [Unused]
     ! long_name: Ideal Age Tracer advective zonal flux
     ! units: yr m3 s-1
-    ! cell_methods: z_l:mean
+    ! cell_methods: z_l:sum
 "ocean_model", "age_ady"  [Unused]
     ! long_name: Ideal Age Tracer advective meridional flux
     ! units: yr m3 s-1
-    ! cell_methods: xh:mean yq:point zl:mean
+    ! cell_methods: xh:sum yq:point zl:sum
 "ocean_model", "age_ady_xyave"  [Unused]
     ! long_name: Ideal Age Tracer advective meridional flux
     ! units: yr m3 s-1
-    ! cell_methods: zl:mean
+    ! cell_methods: zl:sum
 "ocean_model_z", "age_ady"  [Unused]
     ! long_name: Ideal Age Tracer advective meridional flux
     ! units: yr m3 s-1
-    ! cell_methods: xh:mean yq:point z_l:mean
+    ! cell_methods: xh:sum yq:point z_l:sum
 "ocean_model_z", "age_ady_xyave"  [Unused]
     ! long_name: Ideal Age Tracer advective meridional flux
     ! units: yr m3 s-1
-    ! cell_methods: z_l:mean
+    ! cell_methods: z_l:sum
 "ocean_model", "age_dfx"  [Unused]
     ! long_name: Ideal Age Tracer diffusive zonal flux
     ! units: yr m3 s-1
-    ! cell_methods: xq:point yh:mean zl:mean
+    ! cell_methods: xq:point yh:sum zl:sum
 "ocean_model", "age_dfx_xyave"  [Unused]
     ! long_name: Ideal Age Tracer diffusive zonal flux
     ! units: yr m3 s-1
-    ! cell_methods: zl:mean
+    ! cell_methods: zl:sum
 "ocean_model_z", "age_dfx"  [Unused]
     ! long_name: Ideal Age Tracer diffusive zonal flux
     ! units: yr m3 s-1
-    ! cell_methods: xq:point yh:mean z_l:mean
+    ! cell_methods: xq:point yh:sum z_l:sum
 "ocean_model_z", "age_dfx_xyave"  [Unused]
     ! long_name: Ideal Age Tracer diffusive zonal flux
     ! units: yr m3 s-1
-    ! cell_methods: z_l:mean
+    ! cell_methods: z_l:sum
 "ocean_model", "age_dfy"  [Unused]
     ! long_name: Ideal Age Tracer diffusive zonal flux
     ! units: yr m3 s-1
-    ! cell_methods: xh:mean yq:point zl:mean
+    ! cell_methods: xh:sum yq:point zl:sum
 "ocean_model", "age_dfy_xyave"  [Unused]
     ! long_name: Ideal Age Tracer diffusive zonal flux
     ! units: yr m3 s-1
-    ! cell_methods: zl:mean
+    ! cell_methods: zl:sum
 "ocean_model_z", "age_dfy"  [Unused]
     ! long_name: Ideal Age Tracer diffusive zonal flux
     ! units: yr m3 s-1
-    ! cell_methods: xh:mean yq:point z_l:mean
+    ! cell_methods: xh:sum yq:point z_l:sum
 "ocean_model_z", "age_dfy_xyave"  [Unused]
     ! long_name: Ideal Age Tracer diffusive zonal flux
     ! units: yr m3 s-1
+    ! cell_methods: z_l:sum
+"ocean_model", "age_adx_2d"  [Unused]
+    ! long_name: Vertically Integrated Advective Zonal Flux of Ideal Age Tracer
+    ! units: yr m3 s-1
+    ! cell_methods: xq:point yh:sum
+"ocean_model", "age_ady_2d"  [Unused]
+    ! long_name: Vertically Integrated Advective Meridional Flux of Ideal Age Tracer
+    ! units: yr m3 s-1
+    ! cell_methods: xh:sum yq:point
+"ocean_model", "age_diffx_2d"  [Unused]
+    ! long_name: Vertically Integrated Diffusive Zonal Flux of Ideal Age Tracer
+    ! units: yr m3 s-1
+    ! cell_methods: xq:point yh:sum
+"ocean_model", "age_diffy_2d"  [Unused]
+    ! long_name: Vertically Integrated Diffusive Meridional Flux of Ideal Age Tracer
+    ! units: yr m3 s-1
+    ! cell_methods: xh:sum yq:point
+"ocean_model", "age_advection_xy"  [Unused]
+    ! long_name: Horizontal convergence of residual mean advective fluxes of ideal age tracer
+    ! units: yr m s-1
+    ! cell_methods: xh:mean yh:mean zl:sum area:mean
+"ocean_model", "age_advection_xy_xyave"  [Unused]
+    ! long_name: Horizontal convergence of residual mean advective fluxes of ideal age tracer
+    ! units: yr m s-1
+    ! cell_methods: zl:sum
+"ocean_model_z", "age_advection_xy"  [Unused]
+    ! long_name: Horizontal convergence of residual mean advective fluxes of ideal age tracer
+    ! units: yr m s-1
+    ! cell_methods: xh:mean yh:mean z_l:sum area:mean
+"ocean_model_z", "age_advection_xy_xyave"  [Unused]
+    ! long_name: Horizontal convergence of residual mean advective fluxes of ideal age tracer
+    ! units: yr m s-1
+    ! cell_methods: z_l:sum
+"ocean_model", "age_advection_xy_2d"  [Unused]
+    ! long_name: Vertical sum of horizontal convergence of residual mean advective fluxes of ideal age tracer
+    ! units: yr m s-1
+    ! cell_methods: xh:mean yh:mean area:mean
+"ocean_model", "age_tendency"  [Unused]
+    ! long_name: Net time tendency for ideal age tracer
+    ! units: yr s-1
+    ! cell_methods: xh:mean yh:mean zl:mean area:mean
+"ocean_model", "age_tendency_xyave"  [Unused]
+    ! long_name: Net time tendency for ideal age tracer
+    ! units: yr s-1
+    ! cell_methods: zl:mean
+"ocean_model_z", "age_tendency"  [Unused]
+    ! long_name: Net time tendency for ideal age tracer
+    ! units: yr s-1
+    ! cell_methods: xh:mean yh:mean z_l:mean area:mean
+"ocean_model_z", "age_tendency_xyave"  [Unused]
+    ! long_name: Net time tendency for ideal age tracer
+    ! units: yr s-1
     ! cell_methods: z_l:mean
+"ocean_model", "age_dfxy_cont_tendency"  [Unused]
+    ! long_name: Lateral or neutral diffusion tracer content tendency for age
+    ! units: yr m s-1
+    ! cell_methods: xh:sum yh:sum zl:sum area:sum
+"ocean_model", "age_dfxy_cont_tendency_xyave"  [Unused]
+    ! long_name: Lateral or neutral diffusion tracer content tendency for age
+    ! units: yr m s-1
+    ! cell_methods: zl:sum
+"ocean_model_z", "age_dfxy_cont_tendency"  [Unused]
+    ! long_name: Lateral or neutral diffusion tracer content tendency for age
+    ! units: yr m s-1
+    ! cell_methods: xh:sum yh:sum z_l:sum area:sum
+"ocean_model_z", "age_dfxy_cont_tendency_xyave"  [Unused]
+    ! long_name: Lateral or neutral diffusion tracer content tendency for age
+    ! units: yr m s-1
+    ! cell_methods: z_l:sum
+"ocean_model", "age_dfxy_cont_tendency_2d"  [Unused]
+    ! long_name: Depth integrated lateral or neutral diffusion tracer concentration tendency for age
+    ! units: yr m s-1
+    ! cell_methods: xh:sum yh:sum area:sum
+"ocean_model", "age_dfxy_conc_tendency"  [Unused]
+    ! long_name: Lateral (neutral) tracer concentration tendency for age
+    ! units: yr s-1
+    ! cell_methods: xh:mean yh:mean zl:mean area:mean
+"ocean_model", "age_dfxy_conc_tendency_xyave"  [Unused]
+    ! long_name: Lateral (neutral) tracer concentration tendency for age
+    ! units: yr s-1
+    ! cell_methods: zl:mean
+"ocean_model_z", "age_dfxy_conc_tendency"  [Unused]
+    ! long_name: Lateral (neutral) tracer concentration tendency for age
+    ! units: yr s-1
+    ! cell_methods: xh:mean yh:mean z_l:mean area:mean
+"ocean_model_z", "age_dfxy_conc_tendency_xyave"  [Unused]
+    ! long_name: Lateral (neutral) tracer concentration tendency for age
+    ! units: yr s-1
+    ! cell_methods: z_l:mean
+"ocean_model", "ageh_tendency"  [Unused]
+    ! long_name: Net time tendency for ideal age tracer
+    ! units: yr m s-1
+    ! cell_methods: xh:mean yh:mean zl:sum area:mean
+"ocean_model", "ageh_tendency_xyave"  [Unused]
+    ! long_name: Net time tendency for ideal age tracer
+    ! units: yr m s-1
+    ! cell_methods: zl:sum
+"ocean_model_z", "ageh_tendency"  [Unused]
+    ! long_name: Net time tendency for ideal age tracer
+    ! units: yr m s-1
+    ! cell_methods: xh:mean yh:mean z_l:sum area:mean
+"ocean_model_z", "ageh_tendency_xyave"  [Unused]
+    ! long_name: Net time tendency for ideal age tracer
+    ! units: yr m s-1
+    ! cell_methods: z_l:sum
+"ocean_model", "ageh_tendency_2d"  [Unused]
+    ! long_name: Vertical sum of net time tendency for ideal age tracer
+    ! units: yr m s-1
+    ! cell_methods: xh:mean yh:mean area:mean
 "ocean_model_zold", "age"  [Unused]
     ! long_name: Ideal Age Tracer
     ! units: yr
@@ -3615,6 +3933,14 @@
     ! long_name: Ideal Age Tracer
     ! units: yr
     ! standard_name: not provided
+"ocean_model_zold", "agessc"  [Unused]
+    ! long_name: Ideal Age Tracer
+    ! units: yr
+    ! standard_name: ideal_age_tracer
+"ocean_model_zold", "agessc_xyave"  [Unused]
+    ! long_name: Ideal Age Tracer
+    ! units: yr
+    ! standard_name: ideal_age_tracer
 "ocean_model", "taux"  [Used] (CMOR equivalent is "tauuo")
     ! long_name: Zonal surface stress from ocean interactions with atmos and ice
     ! units: Pa
