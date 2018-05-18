@@ -1,9 +1,9 @@
 [submodule "src/FMS"]
 	path = src/FMS
-	url = https://github.com/NOAA-GFDL/FMS.git
+	url = git@github.com:ashao/FMS.git
 [submodule "src/MOM6"]
 	path = src/MOM6
-	url = https://github.com/NOAA-GFDL/MOM6.git
+	url = git@github.com:ashao/MOM6.git
 [submodule "src/SIS2"]
 	path = src/SIS2
 	url = https://github.com/NOAA-GFDL/SIS2.git
@@ -18,7 +18,7 @@
 	url = https://github.com/NOAA-GFDL/icebergs.git
 [submodule "src/coupler"]
 	path = src/coupler
-	url = https://github.com/NOAA-GFDL/coupler.git
+	url = git@github.com:ashao/coupler.git
 [submodule "src/atmos_null"]
 	path = src/atmos_null
 	url = https://github.com/NOAA-GFDL/atmos_null.git
@@ -27,10 +27,10 @@
 	url = https://github.com/NOAA-GFDL/land_null.git
 [submodule "src/mkmf"]
 	path = src/mkmf
-	url = https://github.com/NOAA-GFDL/mkmf.git
+	url = git@github.com:ashao/mkmf.git
 [submodule "tools/analysis/mpl-cmocean"]
 	path = tools/analysis/mpl-cmocean
 	url = https://github.com/matplotlib/cmocean.git
 [submodule "src/MOM5"]
 	path = src/MOM5
-	url = https://github.com/mom-ocean/MOM5/
+	url = git@github.com:ashao/MOM5.git
