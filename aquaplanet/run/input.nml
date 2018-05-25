@@ -86,7 +86,7 @@
 /
 
  &atmos_co2_nml
-    do_co2_restore = .true.               
+    do_co2_restore = .false.               
     restore_tscale = 3.1536e7,
     restore_klimit = 24
     co2_radiation_override = .true.
@@ -255,8 +255,8 @@
 
  &fv_core_nml
     LAYOUT = 1,1
-    nlon =144
-    mlat=90
+    nlon = 144
+    mlat= 90
     nlev = 24
     ncnst = 4
     pnats = 0
@@ -268,13 +268,13 @@
 
  &gas_tf_nml
     interp_form = 'log' ,
-    do_calcstdco2tfs = .true.,
+    do_calcstdco2tfs = .false.,
     do_writestdco2tfs= .false.,
     do_readstdco2tfs = .false.,
-    do_calcstdch4tfs = .true.,
+    do_calcstdch4tfs = .false.,
     do_writestdch4tfs= .false.,
     do_readstdch4tfs = .false.,
-    do_calcstdn2otfs = .true.,
+    do_calcstdn2otfs = .false.,
     do_writestdn2otfs= .false.,
     do_readstdn2otfs = .false.
 /
