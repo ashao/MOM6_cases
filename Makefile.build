@@ -27,7 +27,7 @@ MKMF_SRC = $(SRC_DIR)/mkmf
 LIST_PATHS = $(MKMF_SRC)/bin/list_paths
 MKMF = $(MKMF_SRC)/bin/mkmf
 BUILD = build
-SITE = cccma
+SITE = linux-ubuntu-trusty
 
 # Local relative paths to source available behind GFDL firewall
 ICE_PARAM_SRC=$(SRC_DIR)/ice_ocean_extras/ice_param
