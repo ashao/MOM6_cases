@@ -1,6 +1,6 @@
 #!/bin/bash
 # Load the MIDAS python package used to generate the supergrids on the land and ocean
-FREPATH=/HOME/ras/dev/FRE-NCtools/build.fre-nctools.gnu-generic.bronx12.g26Ti/bronx12/gnu-generic/bin
+FREPATH=~/dev/FRE-NCtools/build.fre-nctools.gnu-generic.bronx12.ywHuE/bronx12/gnu-generic/bin/
 source activate MIDAS
 rm *.nc
 python make_ocean_atmos_grids.py

@@ -66,8 +66,8 @@ fout.close()
 
 ## Atmospheric Grid
 # Define the parameters.
-xrefine = 0.4 # 2.5-degree resolution
-yrefine = 0.5 # 2-degree resolution
+xrefine = 0.8 # 2.5-degree resolution
+yrefine = 1 # 2-degree resolution
 lat0 = -90 # Start at the south pole
 lon0 = 0   # Start the grid at the prime meridian
 lenlat = 180 #total latitude range (-90 to 90)
@@ -78,11 +78,11 @@ lenlon = 360 #total longitude range (0 to 360)
 
 # Number of points in the super grid (twice as much as actual model grid)
 # 'round' used here in case of roundoff error
-nx_super = round(360*xrefine)
-ny_super = round(180*yrefine)
+nx_super = round(360*xrefine*0.5)
+ny_super = round(180*yrefine*0.5)
 
 # Make a equally spaced lat-lon grid
-atmos_grid = midas.rectgrid.supergrid(nx_super,ny_super,'spherical','degrees',lat0,lenlat,lon0,lenlon,cyclic_x=True)
+atmos_grid = midas.rectgrid.supergrid(nx_super*2,ny_super*2,'spherical','degrees',lat0,lenlat,lon0,lenlon,cyclic_x=True)
 atmos_grid.grid_metrics()
 # Overwrite the metrics with those from set_fv_geoms
 print(atmos_grid.area.shape)
