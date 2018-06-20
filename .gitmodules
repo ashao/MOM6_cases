@@ -1,4 +1,4 @@
 [submodule "aquaplanet/MOM6-examples"]
 	path = aquaplanet/MOM6-examples
-    url = git@github.com:ashao/MOM6-examples.git
+    url = https://github.com/ashao/MOM6_cases.git
     branch = aquaplanet
