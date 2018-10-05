@@ -235,7 +235,7 @@ S_REF = 34.75                   !   [ppt] default = 35.0
                                 ! Reference salinity
 DSDZ = -5.0E-3                  !   [ppt/m] default = 0.0
                                 ! Salinity stratification
-DELTA_S = 0.                  !   [ppt] default = 0.0
+DELTA_S = 0.25                  !   [ppt] default = 0.0
                                 ! Salinity difference across baroclinic zone
 DSDX = 0.00                     !   [ppt/m] default = 0.0
                                 ! Linear meridional salinity gradient
