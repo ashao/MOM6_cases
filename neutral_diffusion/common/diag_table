@@ -1,6 +1,7 @@
-"neutral diffusion test case"
+"GOLD Experiment"
 1 1 1 0 0 0
 "prog",      1,"days",1,"days","Time"
+"prog_z",    1,"days",1,"days","Time"
 
 #This is the field section of the diag_table.
 
@@ -13,7 +14,11 @@
 "ocean_model","e",   "e",   "prog","all","none","none",1
 "ocean_model","temp","temp","prog","all","none","none",1
 "ocean_model","salt","salt","prog","all","none","none",1
-"ocean_model","rhopot0","rhopot0","prog","all","none","none",1
+
+"ocean_model_z","u",   "u",   "prog_z","all","none","none",2
+"ocean_model_z","v",   "v",   "prog_z","all","none","none",2
+"ocean_model_z","temp","temp","prog_z","all","none","none",1
+"ocean_model_z","salt","salt","prog_z","all","none","none",1
 
 #=============================================================================================
 #
