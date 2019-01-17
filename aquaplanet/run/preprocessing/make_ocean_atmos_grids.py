@@ -7,21 +7,22 @@ import set_fv_geom
 
 ## Ocean Grid
 # Define the parameters of a cartesian grid
-xrefine = 1
-yrefine = 1
-lat0 = -90 # Start at the south pole
+xrefine = 1.
+yrefine = 1.
+lat0 = -89  # Start at the south pole
 lon0 = 0   # Start the grid at the prime meridian
-lenlat = 180 #total latitude range (-90 to 90)
+lenlat = 178 #total latitude range (-90 to 90)
 lenlon = 360 #total longitude range (0 to 360)
 # Define parameters related to topography
 ocean_depth = 5000. # Depth of ocean points in meters
 land_depth = -0.    # "depth" of the land points
-cap_extent = 80 # How far equatorward the land at poles extends
+cap_extent = 70 # How far equatorward the land at poles extends
 
 # Number of points in the super grid (twice as much as actual model grid)
 # 'round' used here in case of roundoff error
-nx_super = round(360*xrefine) # Nominally 2-degree zonal resolution
-ny_super = round(180*yrefine) # Nominally 2-degree meridional resolution
+lenlat*yrefine
+ny_super = int(round(lenlat*yrefine))
+nx_super = int(round(lenlon*xrefine)) # Nominally 2-degree zonal resolution
 
 # Make a equally spaced lat-lon grid
 ocean_grid = midas.rectgrid.supergrid(nx_super,ny_super,'spherical','degrees',lat0,lenlat,lon0,lenlon,cyclic_x=True)
@@ -52,6 +53,21 @@ yax = fout.createDimension('ny',ny_grid)
 xax = fout.createDimension('nx',nx_grid)
 # Create the 'ntiles' dimension needed for mosaic generation
 fout.createDimension('ntiles',1)
+# Output the T-point coordinates lat/lon
+xvar = fout.createVariable('geolon','f8',('ny','nx'))
+xvar[:,:] = grid.x_T
+yvar = fout.createVariable('geolat','f8',('ny','nx'))
+yvar[:,:] = grid.y_T
+
+print("Ocean grid created")
+print("T-grid lon Max: {}\t Min: {}  \tAbsolute min: {}".format(grid.lonh.max(), grid.lonh.min(), np.abs(grid.lonh).min()))
+print("T-grid lat Max: {}\t Min: {}  \tAbsolute min: {}".format(grid.lath.max(), grid.lath.min(), np.abs(grid.lath).min()))
+print("Q-grid lon Max: {}\t Min: {}  \tAbsolute min: {}".format(grid.lonq.max(), grid.lonq.min(), np.abs(grid.lonq).min()))
+print("Q-grid lat Max: {}\t Min: {}  \tAbsolute min: {}".format(grid.latq.max(), grid.latq.min(), np.abs(grid.latq).min()))
+# Do some basic sanity checkinn of the grid
+assert grid.lath[0] == -grid.lath[-1], "Grid is not symmetric in latitude"
+assert np.abs(grid.lath).min() == 0., "T-grid should have a point exactly at 0. latitude"
+
 # Create variables storing mean and variance of topography
 meantopo = fout.createVariable('depth','f8',('ny','nx'))
 meantopo.units = 'meters'
@@ -78,16 +94,16 @@ lenlon = 360 #total longitude range (0 to 360)
 
 # Number of points in the super grid (twice as much as actual model grid)
 # 'round' used here in case of roundoff error
-nx_super = round(360*xrefine*0.5)
-ny_super = round(180*yrefine*0.5)
+nx_super = int(round(360*xrefine*0.5))
+ny_super = int(round(180*yrefine*0.5))
 
 # Make a equally spaced lat-lon grid
 atmos_grid = midas.rectgrid.supergrid(nx_super*2,ny_super*2,'spherical','degrees',lat0,lenlat,lon0,lenlon,cyclic_x=True)
 atmos_grid.grid_metrics()
 # Overwrite the metrics with those from set_fv_geoms
-print(atmos_grid.area.shape)
+#print(atmos_grid.area.shape)
 y, x = set_fv_geom.set_fv_geom(int(ny_super), int(nx_super))
-print( x.shape, y.shape)
+#print( x.shape, y.shape)
 atmos_grid.x[:,:] = x
 atmos_grid.y[:,:] = y
 atmos_grid.angle_dx[:,:] = 0.
