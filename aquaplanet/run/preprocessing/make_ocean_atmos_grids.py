@@ -9,9 +9,9 @@ import set_fv_geom
 # Define the parameters of a cartesian grid
 xrefine = 1.
 yrefine = 1.
-lat0 = -89  # Start at the south pole
+lat0 = -81  # Start at the south pole
 lon0 = 0   # Start the grid at the prime meridian
-lenlat = 178 #total latitude range (-90 to 90)
+lenlat = 162 #total latitude range (-90 to 90)
 lenlon = 360 #total longitude range (0 to 360)
 # Define parameters related to topography
 ocean_depth = 5000. # Depth of ocean points in meters
