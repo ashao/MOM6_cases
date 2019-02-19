@@ -14,6 +14,7 @@
 "ocean_model","e",   "e",   "prog","all","none","none",1
 "ocean_model","temp","temp","prog","all","none","none",1
 "ocean_model","salt","salt","prog","all","none","none",1
+"ocean_model","rhoinsitu","rhoinsitu","prog","all","none","none",1
 
 "ocean_model_z","u",   "u",   "prog_z","all","none","none",2
 "ocean_model_z","v",   "v",   "prog_z","all","none","none",2
