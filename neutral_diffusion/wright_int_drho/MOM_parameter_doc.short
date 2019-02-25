@@ -79,7 +79,6 @@ LENLAT = 40.0                   !   [k]
                                 ! The latitudinal or y-direction length of the domain.
 LENLON = 200.0                  !   [k]
                                 ! The longitudinal or x-direction length of the domain.
-WESTLON = 0.0
 TOPO_CONFIG = "flat"            !
                                 ! This specifies how bathymetry is specified:
                                 !     file - read bathymetric information from the file
@@ -123,15 +122,6 @@ ROTATION = "beta"               ! default = "2omegasinlat"
 ! === module MOM_tracer_registry ===
 
 ! === module MOM_EOS ===
-EQN_OF_STATE = "LINEAR"         ! default = "WRIGHT"
-                                ! EQN_OF_STATE determines which ocean equation of state
-                                ! should be used.  Currently, the valid choices are
-                                ! "LINEAR", "UNESCO", "WRIGHT", "NEMO" and "TEOS10".
-                                ! This is only used if USE_EOS is true.
-DRHO_DT = 0.0                   !   [kg m-3 K-1] default = -0.2
-                                ! When EQN_OF_STATE=LINEAR,
-                                ! this is the partial derivative of density with
-                                ! temperature.
 
 ! === module MOM_restart ===
 
@@ -173,7 +163,7 @@ REGRIDDING_COORDINATE_MODE = "Z*" ! default = "LAYER"
                                 !  HYCOM1 - HyCOM-like hybrid coordinate
                                 !  SLIGHT - stretched coordinates above continuous isopycnal
                                 !  ADAPTIVE - optimize for smooth neutral density surfaces
-!ALE_RESOLUTION = 25*8.0        !   [m]
+!ALE_RESOLUTION = 10*20.0       !   [m]
                                 ! The distribution of vertical resolution for the target
                                 ! grid used for Eulerian-like coordinates. For example,
                                 ! in z-coordinate mode, the parameter is a list of level
@@ -291,7 +281,7 @@ KV = 1.0E-06                    !   [m2 s-1]
 ! === module MOM_continuity ===
 
 ! === module MOM_continuity_PPM ===
-ETA_TOLERANCE = 1.0E-12         !   [m] default = 1.0E-14
+ETA_TOLERANCE = 1.0E-12         !   [m] default = 5.000000000000001E-15
                                 ! The tolerance for the differences between the
                                 ! barotropic and baroclinic estimates of the sea surface
                                 ! height due to the fluxes through each face.  The total
@@ -343,8 +333,6 @@ KVML = 0.0                      !   [m2 s-1] default = 1.0E-06
 MAXVEL = 10.0                   !   [m s-1] default = 3.0E+08
                                 ! The maximum velocity allowed before the velocity
                                 ! components are truncated.
-
-! === module MOM_PointAccel ===
 
 ! === module MOM_barotropic ===
 BOUND_BT_CORRECTION = True      !   [Boolean] default = False
@@ -480,7 +468,7 @@ NDIFF_REMAPPING_SCHEME = "PPM_H4" ! default = "PLM"
                                 ! PPM_IH4     (3rd-order accurate)
                                 ! PQM_IH4IH3  (4th-order accurate)
                                 ! PQM_IH6IH5  (5th-order accurate)
-NEUTRAL_POS_METHOD = 3          ! default = 2
+NEUTRAL_POS_METHOD = 1          ! default = 2
                                 ! Method used to find the neutral position
                                 ! 1. Delta_rho varies linearly, find 0 crossing
                                 ! 2. Alpha and beta vary linearly from top to bottom,
@@ -489,17 +477,11 @@ NEUTRAL_POS_METHOD = 3          ! default = 2
                                 !    dependence) Newton's method for neutral position
                                 ! 4. Full nonlinear equation of state, Brent's method
                                 !    for neutral position
-DELTA_RHO_FORM = "full"         ! default = "mid_pressure"
+DELTA_RHO_FORM = "local_pressure" ! default = "mid_pressure"
                                 ! Determine how the difference in density is calculated
                                 !   full       : Difference of in-situ densities
                                 !   no_pressure: Calculated from dRdT, dRdS, but no
                                 !                pressure dependence
-NDIFF_DRHO_TOL = 0.0            !   [not defined] default = 1.0E-10
-                                ! Sets the convergence criterion for finding the neutral
-                                ! position within a layer in kg m-3.
-NDIFF_MAX_ITER = 30             ! default = 10
-                                ! The maximum number of iterations to be done before
-                                ! exiting the iterative loop to find the neutral surface
 
 ! === module MOM_sum_output ===
 MAXTRUNC = 10                   !   [truncations save_interval-1] default = 0
@@ -553,4 +535,3 @@ MAXCPU = 2.88E+04               !   [wall-clock seconds] default = -1.0
                                 ! factor of the number of processors used.
 
 ! === module MOM_file_parser ===
-DO_DYNAMICS = False

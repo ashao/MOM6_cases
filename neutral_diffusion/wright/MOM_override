@@ -1,0 +1,4 @@
+#override EQN_OF_STATE = "WRIGHT"
+!#override DELTA_RHO_FORM = "mid_pressure"
+#override DELTA_RHO_FORM = "full"
+#override NEUTRAL_POS_METHOD = 3
