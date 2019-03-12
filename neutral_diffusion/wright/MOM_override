@@ -1,4 +1,5 @@
-#override EQN_OF_STATE = "WRIGHT"
-!#override DELTA_RHO_FORM = "mid_pressure"
+#override EQN_OF_STATE = "TEOS10"
+#override TFREEZE_FORM = "TEOS10"
 #override DELTA_RHO_FORM = "full"
 #override NEUTRAL_POS_METHOD = 3
+#override NK=25
