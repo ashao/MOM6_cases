@@ -24,7 +24,7 @@ READ_INPUT_NML: input.nml
  
 
 MPP module unknown
-MPP started with NPES=     1
+MPP started with NPES=     4
 Using MPI library for message passing...
 Realtime clock resolution=  1.0000E-09 sec ( 999999999 ticks/sec)
 Clock rolls over after   9.2234E+09 sec ( 9223372036854775806 ticks)
@@ -149,12 +149,12 @@ MOM_domains: unknown
   MOM_domains NIGLOBAL: 20
   MOM_domains NJGLOBAL: 4
   MOM_domains MASKTABLE: MOM_mask_table
-  MOM_domains NIPROC: 1
+  MOM_domains NIPROC: 4
   MOM_domains NJPROC: 1
-  MOM_domains LAYOUT: 1, 1
+  MOM_domains LAYOUT: 4, 1
   MOM_domains IO_LAYOUT: 1, 1
 
-MOM domain decomposition:     1 X    1
+MOM domain decomposition:     4 X    1
    pe,   is,  ie,  js,  je,    isd, ied, jsd, jed
 MOM_debugging: unknown
   MOM_debugging DEBUG: False
@@ -207,7 +207,7 @@ unknown
 MOM_io: unknown
 MOM_hor_index: unknown
 
-MOM domain decomposition:     1 X    1
+MOM domain decomposition:     4 X    1
    pe,   is,  ie,  js,  je,    isd, ied, jsd, jed
 MOM_verticalGrid: unknown
   MOM_verticalGrid G_EARTH: 10.0
@@ -216,7 +216,7 @@ MOM_verticalGrid: unknown
   MOM_verticalGrid ANGSTROM: 1.0E-15
   MOM_verticalGrid H_RESCALE_POWER: 0
   MOM_verticalGrid H_TO_M: 1.0
-  MOM_verticalGrid NK: 10
+  MOM_verticalGrid NK: 25
   MOM_verticalGrid M to THICKNESS: 1.0
   MOM_verticalGrid M to THICKNESS rescaled by 2^-n: 1.0
   MOM_verticalGrid THICKNESS to M rescaled by 2^n: 1.0
@@ -252,12 +252,9 @@ MOM_open_boundary: unknown
 MOM_tracer_registry: unknown
   MOM NK_RHO_VARIES: 0
 MOM_EOS: unknown
-  MOM_EOS EQN_OF_STATE: WRIGHT
+  MOM_EOS EQN_OF_STATE: TEOS10
   MOM_EOS EOS_QUADRATURE: False
-  MOM_EOS TFREEZE_FORM: LINEAR
-  MOM_EOS TFREEZE_S0_P0: 0.0
-  MOM_EOS DTFREEZE_DS: -0.054
-  MOM_EOS DTFREEZE_DP: 0.0
+  MOM_EOS TFREEZE_FORM: TEOS10
 MOM_restart: unknown
   MOM_restart PARALLEL_RESTARTFILES: False
   MOM_restart RESTARTFILE: MOM.res
@@ -269,7 +266,7 @@ MOM_tracer_flow_control: unknown
   MOM_tracer_flow_control USE_DOME_TRACER: False
   MOM_tracer_flow_control USE_ISOMIP_TRACER: False
   MOM_tracer_flow_control USE_IDEAL_AGE_TRACER: False
-  MOM_tracer_flow_control USE_REGIONAL_DYES: False
+  MOM_tracer_flow_control USE_REGIONAL_DYES: True
   MOM_tracer_flow_control USE_OIL_TRACER: False
   MOM_tracer_flow_control USE_ADVECTION_TEST_TRACER: False
   MOM_tracer_flow_control USE_OCMIP2_CFC: False
@@ -277,6 +274,14 @@ MOM_tracer_flow_control: unknown
   MOM_tracer_flow_control USE_PSEUDO_SALT_TRACER: False
   MOM_tracer_flow_control USE_BOUNDARY_IMPULSE_TRACER: False
   MOM_tracer_flow_control USE_DYED_OBC_TRACER: False
+regional_dyes: unknown
+  regional_dyes NUM_DYE_TRACERS: 1
+  regional_dyes DYE_SOURCE_MINLON: 80.0
+  regional_dyes DYE_SOURCE_MAXLON: 120.0
+  regional_dyes DYE_SOURCE_MINLAT: 0.0
+  regional_dyes DYE_SOURCE_MAXLAT: 40.0
+  regional_dyes DYE_SOURCE_MINDEPTH: 90.0
+  regional_dyes DYE_SOURCE_MAXDEPTH: 110.0
 MOM_coord_initialization: unknown
   MOM_coord_initialization DEBUG: False
   MOM_coord_initialization COORD_CONFIG: linear
@@ -288,7 +293,7 @@ MOM_coord_initialization: unknown
   MOM_ALE INPUTDIR: INPUT
   MOM_ALE REGRIDDING_COORDINATE_UNITS: m
   MOM_ALE ALE_COORDINATE_CONFIG: UNIFORM
-  MOM_ALE !ALE_RESOLUTION: 10*20.0
+  MOM_ALE !ALE_RESOLUTION: 25*8.0
   MOM_ALE MIN_THICKNESS: 0.001
   MOM_ALE REMAPPING_SCHEME: PPM_H4
   MOM_ALE FATAL_CHECK_RECONSTRUCTIONS: False
@@ -311,11 +316,11 @@ MOM_state_initialization: unknown
   MOM_state_initialization TS_CONFIG: baroclinic_zone
 baroclinic_zone_initialization: unknown
   baroclinic_zone_initialization S_REF: 34.75
-  baroclinic_zone_initialization DSDZ: -0.005
+  baroclinic_zone_initialization DSDZ: -0.0025
   baroclinic_zone_initialization DELTA_S: 0.25
   baroclinic_zone_initialization DSDX: 0.0
   baroclinic_zone_initialization T_REF: 10.0
-  baroclinic_zone_initialization DTDZ: 0.0025
+  baroclinic_zone_initialization DTDZ: 0.01
   baroclinic_zone_initialization DELTA_T: 0.0
   baroclinic_zone_initialization DTDX: -0.005
   baroclinic_zone_initialization L_ZONE: 100.0
@@ -481,10 +486,10 @@ MOM_barotropic: unknown
   MOM_barotropic DTBT: 5.0
   MOM_barotropic BT_USE_OLD_CORIOLIS_BRACKET_BUG: False
 
-MOM domain decomposition:     1 X    1
+MOM domain decomposition:     4 X    1
    pe,   is,  ie,  js,  je,    isd, ied, jsd, jed
   MOM_barotropic DTBT as used: 5.0
-  MOM_barotropic estimated maximum DTBT: 130.3514877619847
+  MOM_barotropic estimated maximum DTBT: 130.34758090932678
 MOM_thickness_diffuse: unknown
   MOM_thickness_diffuse THICKNESSDIFFUSE: False
   MOM_thickness_diffuse KHTH: 0.0
@@ -640,7 +645,7 @@ MOM_neutral_diffusion: unknown
   MOM_neutral_diffusion NDIFF_BOUNDARY_EXTRAP: True
   MOM_neutral_diffusion NDIFF_REMAPPING_SCHEME: PPM_H4
   MOM_neutral_diffusion NEUTRAL_POS_METHOD: 1
-  MOM_neutral_diffusion DELTA_RHO_FORM: local_pressure
+  MOM_neutral_diffusion DELTA_RHO_FORM: full
   MOM_neutral_diffusion NDIFF_DEBUG: False
   MOM_tracer_hor_diff DEBUG: False
 MOM_obsolete_diagnostics: unknown
@@ -718,7 +723,7 @@ DIAG_OUTPUT_MOD
 unknown
 
                                      time
-Total runtime                         7.736112
-Initialization                        0.088209
-Main loop                             7.644397
-Termination                           0.001516
+Total runtime                         6.312804
+Initialization                        0.157173
+Main loop                             6.151009
+Termination                           0.001804

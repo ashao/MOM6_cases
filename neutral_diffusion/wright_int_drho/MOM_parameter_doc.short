@@ -51,7 +51,7 @@ RHO_0 = 1000.0                  !   [kg m-3] default = 1035.0
                                 ! parameters from vertical units of m to kg m-2.
 ANGSTROM = 1.0E-15              !   [m] default = 1.0E-10
                                 ! The minumum layer thickness, usually one-Angstrom.
-NK = 10                         !   [nondim]
+NK = 25                         !   [nondim]
                                 ! The number of model layers.
 
 ! === module MOM_fixed_initialization ===
@@ -122,10 +122,38 @@ ROTATION = "beta"               ! default = "2omegasinlat"
 ! === module MOM_tracer_registry ===
 
 ! === module MOM_EOS ===
+EQN_OF_STATE = "TEOS10"         ! default = "WRIGHT"
+                                ! EQN_OF_STATE determines which ocean equation of state
+                                ! should be used.  Currently, the valid choices are
+                                ! "LINEAR", "UNESCO", "WRIGHT", "NEMO" and "TEOS10".
+                                ! This is only used if USE_EOS is true.
+TFREEZE_FORM = "TEOS10"         ! default = "LINEAR"
+                                ! TFREEZE_FORM determines which expression should be
+                                ! used for the freezing point.  Currently, the valid
+                                ! choices are "LINEAR", "MILLERO_78", "TEOS10"
 
 ! === module MOM_restart ===
 
 ! === module MOM_tracer_flow_control ===
+USE_REGIONAL_DYES = True        !   [Boolean] default = False
+                                ! If true, use the regional_dyes tracer package.
+
+! === module regional_dyes ===
+NUM_DYE_TRACERS = 1             ! default = 0
+                                ! The number of dye tracers in this run. Each tracer
+                                ! should have a separate region.
+DYE_SOURCE_MINLON = 80.0        !   [not defined]
+                                ! This is the starting longitude at which we start injecting dyes.
+DYE_SOURCE_MAXLON = 120.0       !   [not defined]
+                                ! This is the ending longitude at which we finish injecting dyes.
+DYE_SOURCE_MINLAT = 0.0         !   [not defined]
+                                ! This is the starting latitude at which we start injecting dyes.
+DYE_SOURCE_MAXLAT = 40.0        !   [not defined]
+                                ! This is the ending latitude at which we finish injecting dyes.
+DYE_SOURCE_MINDEPTH = 90.0      !   [m]
+                                ! This is the minumum depth at which we inject dyes.
+DYE_SOURCE_MAXDEPTH = 110.0     !   [m]
+                                ! This is the maximum depth at which we inject dyes.
 
 ! === module MOM_coord_initialization ===
 COORD_CONFIG = "linear"         !
@@ -163,7 +191,7 @@ REGRIDDING_COORDINATE_MODE = "Z*" ! default = "LAYER"
                                 !  HYCOM1 - HyCOM-like hybrid coordinate
                                 !  SLIGHT - stretched coordinates above continuous isopycnal
                                 !  ADAPTIVE - optimize for smooth neutral density surfaces
-!ALE_RESOLUTION = 10*20.0       !   [m]
+!ALE_RESOLUTION = 25*8.0        !   [m]
                                 ! The distribution of vertical resolution for the target
                                 ! grid used for Eulerian-like coordinates. For example,
                                 ! in z-coordinate mode, the parameter is a list of level
@@ -240,11 +268,11 @@ TS_CONFIG = "baroclinic_zone"   !
 BCZIC%
 S_REF = 34.75                   !   [ppt] default = 35.0
                                 ! Reference salinity
-DSDZ = -0.005                   !   [ppt/m] default = 0.0
+DSDZ = -0.0025                  !   [ppt/m] default = 0.0
                                 ! Salinity stratification
 DELTA_S = 0.25                  !   [ppt] default = 0.0
                                 ! Salinity difference across baroclinic zone
-DTDZ = 0.0025                   !   [C/m] default = 0.0
+DTDZ = 0.01                     !   [C/m] default = 0.0
                                 ! Temperature stratification
 DTDX = -0.005                   !   [C/kilometers] default = 0.0
                                 ! Meridional temperature difference
@@ -281,7 +309,7 @@ KV = 1.0E-06                    !   [m2 s-1]
 ! === module MOM_continuity ===
 
 ! === module MOM_continuity_PPM ===
-ETA_TOLERANCE = 1.0E-12         !   [m] default = 5.000000000000001E-15
+ETA_TOLERANCE = 1.0E-12         !   [m] default = 1.25E-14
                                 ! The tolerance for the differences between the
                                 ! barotropic and baroclinic estimates of the sea surface
                                 ! height due to the fluxes through each face.  The total
@@ -468,16 +496,14 @@ NDIFF_REMAPPING_SCHEME = "PPM_H4" ! default = "PLM"
                                 ! PPM_IH4     (3rd-order accurate)
                                 ! PQM_IH4IH3  (4th-order accurate)
                                 ! PQM_IH6IH5  (5th-order accurate)
-NEUTRAL_POS_METHOD = 1          ! default = 2
+NEUTRAL_POS_METHOD = 1          ! default = 3
                                 ! Method used to find the neutral position
                                 ! 1. Delta_rho varies linearly, find 0 crossing
                                 ! 2. Alpha and beta vary linearly from top to bottom,
                                 !    Newton's method for neutral position
-                                ! 3. Keep recalculating alpha and beta (no pressure
-                                !    dependence) Newton's method for neutral position
-                                ! 4. Full nonlinear equation of state, Brent's method
+                                ! 3. Full nonlinear equation of state, use regula falsi
                                 !    for neutral position
-DELTA_RHO_FORM = "local_pressure" ! default = "mid_pressure"
+DELTA_RHO_FORM = "full"         ! default = "mid_pressure"
                                 ! Determine how the difference in density is calculated
                                 !   full       : Difference of in-situ densities
                                 !   no_pressure: Calculated from dRdT, dRdS, but no

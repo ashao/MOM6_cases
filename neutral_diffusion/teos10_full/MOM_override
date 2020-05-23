@@ -1,0 +1,6 @@
+#override EQN_OF_STATE = "TEOS10"
+#override TFREEZE_FORM = "TEOS10"
+NDIFF_REF_PRES = 2.e7
+DIAG_COORD_DEF_Z="UNIFORM:100"
+#override DAYMAX = 1
+#override NK=5

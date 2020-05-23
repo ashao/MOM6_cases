@@ -1,0 +1,92 @@
+========================================================================
+READ_ASCII_FILE: unknown
+READ_ASCII_FILE: File: input.nml
+========================================================================
+READ_INPUT_NML: unknown
+READ_INPUT_NML: input.nml 
+  &MOM_input_nml
+          output_directory = './',
+          input_filename = 'n'
+          restart_input_dir = 'INPUT/',
+          restart_output_dir = 'RESTART/',
+          parameter_filename = 'MOM_input',
+                               'MOM_override' /
+ 
+  &diag_manager_nml
+  /
+ 
+  &fms_nml
+          domains_stack_size = 710000,
+          stack_size = 0 /
+ 
+  &ocean_domains_nml
+  /
+ 
+
+MPP module unknown
+MPP started with NPES=     4
+Using MPI library for message passing...
+Realtime clock resolution=  1.0000E-09 sec ( 999999999 ticks/sec)
+Clock rolls over after   9.2234E+09 sec ( 9223372036854775806 ticks)
+
+MPP Parameter module unknown
+
+MPP Data module unknown
+
+MPP_DOMAINS module unknown
+ &MPP_IO_NML
+ HEADER_BUFFER_VAL       =       16384,
+ GLOBAL_FIELD_ON_ROOT_PE = T,
+ IO_CLOCKS_ON    = F,
+ SHUFFLE =           0,
+ DEFLATE_LEVEL   =          -1,
+ CF_COMPLIANCE   = F
+ /
+
+MPP_IO module unknown
+
+Using netCDF library version 4.6.1 of Dec 10 2018 14:16:43 $
+
+================================================================================
+FMS_IO_MOD
+unknown
+
+================================================================================
+FMS_MOD
+unknown
+ &FMS_NML
+ READ_ALL_PE     = T,
+ CLOCK_GRAIN     = NONE            ,
+ CLOCK_FLAGS     = NONE            ,
+ WARNING_LEVEL   = warning ,
+ IOSPEC_IEEE32   = -N ieee_32                                                      ,
+ STACK_SIZE      =           0,
+ DOMAINS_STACK_SIZE      =      710000,
+ PRINT_MEMORY_USAGE      = F
+ /
+ nml_error_codes=
+
+================================================================================
+CONSTANTS_MOD
+unknown
+
+================================================================================
+TIME_MANAGER_MOD
+unknown
+
+================================================================================
+TIME_INTERP_EXTERNAL_MOD
+unknown
+ &TIME_INTERP_EXTERNAL_NML
+ NUM_IO_BUFFERS  =           2,
+ DEBUG_THIS_MODULE       = F,
+ MAX_FIELDS      =         100,
+ MAX_FILES       =          40
+ /
+
+================================================================================
+TIME_INTERP_MOD
+unknown
+ &TIME_INTERP_NML
+ PERTHLIKE_BEHAVIOR      = F
+ /

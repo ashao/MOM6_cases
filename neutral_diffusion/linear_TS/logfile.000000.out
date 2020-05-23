@@ -1,0 +1,739 @@
+========================================================================
+READ_ASCII_FILE: unknown
+READ_ASCII_FILE: File: input.nml
+========================================================================
+READ_INPUT_NML: unknown
+READ_INPUT_NML: input.nml 
+  &MOM_input_nml
+          output_directory = './',
+          input_filename = 'n'
+          restart_input_dir = 'INPUT/',
+          restart_output_dir = 'RESTART/',
+          parameter_filename = 'MOM_input',
+                               'MOM_override' /
+ 
+  &diag_manager_nml
+  /
+ 
+  &fms_nml
+          domains_stack_size = 710000,
+          stack_size = 0 /
+ 
+  &ocean_domains_nml
+  /
+ 
+
+MPP module unknown
+MPP started with NPES=     1
+Using MPI library for message passing...
+Realtime clock resolution=  1.0000E-09 sec ( 999999999 ticks/sec)
+Clock rolls over after   9.2234E+09 sec ( 9223372036854775806 ticks)
+
+MPP Parameter module unknown
+
+MPP Data module unknown
+
+MPP_DOMAINS module unknown
+ &MPP_IO_NML
+ HEADER_BUFFER_VAL       =       16384,
+ GLOBAL_FIELD_ON_ROOT_PE = T,
+ IO_CLOCKS_ON    = F,
+ SHUFFLE =           0,
+ DEFLATE_LEVEL   =          -1,
+ CF_COMPLIANCE   = F
+ /
+
+MPP_IO module unknown
+
+Using netCDF library version 4.6.1 of Dec 10 2018 14:16:43 $
+
+================================================================================
+FMS_IO_MOD
+unknown
+
+================================================================================
+FMS_MOD
+unknown
+ &FMS_NML
+ READ_ALL_PE     = T,
+ CLOCK_GRAIN     = NONE            ,
+ CLOCK_FLAGS     = NONE            ,
+ WARNING_LEVEL   = warning ,
+ IOSPEC_IEEE32   = -N ieee_32                                                      ,
+ STACK_SIZE      =           0,
+ DOMAINS_STACK_SIZE      =      710000,
+ PRINT_MEMORY_USAGE      = F
+ /
+ nml_error_codes=
+
+================================================================================
+CONSTANTS_MOD
+unknown
+
+================================================================================
+TIME_MANAGER_MOD
+unknown
+
+================================================================================
+TIME_INTERP_EXTERNAL_MOD
+unknown
+ &TIME_INTERP_EXTERNAL_NML
+ NUM_IO_BUFFERS  =           2,
+ DEBUG_THIS_MODULE       = F,
+ MAX_FIELDS      =         100,
+ MAX_FILES       =          40
+ /
+
+================================================================================
+TIME_INTERP_MOD
+unknown
+ &TIME_INTERP_NML
+ PERTHLIKE_BEHAVIOR      = F
+ /
+find_obsolete_params: unknown
+MOM: unknown
+  MOM VERBOSITY: 2
+  MOM DO_UNIT_TESTS: False
+MOM_unit_scaling: unknown
+  MOM_unit_scaling Z_RESCALE_POWER: 0
+  MOM_unit_scaling L_RESCALE_POWER: 0
+  MOM_unit_scaling T_RESCALE_POWER: 0
+  MOM SPLIT: True
+  MOM CALC_RHO_FOR_SEA_LEVEL: False
+  MOM ENABLE_THERMODYNAMICS: True
+  MOM USE_EOS: True
+  MOM DIABATIC_FIRST: False
+  MOM USE_CONTEMP_ABSSAL: False
+  MOM ADIABATIC: False
+  MOM USE_LEGACY_DIABATIC_DRIVER: True
+  MOM OFFLINE_TRACER_MODE: False
+  MOM USE_REGRIDDING: True
+  MOM DO_REMAP: True
+  MOM BULKMIXEDLAYER: False
+  MOM THICKNESSDIFFUSE: False
+  MOM THICKNESSDIFFUSE_FIRST: False
+  MOM BATHYMETRY_AT_VEL: False
+  MOM DEBUG: False
+  MOM DEBUG_TRUNCATIONS: False
+  MOM DT: 3600.0
+  MOM DT_THERM: 3600.0
+  MOM THERMO_SPANS_COUPLING: False
+  MOM HMIX_SFC_PROP: 1.0
+  MOM HMIX_UV_SFC_PROP: 0.0
+  MOM HFREEZE: -1.0
+  MOM MIN_Z_DIAG_INTERVAL: 0.0
+  MOM INTERPOLATE_P_SURF: False
+  MOM DTBT: 5.0
+  MOM DTBT_RESET_PERIOD: -1.0
+  MOM FRAZIL: False
+  MOM DO_GEOTHERMAL: False
+  MOM BOUND_SALINITY: False
+  MOM C_P: 3925.0
+  MOM P_REF: 2.0E+07
+  MOM GLOBAL_INDEXING: False
+  MOM FIRST_DIRECTION: 0
+  MOM CHECK_BAD_SURFACE_VALS: False
+  MOM SAVE_INITIAL_CONDS: True
+  MOM IC_OUTPUT_FILE: Initial_state
+  MOM WRITE_GEOM: 1
+  MOM ENSEMBLE_OCEAN: False
+MOM_domains: unknown
+  MOM_domains REENTRANT_X: False
+  MOM_domains REENTRANT_Y: True
+  MOM_domains TRIPOLAR_N: False
+  MOM_domains !SYMMETRIC_MEMORY_: False
+  MOM_domains NONBLOCKING_UPDATES: False
+  MOM_domains THIN_HALO_UPDATES: True
+  MOM_domains !STATIC_MEMORY_: False
+  MOM_domains NIHALO: 4
+  MOM_domains NJHALO: 4
+  MOM_domains NIGLOBAL: 20
+  MOM_domains NJGLOBAL: 4
+  MOM_domains MASKTABLE: MOM_mask_table
+  MOM_domains NIPROC: 1
+  MOM_domains NJPROC: 1
+  MOM_domains LAYOUT: 1, 1
+  MOM_domains IO_LAYOUT: 1, 1
+
+MOM domain decomposition:     1 X    1
+   pe,   is,  ie,  js,  je,    isd, ied, jsd, jed
+MOM_debugging: unknown
+  MOM_debugging DEBUG: False
+  MOM_debugging DEBUG_CHKSUMS: False
+  MOM_debugging DEBUG_REDUNDANT: False
+MOM_checksums: unknown
+
+================================================================================
+DIAG_UTIL_MOD
+unknown
+
+================================================================================
+DIAG_DATA_MOD
+unknown
+
+================================================================================
+DIAG_MANAGER_MOD
+unknown
+ &DIAG_MANAGER_NML
+ APPEND_PELIST_NAME      = F,
+ MIX_SNAPSHOT_AVERAGE_FIELDS     = F,
+ MAX_OUTPUT_FIELDS       =         300,
+ MAX_INPUT_FIELDS        =         600,
+ MAX_AXES        =          60,
+ DO_DIAG_FIELD_LOG       = F,
+ WRITE_BYTES_IN_FILE     = F,
+ DEBUG_DIAG_MANAGER      = F,
+ MAX_NUM_AXIS_SETS       =          25,
+ MAX_FILES       =          31,
+ USE_CMOR        = F,
+ ISSUE_OOR_WARNINGS      = T,
+ OOR_WARNINGS_FATAL      = F,
+ MAX_OUT_PER_IN_FIELD    =         150,
+ FLUSH_NC_FILES  = F,
+ REGION_OUT_USE_ALT_VALUE        = T,
+ MAX_FIELD_ATTRIBUTES    =           4,
+ MAX_FILE_ATTRIBUTES     =           2,
+ MAX_AXIS_ATTRIBUTES     =           4,
+ PREPEND_DATE    = T,
+ WRITE_MANIFEST_FILE     = F
+ /
+========================================================================
+READ_ASCII_FILE: unknown
+READ_ASCII_FILE: File: diag_table
+base date used =    1 January  1  0:00:00 gmt
+
+================================================================================
+DIAG_AXIS_MOD
+unknown
+MOM_io: unknown
+MOM_hor_index: unknown
+
+MOM domain decomposition:     1 X    1
+   pe,   is,  ie,  js,  je,    isd, ied, jsd, jed
+MOM_verticalGrid: unknown
+  MOM_verticalGrid G_EARTH: 10.0
+  MOM_verticalGrid RHO_0: 1000.0
+  MOM_verticalGrid BOUSSINESQ: True
+  MOM_verticalGrid ANGSTROM: 1.0E-15
+  MOM_verticalGrid H_RESCALE_POWER: 0
+  MOM_verticalGrid H_TO_M: 1.0
+  MOM_verticalGrid NK: 25
+  MOM_verticalGrid M to THICKNESS: 1.0
+  MOM_verticalGrid M to THICKNESS rescaled by 2^-n: 1.0
+  MOM_verticalGrid THICKNESS to M rescaled by 2^n: 1.0
+MOM_fixed_initialization: unknown
+  MOM_fixed_initialization DEBUG: False
+  MOM_fixed_initialization INPUTDIR: INPUT
+MOM_grid_init: unknown
+  MOM_grid_init GRID_CONFIG: cartesian
+  MOM_grid_init DEBUG: False
+  MOM_grid_init set_grid_metrics_cartesian AXIS_UNITS: k
+  MOM_grid_init set_grid_metrics_cartesian SOUTHLAT: 0.0
+  MOM_grid_init set_grid_metrics_cartesian LENLAT: 40.0
+  MOM_grid_init set_grid_metrics_cartesian WESTLON: 0.0
+  MOM_grid_init set_grid_metrics_cartesian LENLON: 200.0
+  MOM_grid_init set_grid_metrics_cartesian RAD_EARTH: 6.378E+06
+  MOM_grid_init set_grid_metrics_cartesian explicit AXIS_UNITS: kilometers
+  MOM_initialize_topography TOPO_CONFIG: flat
+  initialize_topography_named MINIMUM_DEPTH: 0.1
+  MOM_initialize_topography MAXIMUM_DEPTH: 200.0
+  limit_topography MINIMUM_DEPTH: 0.1
+MOM_open_boundary: unknown
+  MOM_open_boundary OBC_NUMBER_OF_SEGMENTS: 0
+  MOM_open_boundary G_EARTH: 10.0
+  MOM_grid_init initialize_masks MINIMUM_DEPTH: 0.1
+  MOM_grid_init initialize_masks MASKING_DEPTH: -9999.0
+  MOM_fixed_initialization CHANNEL_CONFIG: none
+  MOM_initialize_rotation ROTATION: beta
+  set_rotation_beta_plane F_0: 0.0
+  set_rotation_beta_plane BETA: 0.0
+  set_rotation_beta_plane AXIS_UNITS: k
+  initialize_grid_rotation_angle GRID_ROTATION_ANGLE_BUGS: True
+  write_ocean_geometry_file PARALLEL_RESTARTFILES: False
+MOM_tracer_registry: unknown
+  MOM NK_RHO_VARIES: 0
+MOM_EOS: unknown
+  MOM_EOS EQN_OF_STATE: LINEAR
+  MOM_EOS RHO_T0_S0: 1000.0
+  MOM_EOS DRHO_DT: -0.2
+  MOM_EOS DRHO_DS: 0.8
+  MOM_EOS EOS_QUADRATURE: False
+  MOM_EOS TFREEZE_FORM: LINEAR
+  MOM_EOS TFREEZE_S0_P0: 0.0
+  MOM_EOS DTFREEZE_DS: -0.054
+  MOM_EOS DTFREEZE_DP: 0.0
+MOM_restart: unknown
+  MOM_restart PARALLEL_RESTARTFILES: False
+  MOM_restart RESTARTFILE: MOM.res
+  MOM_restart LARGE_FILE_SUPPORT: True
+  MOM_restart MAX_FIELDS: 100
+  MOM_restart RESTART_CHECKSUMS_REQUIRED: True
+MOM_tracer_flow_control: unknown
+  MOM_tracer_flow_control USE_USER_TRACER_EXAMPLE: False
+  MOM_tracer_flow_control USE_DOME_TRACER: False
+  MOM_tracer_flow_control USE_ISOMIP_TRACER: False
+  MOM_tracer_flow_control USE_IDEAL_AGE_TRACER: False
+  MOM_tracer_flow_control USE_REGIONAL_DYES: True
+  MOM_tracer_flow_control USE_OIL_TRACER: False
+  MOM_tracer_flow_control USE_ADVECTION_TEST_TRACER: False
+  MOM_tracer_flow_control USE_OCMIP2_CFC: False
+  MOM_tracer_flow_control USE_generic_tracer: False
+  MOM_tracer_flow_control USE_PSEUDO_SALT_TRACER: False
+  MOM_tracer_flow_control USE_BOUNDARY_IMPULSE_TRACER: False
+  MOM_tracer_flow_control USE_DYED_OBC_TRACER: False
+regional_dyes: unknown
+  regional_dyes NUM_DYE_TRACERS: 1
+  regional_dyes DYE_SOURCE_MINLON: 80.0
+  regional_dyes DYE_SOURCE_MAXLON: 120.0
+  regional_dyes DYE_SOURCE_MINLAT: 0.0
+  regional_dyes DYE_SOURCE_MAXLAT: 40.0
+  regional_dyes DYE_SOURCE_MINDEPTH: 90.0
+  regional_dyes DYE_SOURCE_MAXDEPTH: 110.0
+MOM_coord_initialization: unknown
+  MOM_coord_initialization DEBUG: False
+  MOM_coord_initialization COORD_CONFIG: linear
+  set_coord_linear LIGHTEST_DENSITY: 1025.5
+  set_coord_linear DENSITY_RANGE: 1.0
+  set_coord_linear GFS: 10.0
+  MOM_ALE REMAP_UV_USING_OLD_ALG: True
+  MOM_ALE REGRIDDING_COORDINATE_MODE: Z*
+  MOM_ALE INPUTDIR: INPUT
+  MOM_ALE REGRIDDING_COORDINATE_UNITS: m
+  MOM_ALE ALE_COORDINATE_CONFIG: UNIFORM
+  MOM_ALE !ALE_RESOLUTION: 25*8.0
+  MOM_ALE MIN_THICKNESS: 0.001
+  MOM_ALE REMAPPING_SCHEME: PPM_H4
+  MOM_ALE FATAL_CHECK_RECONSTRUCTIONS: False
+  MOM_ALE FATAL_CHECK_REMAPPING: False
+  MOM_ALE REMAP_BOUND_INTERMEDIATE_VALUES: False
+  MOM_ALE REMAP_BOUNDARY_EXTRAP: True
+  MOM_ALE REMAP_AFTER_INITIALIZATION: True
+  MOM_ALE REGRID_TIME_SCALE: 0.0
+  MOM_ALE REGRID_FILTER_SHALLOW_DEPTH: 0.0
+  MOM_ALE REGRID_FILTER_DEEP_DEPTH: 0.0
+MOM_grid: unknown
+  MOM_grid NIBLOCK: 1
+  MOM_grid NJBLOCK: 1
+MOM_state_initialization: unknown
+  MOM_state_initialization DEBUG: False
+  MOM_state_initialization DEBUG_OBC: False
+  MOM_state_initialization INPUTDIR: INPUT
+  MOM_state_initialization INIT_LAYERS_FROM_Z_FILE: False
+  MOM_state_initialization THICKNESS_CONFIG: uniform
+  MOM_state_initialization TS_CONFIG: baroclinic_zone
+baroclinic_zone_initialization: unknown
+  baroclinic_zone_initialization S_REF: 34.75
+  baroclinic_zone_initialization DSDZ: -0.0025
+  baroclinic_zone_initialization DELTA_S: 0.25
+  baroclinic_zone_initialization DSDX: 0.0
+  baroclinic_zone_initialization T_REF: 10.0
+  baroclinic_zone_initialization DTDZ: 0.01
+  baroclinic_zone_initialization DELTA_T: 0.0
+  baroclinic_zone_initialization DTDX: -0.005
+  baroclinic_zone_initialization L_ZONE: 100.0
+  MOM_state_initialization VELOCITY_CONFIG: zero
+  MOM_state_initialization CONVERT_THICKNESS_UNITS: False
+  MOM_state_initialization DEPRESS_INITIAL_SURFACE: False
+  MOM_state_initialization TRIM_IC_FOR_P_SURF: False
+  MOM_state_initialization REGRID_ACCELERATE_INIT: False
+  MOM_state_initialization SPONGE: False
+MOM_diag_mediator: unknown
+  MOM_diag_mediator NUM_DIAG_COORDS: 1
+  MOM_diag_mediator DIAG_COORDS: z Z ZSTAR
+  MOM_diag_mediator DIAG_MISVAL: 1.0E+20
+  MOM_diag_mediator DIAG_AS_CHKSUM: False
+  MOM_diag_mediator AVAILABLE_DIAGS_FILE: available_diags.000000
+  MOM_diag_remap INPUTDIR: INPUT
+  MOM_diag_remap DIAG_COORD_DEF_Z: UNIFORM
+MOM_MEKE: unknown
+  MOM_MEKE USE_MEKE: False
+MOM_lateral_mixing_coeffs: unknown
+  MOM_lateral_mixing_coeffs USE_VARIABLE_MIXING: False
+  MOM_lateral_mixing_coeffs RESOLN_SCALED_KH: False
+  MOM_lateral_mixing_coeffs RESOLN_SCALED_KHTH: False
+  MOM_lateral_mixing_coeffs RESOLN_SCALED_KHTR: False
+  MOM_lateral_mixing_coeffs RESOLN_USE_EBT: False
+  MOM_lateral_mixing_coeffs KHTH_USE_EBT_STRUCT: False
+  MOM_lateral_mixing_coeffs KHTH_SLOPE_CFF: 0.0
+  MOM_lateral_mixing_coeffs KHTR_SLOPE_CFF: 0.0
+  MOM_lateral_mixing_coeffs USE_STORED_SLOPES: False
+MOM_set_visc: unknown
+  MOM_set_visc BOTTOMDRAGLAW: True
+  MOM_set_visc CHANNEL_DRAG: False
+  MOM_set_visc LINEAR_DRAG: False
+  MOM_set_visc DOUBLE_DIFFUSION: False
+  MOM_set_visc PRANDTL_TURB: 1.0
+  MOM_set_visc DEBUG: False
+  MOM_set_visc DYNAMIC_VISCOUS_ML: False
+  MOM_set_visc OMEGA: 7.2921E-05
+  MOM_set_visc HBBL: 0.001
+  MOM_set_visc CDRAG: 0.0
+  MOM_set_visc DRAG_BG_VEL: 0.0
+  MOM_set_visc BBL_USE_EOS: False
+  MOM_set_visc BBL_THICK_MIN: 0.01
+  MOM_set_visc HTBL_SHELF_MIN: 0.01
+  MOM_set_visc HTBL_SHELF: 0.001
+  MOM_set_visc KV: 1.0E-06
+  MOM_set_visc ADD_KV_SLOW: False
+  MOM_set_visc KV_BBL_MIN: 1.0E-06
+  MOM_set_visc KV_TBL_MIN: 1.0E-06
+  MOM_dynamics_split_RK2 TIDES: False
+  MOM_dynamics_split_RK2 BE: 0.6
+  MOM_dynamics_split_RK2 BEGW: 0.0
+  MOM_dynamics_split_RK2 SPLIT_BOTTOM_STRESS: False
+  MOM_dynamics_split_RK2 BT_USE_LAYER_FLUXES: True
+  MOM_dynamics_split_RK2 DEBUG: False
+  MOM_dynamics_split_RK2 DEBUG_OBC: False
+  MOM_dynamics_split_RK2 DEBUG_TRUNCATIONS: False
+MOM_continuity: unknown
+  MOM_continuity CONTINUITY_SCHEME: PPM
+MOM_continuity_PPM: unknown
+  MOM_continuity_PPM MONOTONIC_CONTINUITY: False
+  MOM_continuity_PPM SIMPLE_2ND_PPM_CONTINUITY: False
+  MOM_continuity_PPM UPWIND_1ST_CONTINUITY: False
+  MOM_continuity_PPM ETA_TOLERANCE: 1.0E-12
+  MOM_continuity_PPM ETA_TOLERANCE_AUX: 1.0E-12
+  MOM_continuity_PPM VELOCITY_TOLERANCE: 3.0E+08
+  MOM_continuity_PPM CONT_PPM_AGGRESS_ADJUST: False
+  MOM_continuity_PPM CONT_PPM_VOLUME_BASED_CFL: False
+  MOM_continuity_PPM CONTINUITY_CFL_LIMIT: 0.5
+  MOM_continuity_PPM CONT_PPM_BETTER_ITER: True
+  MOM_continuity_PPM CONT_PPM_USE_VISC_REM_MAX: True
+  MOM_continuity_PPM CONT_PPM_MARGINAL_FACE_AREAS: True
+MOM_CoriolisAdv: unknown
+  MOM_CoriolisAdv NOSLIP: False
+  MOM_CoriolisAdv CORIOLIS_EN_DIS: False
+  MOM_CoriolisAdv CORIOLIS_SCHEME: SADOURNY75_ENERGY
+  MOM_CoriolisAdv BOUND_CORIOLIS: True
+  MOM_CoriolisAdv KE_SCHEME: KE_GUDONOV
+  MOM_CoriolisAdv PV_ADV_SCHEME: PV_ADV_CENTERED
+MOM_PressureForce: unknown
+  MOM_PressureForce ANALYTIC_FV_PGF: True
+MOM_PressureForce_AFV: unknown
+  MOM_PressureForce_AFV RHO_0: 1000.0
+  MOM_PressureForce_AFV TIDES: False
+  MOM USE_REGRIDDING: True
+  MOM_PressureForce_AFV MASS_WEIGHT_IN_PRESSURE_GRADIENT: False
+  MOM_PressureForce_AFV RECONSTRUCT_FOR_PRESSURE: True
+  MOM_PressureForce_AFV PRESSURE_RECONSTRUCTION_SCHEME: 1
+  MOM_PressureForce_AFV BOUNDARY_EXTRAPOLATION_PRESSURE: True
+  MOM_PressureForce_AFV GFS / G_EARTH: 1.0
+MOM_hor_visc: unknown
+  MOM_hor_visc GET_ALL_PARAMS: False
+  MOM_hor_visc LAPLACIAN: True
+  MOM_hor_visc KH: 0.0
+  MOM_hor_visc KH_BG_MIN: 0.0
+  MOM_hor_visc KH_VEL_SCALE: 0.0
+  MOM_hor_visc KH_SIN_LAT: 0.0
+  MOM_hor_visc SMAGORINSKY_KH: True
+  MOM_hor_visc SMAG_LAP_CONST: 0.15
+  MOM_hor_visc LEITH_KH: False
+  MOM_hor_visc MODIFIED_LEITH: False
+  MOM_hor_visc BOUND_KH: True
+  MOM_hor_visc BETTER_BOUND_KH: True
+  MOM_hor_visc ANISOTROPIC_VISCOSITY: False
+  MOM_hor_visc BIHARMONIC: False
+  MOM_hor_visc USE_LAND_MASK_FOR_HVISC: False
+  MOM_hor_visc HORVISC_BOUND_COEF: 0.8
+  MOM_hor_visc NOSLIP: False
+  MOM_hor_visc USE_KH_BG_2D: False
+  MOM_hor_visc DT: 3600.0
+MOM_vert_friction: unknown
+  MOM_vert_friction BOTTOMDRAGLAW: True
+  MOM_vert_friction CHANNEL_DRAG: False
+  MOM_vert_friction DIRECT_STRESS: True
+  MOM_vert_friction DYNAMIC_VISCOUS_ML: False
+  MOM_vert_friction U_TRUNC_FILE:
+  MOM_vert_friction V_TRUNC_FILE:
+  MOM_vert_friction HARMONIC_VISC: False
+  MOM_vert_friction HARMONIC_BL_SCALE: 0.0
+  MOM_vert_friction DEBUG: False
+  MOM_vert_friction HMIX_FIXED: 1.0E-10
+  MOM_vert_friction HMIX_STRESS: 1.0E-10
+  MOM_vert_friction KV: 1.0E-06
+  MOM_vert_friction KVML: 0.0
+  MOM_vert_friction HBBL: 0.001
+  MOM_vert_friction MAXVEL: 10.0
+  MOM_vert_friction CFL_BASED_TRUNCATIONS: True
+  MOM_vert_friction CFL_TRUNCATE: 0.5
+  MOM_vert_friction CFL_REPORT: 0.5
+  MOM_vert_friction CFL_TRUNCATE_RAMP_TIME: 0.0
+  MOM_vert_friction CFL_TRUNCATE_START: 0.0
+  MOM_vert_friction STOKES_MIXING_COMBINED: False
+  MOM_vert_friction VEL_UNDERFLOW: 0.0
+MOM_barotropic: unknown
+  MOM_barotropic SPLIT: True
+  MOM_barotropic BOUND_BT_CORRECTION: True
+  MOM_barotropic BT_CONT_CORR_BOUNDS: True
+  MOM_barotropic ADJUST_BT_CONT: False
+  MOM_barotropic GRADUAL_BT_ICS: False
+  MOM_barotropic BT_USE_VISC_REM_U_UH0: False
+  MOM_barotropic BT_USE_WIDE_HALOS: True
+  MOM_barotropic BTHALO: 0
+  MOM_barotropic !BT x-halo: 0
+  MOM_barotropic !BT y-halo: 0
+  MOM_barotropic USE_BT_CONT_TYPE: True
+  MOM_barotropic NONLINEAR_BT_CONTINUITY: False
+  MOM_barotropic BT_PROJECT_VELOCITY: True
+  MOM_barotropic DYNAMIC_SURFACE_PRESSURE: False
+  MOM_barotropic TIDES: False
+  MOM_barotropic SADOURNY: True
+  MOM_barotropic BT_THICK_SCHEME: HYBRID
+  MOM_barotropic BT_STRONG_DRAG: False
+  MOM_barotropic BT_LINEAR_WAVE_DRAG: False
+  MOM_barotropic CLIP_BT_VELOCITY: False
+  MOM_barotropic MAXCFL_BT_CONT: 0.25
+  MOM_barotropic VEL_UNDERFLOW: 0.0
+  MOM_barotropic DT_BT_FILTER: -0.25
+  MOM_barotropic G_BT_EXTRA: 0.0
+  MOM_barotropic SSH_EXTRA: 10.0
+  MOM_barotropic DEBUG: False
+  MOM_barotropic DEBUG_BT: False
+  MOM_barotropic BEBT: 0.2
+  MOM_barotropic DTBT: 5.0
+  MOM_barotropic BT_USE_OLD_CORIOLIS_BRACKET_BUG: False
+
+MOM domain decomposition:     1 X    1
+   pe,   is,  ie,  js,  je,    isd, ied, jsd, jed
+  MOM_barotropic DTBT as used: 5.0
+  MOM_barotropic estimated maximum DTBT: 130.34758090932678
+MOM_thickness_diffuse: unknown
+  MOM_thickness_diffuse THICKNESSDIFFUSE: False
+  MOM_thickness_diffuse KHTH: 0.0
+  MOM_thickness_diffuse KHTH_SLOPE_CFF: 0.0
+  MOM_thickness_diffuse KHTH_MIN: 0.0
+  MOM_thickness_diffuse KHTH_MAX: 0.0
+  MOM_thickness_diffuse KHTH_MAX_CFL: 0.8
+  MOM_thickness_diffuse DETANGLE_INTERFACES: False
+  MOM_thickness_diffuse KHTH_SLOPE_MAX: 0.01
+  MOM_thickness_diffuse KD_SMOOTH: 1.0E-06
+  MOM_thickness_diffuse KHTH_USE_FGNV_STREAMFUNCTION: False
+  MOM_thickness_diffuse DEBUG: False
+MOM_mixed_layer_restrat: unknown
+  MOM_mixed_layer_restrat MIXEDLAYER_RESTRAT: False
+MOM_diagnostics: unknown
+  MOM_diagnostics DIAG_EBT_MONO_N2_COLUMN_FRACTION: 0.0
+  MOM_diagnostics DIAG_EBT_MONO_N2_DEPTH: -1.0
+MOM_diag_to_Z: unknown
+  MOM_diag_to_Z Z_OUTPUT_GRID_FILE:
+MOM_diabatic_driver: unknown
+  MOM_diabatic_driver SPONGE: False
+  MOM_diabatic_driver ENABLE_THERMODYNAMICS: True
+  MOM_diabatic_driver ENERGETICS_SFC_PBL: False
+  MOM_diabatic_driver EPBL_IS_ADDITIVE: True
+  MOM_diabatic_driver DOUBLE_DIFFUSION: False
+  MOM_diabatic_driver DO_GEOTHERMAL: False
+  MOM_diabatic_driver INTERNAL_TIDES: False
+  MOM_diabatic_driver MASSLESS_MATCH_TARGETS: True
+  MOM_diabatic_driver AGGREGATE_FW_FORCING: True
+  MOM_diabatic_driver DEBUG: False
+  MOM_diabatic_driver DEBUG_CONSERVATION: False
+  MOM_diabatic_driver MIX_BOUNDARY_TRACERS: True
+  MOM_diabatic_driver KD: 0.0
+  MOM_diabatic_driver KD_MIN_TR: 0.0
+  MOM_diabatic_driver KD_BBL_TR: 0.0
+  MOM_diabatic_driver TRACER_TRIDIAG: False
+  MOM_diabatic_driver MINIMUM_FORCING_DEPTH: 0.001
+  MOM_diabatic_driver EVAP_CFL_LIMIT: 0.8
+  MOM_diabatic_driver DIAG_MLD_DENSITY_DIFF: 0.1
+MOM_CVMix_KPP: unknown
+  MOM_CVMix_KPP USE_KPP: False
+  MOM_diabatic_driver SALT_REJECT_BELOW_ML: False
+MOM_tidal_mixing: unknown
+  MOM_tidal_mixing USE_CVMix_TIDAL: False
+  MOM_tidal_mixing INT_TIDE_DISSIPATION: False
+MOM_CVMix_conv: unknown
+  MOM_CVMix_conv USE_CVMix_CONVECTION: False
+MOM_entrain_diffusive: unknown
+  MOM_entrain_diffusive CORRECT_DENSITY: False
+  MOM_entrain_diffusive MAX_ENT_IT: 5
+  MOM_entrain_diffusive KD: 0.0
+  MOM_entrain_diffusive DT: 3600.0
+  MOM_entrain_diffusive TOLERANCE_ENT: 1.0E-13
+MOM_set_diffusivity: unknown
+  MOM_set_diffusivity INPUTDIR: INPUT
+  MOM_set_diffusivity FLUX_RI_MAX: 0.2
+  MOM_set_diffusivity OMEGA: 7.2921E-05
+  MOM_set_diffusivity ML_RADIATION: False
+  MOM_set_diffusivity BOTTOMDRAGLAW: True
+  MOM_set_diffusivity CDRAG: 0.0
+  MOM_set_diffusivity BBL_EFFIC: 0.0
+  MOM_set_diffusivity BBL_MIXING_MAX_DECAY: 0.0
+  MOM_set_diffusivity BBL_MIXING_AS_MAX: True
+  MOM_set_diffusivity USE_LOTW_BBL_DIFFUSIVITY: False
+  MOM_set_diffusivity SIMPLE_TKE_TO_KD: False
+MOM_bkgnd_mixing: unknown
+  MOM_bkgnd_mixing KD: 0.0
+  MOM_bkgnd_mixing KV: 1.0E-06
+  MOM_bkgnd_mixing KD_MIN: 0.0
+  MOM_bkgnd_mixing KDML: 0.0
+  MOM_bkgnd_mixing HMIX_FIXED: 1.0E-10
+  MOM_bkgnd_mixing BRYAN_LEWIS_DIFFUSIVITY: False
+  MOM_bkgnd_mixing HORIZ_VARYING_BACKGROUND: False
+  MOM_bkgnd_mixing PRANDTL_BKGND: 1.0
+  MOM_bkgnd_mixing HENYEY_IGW_BACKGROUND: False
+  MOM_bkgnd_mixing HENYEY_IGW_BACKGROUND_NEW: False
+  MOM_bkgnd_mixing KD_TANH_LAT_FN: False
+  MOM_set_diffusivity KV: 1.0E-06
+  MOM_set_diffusivity KD: 0.0
+  MOM_set_diffusivity KD_MIN: 0.0
+  MOM_set_diffusivity KD_MAX: -1.0
+  MOM_set_diffusivity KD_ADD: 0.0
+  MOM_set_diffusivity KDML: 0.0
+  MOM_set_diffusivity HMIX_FIXED: 1.0E-10
+  MOM_set_diffusivity DEBUG: False
+  MOM_set_diffusivity USER_CHANGE_DIFFUSIVITY: False
+  MOM_set_diffusivity DISSIPATION_MIN: 0.0
+  MOM_set_diffusivity DISSIPATION_N0: 0.0
+  MOM_set_diffusivity DISSIPATION_N1: 0.0
+  MOM_set_diffusivity DISSIPATION_KD_MIN: 0.0
+  MOM_set_diffusivity DOUBLE_DIFFUSION: False
+MOM_kappa_shear: unknown
+  MOM_kappa_shear USE_JACKSON_PARAM: False
+  MOM_kappa_shear VERTEX_SHEAR: False
+  MOM_kappa_shear RINO_CRIT: 0.25
+  MOM_kappa_shear SHEARMIX_RATE: 0.089
+  MOM_kappa_shear MAX_RINO_IT: 50
+  MOM_kappa_shear KD_KAPPA_SHEAR_0: 0.0
+  MOM_kappa_shear FRI_CURVATURE: -0.97
+  MOM_kappa_shear TKE_N_DECAY_CONST: 0.24
+  MOM_kappa_shear TKE_SHEAR_DECAY_CONST: 0.14
+  MOM_kappa_shear KAPPA_BUOY_SCALE_COEF: 0.82
+  MOM_kappa_shear KAPPA_N_OVER_S_SCALE_COEF2: 0.0
+  MOM_kappa_shear KAPPA_SHEAR_TOL_ERR: 0.1
+  MOM_kappa_shear TKE_BACKGROUND: 0.0
+  MOM_kappa_shear KAPPA_SHEAR_ELIM_MASSLESS: True
+  MOM_kappa_shear MAX_KAPPA_SHEAR_IT: 13
+  MOM_kappa_shear VEL_UNDERFLOW: 0.0
+  MOM_kappa_shear DEBUG_KAPPA_SHEAR: False
+MOM_CVMix_shear: unknown
+  MOM_CVMix_shear USE_LMD94: False
+  MOM_CVMix_shear USE_PP81: False
+MOM_CVMix_ddiff: unknown
+  MOM_CVMix_ddiff USE_CVMIX_DDIFF: False
+MOM_diabatic_aux: unknown
+  MOM_diabatic_aux RECLAIM_FRAZIL: True
+  MOM_diabatic_aux PRESSURE_DEPENDENT_FRAZIL: False
+  MOM_diabatic_aux USE_RIVER_HEAT_CONTENT: False
+  MOM_diabatic_aux USE_CALVING_HEAT_CONTENT: False
+MOM_regularize_layers: unknown
+  MOM_regularize_layers REGULARIZE_SURFACE_LAYERS: False
+  MOM_regularize_layers HMIX_MIN: 0.0
+  MOM_regularize_layers REG_SFC_DEFICIT_TOLERANCE: 0.5
+  MOM_regularize_layers DEBUG: False
+  MOM_regularize_layers ALLOW_CLOCKS_IN_OMP_LOOPS: True
+  MOM_diabatic_driver PEN_SW_NBANDS: 1
+MOM_opacity: unknown
+  MOM_opacity VAR_PEN_SW: False
+  MOM_opacity EXP_OPACITY_SCHEME: SINGLE_EXP
+  MOM_opacity PEN_SW_SCALE: 15.0
+  MOM_opacity PEN_SW_FRAC: 0.42
+  MOM_opacity PEN_SW_NBANDS: 1
+  MOM_opacity OPACITY_LAND_VALUE: 10.0
+MOM_tracer_advect: unknown
+  MOM_tracer_advect DT: 3600.0
+  MOM_tracer_advect DEBUG: False
+  MOM_tracer_advect TRACER_ADVECTION_SCHEME: PLM
+MOM_tracer_hor_diff: unknown
+  MOM_tracer_hor_diff KHTR: 5000.0
+  MOM_tracer_hor_diff KHTR_SLOPE_CFF: 0.0
+  MOM_tracer_hor_diff KHTR_MIN: 0.0
+  MOM_tracer_hor_diff KHTR_MAX: 0.0
+  MOM_tracer_hor_diff KHTR_PASSIVITY_COEFF: 0.0
+  MOM_tracer_hor_diff KHTR_PASSIVITY_MIN: 0.5
+  MOM_tracer_hor_diff DIFFUSE_ML_TO_INTERIOR: False
+  MOM_tracer_hor_diff CHECK_DIFFUSIVE_CFL: False
+  MOM_tracer_hor_diff MAX_TR_DIFFUSION_CFL: -1.0
+  MOM_tracer_hor_diff RECALC_NEUTRAL_SURF: True
+MOM_neutral_diffusion: unknown
+  MOM_neutral_diffusion USE_NEUTRAL_DIFFUSION: True
+  MOM_neutral_diffusion NDIFF_CONTINUOUS: False
+  MOM_neutral_diffusion NDIFF_REF_PRES: -1.0
+  MOM_neutral_diffusion NDIFF_BOUNDARY_EXTRAP: True
+  MOM_neutral_diffusion NDIFF_REMAPPING_SCHEME: PPM_H4
+  MOM_neutral_diffusion NEUTRAL_POS_METHOD: 3
+  MOM_neutral_diffusion DELTA_RHO_FORM: full
+  MOM_neutral_diffusion NDIFF_DRHO_TOL: 0.0
+  MOM_neutral_diffusion NDIFF_X_TOL: 0.0
+  MOM_neutral_diffusion NDIFF_MAX_ITER: 30
+  MOM_neutral_diffusion NDIFF_DEBUG: False
+  MOM_tracer_hor_diff DEBUG: False
+MOM_obsolete_diagnostics: unknown
+  MOM_obsolete_diagnostics OBSOLETE_DIAGNOSTIC_IS_FATAL: True
+MOM_sum_output: unknown
+  MOM_sum_output CALCULATE_APE: True
+  MOM_sum_output WRITE_STOCKS: True
+  MOM_sum_output ENABLE_THERMODYNAMICS: True
+  MOM_sum_output DT: 3600.0
+  MOM_sum_output MAXTRUNC: 10
+  MOM_sum_output MAX_ENERGY: 0.0
+  MOM_sum_output MAXVEL: 10.0
+  MOM_sum_output MAX_ENERGY as used: 1000.0
+  MOM_sum_output ENERGYFILE: ocean.stats
+  MOM_sum_output output_path/ENERGYFILE: ./ocean.stats
+  MOM_sum_output DATE_STAMPED_STDOUT: True
+  MOM_sum_output TIMEUNIT: 8.64E+04
+  MOM_sum_output READ_DEPTH_LIST: False
+  MOM_sum_output DEPTH_LIST_MIN_INC: 1.0E-10
+  MOM_sum_output TIMEUNIT: 8.64E+04
+  MOM_sum_output ENERGYSAVEDAYS (Time): 5:0
+  MOM_sum_output ENERGYSAVEDAYS_GEOMETRIC (Time): 0:0
+MOM_surface_forcing: unknown
+  MOM_surface_forcing ENABLE_THERMODYNAMICS: True
+  MOM_surface_forcing INPUTDIR: INPUT
+  MOM_surface_forcing ADIABATIC: False
+  MOM_surface_forcing VARIABLE_WINDS: False
+  MOM_surface_forcing VARIABLE_BUOYFORCE: False
+  MOM_surface_forcing BUOY_CONFIG: NONE
+  MOM_surface_forcing WIND_CONFIG: zero
+  MOM_surface_forcing RHO_0: 1000.0
+  MOM_surface_forcing RESTOREBUOY: False
+  MOM_surface_forcing LATENT_HEAT_FUSION: 3.34E+05
+  MOM_surface_forcing LATENT_HEAT_VAPORIZATION: 2.5E+06
+  MOM_surface_forcing G_EARTH: 10.0
+  MOM_surface_forcing GUST_CONST: 0.02
+  MOM_surface_forcing READ_GUST_2D: False
+MOM_restart: unknown
+  MOM_restart PARALLEL_RESTARTFILES: False
+  MOM_restart RESTARTFILE from argument: MOM_forcing.res
+  MOM_restart LARGE_FILE_SUPPORT: True
+  MOM_restart MAX_FIELDS: 100
+  MOM_restart RESTART_CHECKSUMS_REQUIRED: True
+user_revise_forcing: unknown
+  MOM_main (MOM_driver) ICE_SHELF: False
+  MOM_main (MOM_driver) USE_WAVES: False
+  MOM_wave_interface LA_DEPTH_RATIO: 0.04
+MOM_main (MOM_driver): unknown
+  MOM_main (MOM_driver) DT: 3600.0
+  MOM_main (MOM_driver) DT_FORCING: 3600.0
+  MOM_main (MOM_driver) TIMEUNIT: 8.64E+04
+  MOM_main (MOM_driver) DAYMAX (Time): 40:0
+  MOM_main (MOM_driver) SINGLE_STEPPING_CALL: True
+  MOM_main (MOM_driver) DT_THERM: 3600.0
+  MOM_main (MOM_driver) DIABATIC_FIRST: False
+  MOM_main (MOM_driver) RESTART_CONTROL: 3
+  MOM_main (MOM_driver) RESTINT (Time): 0:0
+  MOM_main (MOM_driver) WRITE_CPU_STEPS: 1000
+  MOM DEBUG: False
+  MOM_main (MOM_driver) ELAPSED TIME AS MASTER: False
+MOM_write_cputime: unknown
+  MOM_write_cputime MAXCPU: 2.88E+04
+  MOM_write_cputime CPU_TIME_FILE: CPU_stats
+  MOM_write_cputime directory/CPU_TIME_FILE: ./CPU_stats
+MOM_file_parser: unknown
+  MOM_file_parser SEND_LOG_TO_STDOUT: False
+  MOM_file_parser REPORT_UNUSED_PARAMS: False
+  MOM_file_parser FATAL_UNUSED_PARAMS: False
+  MOM_file_parser DOCUMENT_FILE: MOM_parameter_doc
+  MOM_file_parser COMPLETE_DOCUMENTATION: True
+  MOM_file_parser MINIMAL_DOCUMENTATION: True
+
+================================================================================
+DIAG_OUTPUT_MOD
+unknown
+
+                                     time
+Total runtime                        17.368577
+Initialization                        0.080176
+Main loop                            15.726656
+Termination                           1.559491

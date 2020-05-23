@@ -1,12 +1,4 @@
-#override EQN_OF_STATE = "WRIGHT"
-USE_REGRIDDING = True
-REGRIDDING_COORDINATE_MODE = "Z*"
-#override KHTR = 5000.
-#override REMAPPING_SCHEME = "PPM_H4"
-#override NDIFF_REMAPPING_SCHEME = "PPM_H4"
-REMAP_BOUNDARY_EXTRAP = True
-NDIFF_MAX_ITER = 30
-#override NK=10
-RECALC_NEUTRAL_SURF = True
+#override EQN_OF_STATE = "TEOS10"
+#override TFREEZE_FORM = "TEOS10"
 #override NEUTRAL_POS_METHOD = 1
-#override DELTA_RHO_FORM = "local_pressure"
+#override DELTA_RHO_FORM = "full"

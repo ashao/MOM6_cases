@@ -1258,7 +1258,7 @@
     ! units: m s-1
     ! standard_name: sea_water_x_velocity
     ! cell_methods: zl:mean
-"ocean_model_z", "u"  [Used] (CMOR equivalent is "uo")
+"ocean_model_z", "u"  [Unused] (CMOR equivalent is "uo")
     ! long_name: Zonal velocity
     ! units: m s-1
     ! cell_methods: xq:point yh:mean z_l:mean
@@ -1294,7 +1294,7 @@
     ! units: m s-1
     ! standard_name: sea_water_y_velocity
     ! cell_methods: zl:mean
-"ocean_model_z", "v"  [Used] (CMOR equivalent is "vo")
+"ocean_model_z", "v"  [Unused] (CMOR equivalent is "vo")
     ! long_name: Meridional velocity
     ! units: m s-1
     ! cell_methods: xh:mean yq:point z_l:mean
@@ -1392,7 +1392,7 @@
     ! long_name: Coordinate Potential Density
     ! units: kg m-3
     ! cell_methods: z_l:mean
-"ocean_model", "rhopot0"  [Unused]
+"ocean_model", "rhopot0"  [Used]
     ! long_name: Potential density referenced to surface
     ! units: kg m-3
     ! cell_methods: xh:mean yh:mean zl:mean area:mean
@@ -2955,7 +2955,7 @@
     ! units: degC
     ! standard_name: sea_water_potential_temperature
     ! cell_methods: zl:mean
-"ocean_model_z", "temp"  [Used] (CMOR equivalent is "thetao")
+"ocean_model_z", "temp"  [Unused] (CMOR equivalent is "thetao")
     ! long_name: Potential Temperature
     ! units: degC
     ! cell_methods: xh:mean yh:mean z_l:mean area:mean
@@ -3265,7 +3265,7 @@
     ! units: psu
     ! standard_name: sea_water_salinity
     ! cell_methods: zl:mean
-"ocean_model_z", "salt"  [Used] (CMOR equivalent is "so")
+"ocean_model_z", "salt"  [Unused] (CMOR equivalent is "so")
     ! long_name: Salinity
     ! units: psu
     ! cell_methods: xh:mean yh:mean z_l:mean area:mean
@@ -3556,6 +3556,246 @@
 "ocean_model_z", "S_vardec_xyave"  [Unused]
     ! long_name: ALE variance decay for salinity
     ! units: psu2 s-1
+    ! cell_methods: z_l:mean
+"ocean_model", "dye001"  [Used]
+    ! long_name: Dye Tracer 001
+    ! units: conc
+    ! cell_methods: xh:mean yh:mean zl:mean area:mean
+"ocean_model", "dye001_xyave"  [Unused]
+    ! long_name: Dye Tracer 001
+    ! units: conc
+    ! cell_methods: zl:mean
+"ocean_model_z", "dye001"  [Unused]
+    ! long_name: Dye Tracer 001
+    ! units: conc
+    ! cell_methods: xh:mean yh:mean z_l:mean area:mean
+"ocean_model_z", "dye001_xyave"  [Unused]
+    ! long_name: Dye Tracer 001
+    ! units: conc
+    ! cell_methods: z_l:mean
+"ocean_model", "dye001_adx"  [Unused]
+    ! long_name: Dye Tracer 001 advective zonal flux
+    ! units: conc m3 s-1
+    ! cell_methods: xq:point yh:sum zl:sum
+"ocean_model", "dye001_adx_xyave"  [Unused]
+    ! long_name: Dye Tracer 001 advective zonal flux
+    ! units: conc m3 s-1
+    ! cell_methods: zl:sum
+"ocean_model_z", "dye001_adx"  [Unused]
+    ! long_name: Dye Tracer 001 advective zonal flux
+    ! units: conc m3 s-1
+    ! cell_methods: xq:point yh:sum z_l:sum
+"ocean_model_z", "dye001_adx_xyave"  [Unused]
+    ! long_name: Dye Tracer 001 advective zonal flux
+    ! units: conc m3 s-1
+    ! cell_methods: z_l:sum
+"ocean_model", "dye001_ady"  [Unused]
+    ! long_name: Dye Tracer 001 advective meridional flux
+    ! units: conc m3 s-1
+    ! cell_methods: xh:sum yq:point zl:sum
+"ocean_model", "dye001_ady_xyave"  [Unused]
+    ! long_name: Dye Tracer 001 advective meridional flux
+    ! units: conc m3 s-1
+    ! cell_methods: zl:sum
+"ocean_model_z", "dye001_ady"  [Unused]
+    ! long_name: Dye Tracer 001 advective meridional flux
+    ! units: conc m3 s-1
+    ! cell_methods: xh:sum yq:point z_l:sum
+"ocean_model_z", "dye001_ady_xyave"  [Unused]
+    ! long_name: Dye Tracer 001 advective meridional flux
+    ! units: conc m3 s-1
+    ! cell_methods: z_l:sum
+"ocean_model", "dye001_dfx"  [Unused]
+    ! long_name: Dye Tracer 001 diffusive zonal flux
+    ! units: conc m3 s-1
+    ! cell_methods: xq:point yh:sum zl:sum
+"ocean_model", "dye001_dfx_xyave"  [Unused]
+    ! long_name: Dye Tracer 001 diffusive zonal flux
+    ! units: conc m3 s-1
+    ! cell_methods: zl:sum
+"ocean_model_z", "dye001_dfx"  [Unused]
+    ! long_name: Dye Tracer 001 diffusive zonal flux
+    ! units: conc m3 s-1
+    ! cell_methods: xq:point yh:sum z_l:sum
+"ocean_model_z", "dye001_dfx_xyave"  [Unused]
+    ! long_name: Dye Tracer 001 diffusive zonal flux
+    ! units: conc m3 s-1
+    ! cell_methods: z_l:sum
+"ocean_model", "dye001_dfy"  [Unused]
+    ! long_name: Dye Tracer 001 diffusive zonal flux
+    ! units: conc m3 s-1
+    ! cell_methods: xh:sum yq:point zl:sum
+"ocean_model", "dye001_dfy_xyave"  [Unused]
+    ! long_name: Dye Tracer 001 diffusive zonal flux
+    ! units: conc m3 s-1
+    ! cell_methods: zl:sum
+"ocean_model_z", "dye001_dfy"  [Unused]
+    ! long_name: Dye Tracer 001 diffusive zonal flux
+    ! units: conc m3 s-1
+    ! cell_methods: xh:sum yq:point z_l:sum
+"ocean_model_z", "dye001_dfy_xyave"  [Unused]
+    ! long_name: Dye Tracer 001 diffusive zonal flux
+    ! units: conc m3 s-1
+    ! cell_methods: z_l:sum
+"ocean_model", "dye001_adx_2d"  [Unused]
+    ! long_name: Vertically Integrated Advective Zonal Flux of Dye Tracer 001
+    ! units: conc m3 s-1
+    ! cell_methods: xq:point yh:sum
+"ocean_model", "dye001_ady_2d"  [Unused]
+    ! long_name: Vertically Integrated Advective Meridional Flux of Dye Tracer 001
+    ! units: conc m3 s-1
+    ! cell_methods: xh:sum yq:point
+"ocean_model", "dye001_diffx_2d"  [Unused]
+    ! long_name: Vertically Integrated Diffusive Zonal Flux of Dye Tracer 001
+    ! units: conc m3 s-1
+    ! cell_methods: xq:point yh:sum
+"ocean_model", "dye001_diffy_2d"  [Unused]
+    ! long_name: Vertically Integrated Diffusive Meridional Flux of Dye Tracer 001
+    ! units: conc m3 s-1
+    ! cell_methods: xh:sum yq:point
+"ocean_model", "dye001_advection_xy"  [Unused]
+    ! long_name: Horizontal convergence of residual mean advective fluxes of dye tracer 001
+    ! units: conc m s-1
+    ! cell_methods: xh:mean yh:mean zl:sum area:mean
+"ocean_model", "dye001_advection_xy_xyave"  [Unused]
+    ! long_name: Horizontal convergence of residual mean advective fluxes of dye tracer 001
+    ! units: conc m s-1
+    ! cell_methods: zl:sum
+"ocean_model_z", "dye001_advection_xy"  [Unused]
+    ! long_name: Horizontal convergence of residual mean advective fluxes of dye tracer 001
+    ! units: conc m s-1
+    ! cell_methods: xh:mean yh:mean z_l:sum area:mean
+"ocean_model_z", "dye001_advection_xy_xyave"  [Unused]
+    ! long_name: Horizontal convergence of residual mean advective fluxes of dye tracer 001
+    ! units: conc m s-1
+    ! cell_methods: z_l:sum
+"ocean_model", "dye001_advection_xy_2d"  [Unused]
+    ! long_name: Vertical sum of horizontal convergence of residual mean advective fluxes of dye tracer 001
+    ! units: conc m s-1
+    ! cell_methods: xh:mean yh:mean area:mean
+"ocean_model", "dye001_tendency"  [Unused]
+    ! long_name: Net time tendency for dye tracer 001
+    ! units: conc s-1
+    ! cell_methods: xh:mean yh:mean zl:mean area:mean
+"ocean_model", "dye001_tendency_xyave"  [Unused]
+    ! long_name: Net time tendency for dye tracer 001
+    ! units: conc s-1
+    ! cell_methods: zl:mean
+"ocean_model_z", "dye001_tendency"  [Unused]
+    ! long_name: Net time tendency for dye tracer 001
+    ! units: conc s-1
+    ! cell_methods: xh:mean yh:mean z_l:mean area:mean
+"ocean_model_z", "dye001_tendency_xyave"  [Unused]
+    ! long_name: Net time tendency for dye tracer 001
+    ! units: conc s-1
+    ! cell_methods: z_l:mean
+"ocean_model", "dye001_dfxy_cont_tendency"  [Unused]
+    ! long_name: Lateral or neutral diffusion tracer content tendency for dye001
+    ! units: conc m s-1
+    ! cell_methods: xh:sum yh:sum zl:sum area:sum
+"ocean_model", "dye001_dfxy_cont_tendency_xyave"  [Unused]
+    ! long_name: Lateral or neutral diffusion tracer content tendency for dye001
+    ! units: conc m s-1
+    ! cell_methods: zl:sum
+"ocean_model_z", "dye001_dfxy_cont_tendency"  [Unused]
+    ! long_name: Lateral or neutral diffusion tracer content tendency for dye001
+    ! units: conc m s-1
+    ! cell_methods: xh:sum yh:sum z_l:sum area:sum
+"ocean_model_z", "dye001_dfxy_cont_tendency_xyave"  [Unused]
+    ! long_name: Lateral or neutral diffusion tracer content tendency for dye001
+    ! units: conc m s-1
+    ! cell_methods: z_l:sum
+"ocean_model", "dye001_dfxy_cont_tendency_2d"  [Unused]
+    ! long_name: Depth integrated lateral or neutral diffusion tracer concentration tendency for dye001
+    ! units: conc m s-1
+    ! cell_methods: xh:sum yh:sum area:sum
+"ocean_model", "dye001_dfxy_conc_tendency"  [Unused]
+    ! long_name: Lateral (neutral) tracer concentration tendency for dye001
+    ! units: conc s-1
+    ! cell_methods: xh:mean yh:mean zl:mean area:mean
+"ocean_model", "dye001_dfxy_conc_tendency_xyave"  [Unused]
+    ! long_name: Lateral (neutral) tracer concentration tendency for dye001
+    ! units: conc s-1
+    ! cell_methods: zl:mean
+"ocean_model_z", "dye001_dfxy_conc_tendency"  [Unused]
+    ! long_name: Lateral (neutral) tracer concentration tendency for dye001
+    ! units: conc s-1
+    ! cell_methods: xh:mean yh:mean z_l:mean area:mean
+"ocean_model_z", "dye001_dfxy_conc_tendency_xyave"  [Unused]
+    ! long_name: Lateral (neutral) tracer concentration tendency for dye001
+    ! units: conc s-1
+    ! cell_methods: z_l:mean
+"ocean_model", "dye001h_tendency"  [Unused]
+    ! long_name: Net time tendency for dye tracer 001
+    ! units: conc m s-1
+    ! cell_methods: xh:mean yh:mean zl:sum area:mean
+"ocean_model", "dye001h_tendency_xyave"  [Unused]
+    ! long_name: Net time tendency for dye tracer 001
+    ! units: conc m s-1
+    ! cell_methods: zl:sum
+"ocean_model_z", "dye001h_tendency"  [Unused]
+    ! long_name: Net time tendency for dye tracer 001
+    ! units: conc m s-1
+    ! cell_methods: xh:mean yh:mean z_l:sum area:mean
+"ocean_model_z", "dye001h_tendency_xyave"  [Unused]
+    ! long_name: Net time tendency for dye tracer 001
+    ! units: conc m s-1
+    ! cell_methods: z_l:sum
+"ocean_model", "dye001h_tendency_2d"  [Unused]
+    ! long_name: Vertical sum of net time tendency for dye tracer 001
+    ! units: conc m s-1
+    ! cell_methods: xh:mean yh:mean area:mean
+"ocean_model", "dye001_tendency_vert_remap"  [Unused]
+    ! long_name: Vertical remapping tracer concentration tendency for dye001
+    ! units: conc s-1
+    ! cell_methods: xh:mean yh:mean zl:mean area:mean
+"ocean_model", "dye001_tendency_vert_remap_xyave"  [Unused]
+    ! long_name: Vertical remapping tracer concentration tendency for dye001
+    ! units: conc s-1
+    ! cell_methods: zl:mean
+"ocean_model_z", "dye001_tendency_vert_remap"  [Unused]
+    ! long_name: Vertical remapping tracer concentration tendency for dye001
+    ! units: conc s-1
+    ! cell_methods: xh:mean yh:mean z_l:mean area:mean
+"ocean_model_z", "dye001_tendency_vert_remap_xyave"  [Unused]
+    ! long_name: Vertical remapping tracer concentration tendency for dye001
+    ! units: conc s-1
+    ! cell_methods: z_l:mean
+"ocean_model", "dye001h_tendency_vert_remap"  [Unused]
+    ! long_name: Vertical remapping tracer content tendency for Dye Tracer 001
+    ! units: conc m3 s-1
+    ! cell_methods: xh:mean yh:mean zl:sum area:mean
+"ocean_model", "dye001h_tendency_vert_remap_xyave"  [Unused]
+    ! long_name: Vertical remapping tracer content tendency for Dye Tracer 001
+    ! units: conc m3 s-1
+    ! cell_methods: zl:sum
+"ocean_model_z", "dye001h_tendency_vert_remap"  [Unused]
+    ! long_name: Vertical remapping tracer content tendency for Dye Tracer 001
+    ! units: conc m3 s-1
+    ! cell_methods: xh:mean yh:mean z_l:sum area:mean
+"ocean_model_z", "dye001h_tendency_vert_remap_xyave"  [Unused]
+    ! long_name: Vertical remapping tracer content tendency for Dye Tracer 001
+    ! units: conc m3 s-1
+    ! cell_methods: z_l:sum
+"ocean_model", "dye001h_tendency_vert_remap_2d"  [Unused]
+    ! long_name: Vertical sum of vertical remapping tracer content tendency for Dye Tracer 001
+    ! units: conc m3 s-1
+    ! cell_methods: xh:mean yh:mean area:mean
+"ocean_model", "dye001_vardec"  [Unused]
+    ! long_name: ALE variance decay for dye tracer 001
+    ! units: conc2 s-1
+    ! cell_methods: xh:mean yh:mean zl:mean area:mean
+"ocean_model", "dye001_vardec_xyave"  [Unused]
+    ! long_name: ALE variance decay for dye tracer 001
+    ! units: conc2 s-1
+    ! cell_methods: zl:mean
+"ocean_model_z", "dye001_vardec"  [Unused]
+    ! long_name: ALE variance decay for dye tracer 001
+    ! units: conc2 s-1
+    ! cell_methods: xh:mean yh:mean z_l:mean area:mean
+"ocean_model_z", "dye001_vardec_xyave"  [Unused]
+    ! long_name: ALE variance decay for dye tracer 001
+    ! units: conc2 s-1
     ! cell_methods: z_l:mean
 "ocean_model", "u_preale"  [Unused]
     ! long_name: Zonal velocity before remapping

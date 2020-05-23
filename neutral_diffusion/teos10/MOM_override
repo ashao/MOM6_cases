@@ -1,0 +1,2 @@
+#override EQN_OF_STATE = "TEOS10"
+#override TFREEZE_FORM = "TEOS10"

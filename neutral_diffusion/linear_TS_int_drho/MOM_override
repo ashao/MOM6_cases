@@ -1,0 +1,16 @@
+NDIFF_DEBUG = False              !   [Boolean] default = False
+!                                ! Turns on verbose output for discontinuous neutral
+#override DRHO_DT = -0.2
+#override DRHO_DS = 0.8
+#override DELTA_RHO_FORM = "full"
+#override NEUTRAL_POS_METHOD = 1
+USE_REGIONAL_DYES = True
+NUM_DYE_TRACERS = 1
+DYE_SOURCE_MINLON = 80
+DYE_SOURCE_MAXLON = 120
+DYE_SOURCE_MINLAT = 0
+DYE_SOURCE_MAXLAT = 40
+DYE_SOURCE_MINDEPTH = 90
+DYE_SOURCE_MAXDEPTH = 110
+
+

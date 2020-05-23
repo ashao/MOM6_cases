@@ -1,0 +1,16 @@
+#override DAYMAX=60
+#override ENERGYSAVEDAYS=1
+#override USE_NEUTRAL_DIFFUSION = True
+#override NK = 19
+NEUTRAL_POS_METHOD = 3          ! default = 2
+                                ! Method used to find the neutral position
+                                ! 1. Delta_rho varies linearly, find 0 crossing
+                                ! 2. Alpha and beta vary linearly from top to bottom,
+                                !    Newton's method for neutral position
+                                ! 3. Keep recalculating alpha and beta (no pressure
+                                !    dependence) Newton's method for neutral position
+                                ! 4. Full nonlinear equation of state, Brent's method
+                                !    for neutral position
+Z_INIT_HOMOGENIZE = False
+Z_INIT_REMAP_FULL_COLUMN = True
+#NDIFF_DEBUG = True

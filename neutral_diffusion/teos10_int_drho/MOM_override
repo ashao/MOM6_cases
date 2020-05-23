@@ -1,0 +1,8 @@
+#override EQN_OF_STATE = "TEOS10"
+#override TFREEZE_FORM = "TEOS10"
+#override NEUTRAL_POS_METHOD = 1
+#override DELTA_RHO_FORM = "full"
+NDIFF_REF_PRES = 2.e7
+#override DAYMAX=0.0625
+#override NK=5
+DIAG_COORD_DEF_Z="UNIFORM:100"

@@ -1,7 +1,7 @@
 "GOLD Experiment"
 1 1 1 0 0 0
-"prog",      1,"days",1,"days","Time"
-"prog_z",    1,"days",1,"days","Time"
+"prog",      0,"days",1,"days","Time"
+"prog_z",    0,"days",1,"days","Time"
 
 #This is the field section of the diag_table.
 
@@ -15,11 +15,20 @@
 "ocean_model","temp","temp","prog","all","none","none",1
 "ocean_model","salt","salt","prog","all","none","none",1
 "ocean_model","rhoinsitu","rhoinsitu","prog","all","none","none",1
+"ocean_model","rhopot0","rhopot0","prog","all","none","none",1
+"ocean_model","rhopot2","rhopot2","prog","all","none","none",1
+"ocean_model","dye001","dye001","prog","all","none","none",1
 
 "ocean_model_z","u",   "u",   "prog_z","all","none","none",2
 "ocean_model_z","v",   "v",   "prog_z","all","none","none",2
+"ocean_model_z","h",   "h",   "prog_z","all","none","none",1
+"ocean_model_z","e",   "e",   "prog_z","all","none","none",1
 "ocean_model_z","temp","temp","prog_z","all","none","none",1
 "ocean_model_z","salt","salt","prog_z","all","none","none",1
+"ocean_model_z","rhoinsitu","rhoinsitu","prog_z","all","none","none",1
+"ocean_model_z","rhopot0","rhopot0","prog_z","all","none","none",1
+"ocean_model_z","rhopot2","rhopot2","prog_z","all","none","none",1
+"ocean_model_z","dye001","dye001","prog_z","all","none","none",1
 
 #=============================================================================================
 #

@@ -1,0 +1,16 @@
+#override EQN_OF_STATE = "TEOS10"
+#override TFREEZE_FORM = "TEOS10"
+
+#override REGRIDDING_COORDINATE_MODE = "RHO"
+#override INTERPOLATION_SCHEME = P3M_IH4IH3
+#override USE_NEUTRAL_DIFFUSION=False
+#override P_REF=2e7
+#override LIGHTEST_DENSITY = 1035.
+#override DENSITY_RANGE = 1.6
+#override NK=5
+#override MIN_THICKNESS = 0.
+DIAG_COORD_DEF_Z="UNIFORM:100"
+DO_REMAP = False
+
+#override DAYMAX = 0.0625
+! REGRID_COMPRESSIBILITY_FRACTION = 0.01 !   [not defined] default = 0.0
