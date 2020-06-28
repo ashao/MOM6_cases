@@ -264,12 +264,27 @@ TS_CONFIG = "baroclinic_zone"   !
 BCZIC%
 S_REF = 34.75                   !   [ppt] default = 35.0
                                 ! Reference salinity
-DSDZ = -0.0025                  !   [ppt/m] default = 0.0
+
+STRAT_FUNC = "TANH"
+DTDZ = 3
+DSDZ = -0.2
+T_ZSCALE = 50
+S_ZSCALE = 100
+!STRAT_FUNC = "NATLOG"
+!DSDZ = -1.                  !   [ppt/m] default = 0.0
+!DTDZ = 10.                     !   [C/m] default = 0.0
+
+!STRAT_FUNC = "LINEAR"
+!DSDZ = -0.0025                  !   [ppt/m] default = 0.0
+!DTDZ = 0.01                     !   [C/m] default = 0.0
                                 ! Salinity stratification
-DELTA_S = 0.25                  !   [ppt] default = 0.0
+!DELTA_S = 0.025                  !   [ppt] default = 0.0
+DELTA_S = 0.                  !   [ppt] default = 0.0
                                 ! Salinity difference across baroclinic zone
-DTDZ = 0.01                     !   [C/m] default = 0.0
                                 ! Temperature stratification
+!DELTA_T = -0.5
+DELTA_T = -0
+DSDX = 1e-3
 DTDX = -0.005                   !   [C/kilometers] default = 0.0
                                 ! Meridional temperature difference
 L_ZONE = 100.0                  !   [kilometers] default = 20.0
@@ -462,7 +477,7 @@ PEN_SW_FRAC = 0.42              !   [nondim] default = 0.0
 ! === module MOM_tracer_advect ===
 
 ! === module MOM_tracer_hor_diff ===
-KHTR = 1000.0                   !   [m2 s-1] default = 0.0
+KHTR = 4000.0                   !   [m2 s-1] default = 0.0
                                 ! The background along-isopycnal tracer diffusivity.
 RECALC_NEUTRAL_SURF = True      !   [Boolean] default = False
                                 ! If true, then recalculate the neutral surfaces if the
@@ -557,3 +572,4 @@ MAXCPU = 2.88E+04               !   [wall-clock seconds] default = -1.0
 
 ! === module MOM_file_parser ===
 DO_DYNAMICS = False
+REMAPPING_2018_ANSWERS = False
